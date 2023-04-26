@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const MenuProducts = () => {
     const [position, setPosition] = useState('')
+
     // Get data redux
     const dispath = useDispatch()
     const products = useSelector(productSelector)
