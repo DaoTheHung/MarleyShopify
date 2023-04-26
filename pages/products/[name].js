@@ -9,7 +9,7 @@ import "swiper/css";
 import { Navigation, Thumbs } from "swiper";
 
 // 
-import ReactImageMagnify from 'react-image-magnify';
+
 
 import { useRouter } from 'next/router'
 import { productSelector, getProducts, isDataSelector } from '../../store'
