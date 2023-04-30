@@ -15,7 +15,7 @@ export default function index() {
 
     return (
         <div>
-            <div className='w-full mt-[100px] h-[1300px]'>
+            <div className='w-full mt-[100px] '>
 
                 <div className='w-[78%] m-auto '>
                     <div className='flex'>

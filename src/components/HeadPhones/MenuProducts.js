@@ -78,6 +78,7 @@ const MenuProducts = () => {
                                     <h3 className='text-center cursor-pointer'>{product.name}</h3>
                                     <h3 className='text-center text-[22px]'>Rs. {product.price}</h3>
                                 </div>
+
                             </div>
                         ))}
                     </div>

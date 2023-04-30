@@ -41,11 +41,11 @@ export default function Header() {
                 Home
               </li>
             </Link>
-            <Link style={{ textDecoration: "none" }} href="/new">
+            <Link style={{ textDecoration: "none" }} href="/collections/all">
               <li
                 style={{ transition: "0.3s linear" }}
                 className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                New
+                Headephones
               </li>
             </Link>
             <Link style={{ textDecoration: "none" }} href="/about">
@@ -55,11 +55,11 @@ export default function Header() {
                 About
               </li>
             </Link>
-            <Link style={{ textDecoration: "none" }} href="/collections/all">
+            <Link style={{ textDecoration: "none" }} href="/new">
               <li
                 style={{ transition: "0.3s linear" }}
                 className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                Headephones
+                New
               </li>
             </Link>
             <Link style={{ textDecoration: "none" }} href="/contact">

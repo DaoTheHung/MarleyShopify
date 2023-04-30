@@ -43,13 +43,13 @@ const ProductData = () => {
                 <Row className='bg-[#0000000d] py-[16px] px-[6px]'>
                     <Col xs>
                         <div className='flex relative w-[87px]'>
-                            <div className={`transition-allLinear duration-[500ms] absolute bg-pink-500 w-[50%] h-full ${animate}`}>
-
+                            <div className={`text-[22px] text-white transition-allLinear duration-[500ms] absolute  bg-pink-500 w-[50%] h-full ${animate}`}>
+                                <i class="fa-sharp fa-solid fa-list p-[10px] border "></i>
                             </div>
-                            <div onClick={() => setAnimate('left-0')} className='text-[22px] '>
+                            <div onClick={() => setAnimate('left-0')} className='text-[22px] cursor-pointer'>
                                 <i class="fa-sharp fa-solid fa-list p-[10px] border border-[#e9e9e9]"></i>
                             </div>
-                            <div onClick={() => setAnimate('right-0')} className='text-[22px] ml-[-1px]'>
+                            <div onClick={() => setAnimate('right-0')} className='text-[22px] ml-[-1px] cursor-pointer'>
                                 <i class="fa-sharp fa-solid fa-list p-[10px] border border-[#e9e9e9]"></i>
                             </div>
                         </div>
@@ -65,12 +65,12 @@ const ProductData = () => {
                     </Col>
                 </Row>
 
-                <div className='flex flex-wrap gap-[27px] mt-[24px] relative'>
+                <div className={`${animate == "right-0" ? "flex flex-col gap-0" : "flex "} flex-wrap gap-[27px] mt-[24px] relative`}>
                     {currenCart?.map((product) => (
 
-                        <div key={product.id} className='w-[31%]  group/item overflow-hidden'>
+                        <div key={product.id} className={`${animate == "right-0" ? "flex flex-row w-[88%]" : ""} w-[31%]  group/item overflow-hidden`}>
                             <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
-                                <div className='relative '>
+                                <div className={`${animate == "right-0" ? "w-[358px] " : ""} relative`}>
                                     <img className='' src={product.image} />
                                     <img className='transition   duration-[600ms] absolute top-0 opacity-[0] group-hover/edit:opacity-100' src={product.imageSlick1} />
                                 </div>
@@ -90,16 +90,18 @@ const ProductData = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex flex-col gap-[20px] '>
-                                <span className='m-auto tracking-[3px]'>
+                            <div className={`${animate == "right-0" ? "flex flex-col gap-[20px] mt-[138px] ml-[22px]" : "text-center"}`}>
+                                <div className={`${animate == "right-0" ? "" : "text-center"} tracking-[3px]`}>
                                     <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                     <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                     <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                     <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                     <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                </span>
-                                <h3 className='text-center cursor-pointer'>{product.name}</h3>
-                                <h3 className='text-center text-[22px]'>Rs. {product.price}</h3>
+                                </div>
+                                <div className={`${animate == "right-0" ? "" : "text-center"}`}>
+                                    <h3 className='cursor-pointer'>{product.name}</h3>
+                                    <h3 className='text-[22px]'>Rs. {product.price}</h3>
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -8,6 +8,7 @@ import { PaginationSlide } from '../common/DataSlide/DataSlide';
 import LearnMore from '../common/TitleDetailIntro/LearnMore';
 import Sterlined from '../common/TitleDetailIntro/Sterlined';
 import Comfort from '../common/TitleDetailIntro/Comfort';
+import { Button } from '../common/hook/Button';
 export default function TitlePage() {
     return (
         <>
@@ -27,9 +28,7 @@ export default function TitlePage() {
                             Sit amet risus nullam eget felis eget nunc. Viverra justo nec ultrices dui sapien eget mi proin.
                         </p>
                     </div>
-                    <button className='mt-[52px] text-[21px] py-[20px] text-pink-500 transition-colors duration-300
-                font-semibold px-[40px] border-[4px] border-pink-500 hover:bg-pink-500 hover:text-[#fff] 
-                uppercase tracking-[3px]'>shop now</button>
+                    <Button shop="shop now" />
                 </div>
                 <div className='w-[554px] '>
                     <Swiper
@@ -62,9 +61,7 @@ export default function TitlePage() {
                             Non blandit massa enim nec dui nunc mattis enim. Donec enim diam vulputate ut pharetra sit amet aliquam id.
                         </p>
                     </div>
-                    <button className='mt-[52px] text-[21px] py-[20px] text-pink-500 transition-colors duration-300
-                font-semibold px-[40px] border-[4px] border-pink-500 hover:bg-pink-500 hover:text-[#fff] 
-                uppercase tracking-[3px]'>shop now</button>
+                    <Button shop="shop now" />
                 </div>
                 <div className='w-[554px] '>
                     <Swiper

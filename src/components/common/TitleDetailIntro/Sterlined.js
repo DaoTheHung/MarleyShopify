@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from '../hook/Button'
+
 
 export default function Sterlined() {
     return (
@@ -21,9 +23,7 @@ export default function Sterlined() {
                                 Aliquet porttitor lacus luctus accumsan tortor posuere. Nisl purus in mollis nunc sed id semper risus. Ultrices neque ornare aenean.
                             </p>
                         </div>
-                        <button className='mt-[52px] text-[21px] py-[20px] text-pink-500 transition-colors duration-300
-                    font-semibold px-[40px] border-[4px] border-pink-500 hover:bg-pink-500 hover:text-[#fff] 
-                    uppercase tracking-[3px]'>shop now</button>
+                        <Button shop="shop now" />
                     </div>
                     <div className='w-[554px] '>
 

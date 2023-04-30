@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../hook/Button'
 
 export default function LearnMore() {
     return (
@@ -16,9 +17,7 @@ export default function LearnMore() {
                             Elit eget gravida cum sociis natoque penatibus.
                         </p>
                     </div>
-                    <button className='mt-[52px] text-[21px] py-[20px] text-pink-500 transition-colors duration-300
-                font-semibold px-[40px] border-[4px] border-pink-500 hover:bg-pink-500 hover:text-[#fff] 
-                uppercase tracking-[3px] w-[256px]'>LEARN MORE</button>
+                    <Button learn="Learn more" />
                 </div>
             </div>
         </div>

@@ -12,15 +12,15 @@ const Pagination = ({ cartPage, totalPage, paginate, crPage }) => {
 
 
     return (
-        <div className='absolute left-[58%] bottom-[-525px]'>
-            <div className='flex justify-center gap-[6px] '>
+        <div className=''>
+            <div className='flex justify-center gap-[6px] mt-[39px]'>
                 {pageNumbers.map((item, i) => (
-
                     <button
                         key={i}
                         className={`${item === crPage ? "bg-black" : ''} text-white h-[40px] w-[40px] bg-pink-500`}
                         onClick={(e) => paginate(item)} >
                         <div className='text-[20px] font-semibold'>
+
                             {item}
                         </div>
                     </button>
