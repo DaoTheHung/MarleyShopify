@@ -25,16 +25,14 @@ const ProductData = () => {
         // const res = axios.get('https://api-test-two-beta.vercel.app/api/v1')
         // .then()
     }, [])
-    // Pagination
 
+    // Pagination
     const [crPage, setCrPage] = useState(1)
     const [cartPage, setCartPage] = useState(4);
-
     const lastCart = crPage * cartPage;
     const firtCart = lastCart - cartPage;
     const fakeProductPage = [...products]
     const currenCart = data?.slice(firtCart, lastCart)
-
     const paginate = (pageNumber) => {
         setCrPage(pageNumber)
 
@@ -44,6 +42,7 @@ const ProductData = () => {
         })
 
     }
+
     return (
 
         <>
