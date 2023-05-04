@@ -54,7 +54,7 @@ export default function HeadphoneData() {
                 <img className='transition   duration-[600ms] absolute top-0 opacity-[0] group-hover/edit:opacity-100' src={product.imageSlick1} />
               </div>
               <div className='transition-opacity duration-[600ms] group-hover/edit:bottom-[20px] w-full absolute bottom-1 opacity-[0]  group-hover/edit:opacity-100'>
-                <div className='pl-[115px]  text-[15px] tracking-[37px] gap-[10px]  flex'>
+                <div className='justify-center  text-[15px] tracking-[37px] gap-[10px]  flex'>
                   <Link style={{ textDecoration: "none" }} href={`/products/${product.name}`}>
                     <div className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
                       <i className="text-ink-300 fa-solid fa-link transition duration-[500ms] group-hover:text-[#fff]"></i>
