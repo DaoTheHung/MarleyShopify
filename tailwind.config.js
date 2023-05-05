@@ -14,8 +14,7 @@ module.exports = {
         "height": "0.3s linear"
       },
       backgroundImage: {
-        "hero-pattern": "url('../public/bgr.png')",
-        "hero-pattern-1": "url('../public/Ellipse.png')",
+
         "learn-more": "url('../public/images/learn-more.webp')",
         "footer": "url('../public/images/footer-bg.webp')",
         "navbar-title": "url(../public/images/navbar-title.webp)"

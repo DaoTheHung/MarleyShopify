@@ -23,7 +23,7 @@ export default function NavBarTitle() {
     }
     return (
         <div>
-            <div className='text-center bg-navbar-title  w-[full] py-[40px] relative h-auto  bg-center'>
+            <div className='text-center bg-navbar-title w-[full] py-[40px] relative h-auto  bg-center'>
                 <h3 className='text-[#fff] uppercase text-[38px] tracking-[2px]'>{tilteRouter.title}</h3>
                 <div className='flex text-[#fff]  justify-center items-center gap-[9px] mt-[20px]'>
                     <Link style={{ textDecoration: "none" }} href={tilteRouter.link}>
