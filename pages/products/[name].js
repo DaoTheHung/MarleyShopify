@@ -38,6 +38,7 @@ export default function products() {
 
     // Find products detail
     const findDetail = data.find(product => product.name == router.query.name)
+
     const productDetail = {
         id: findDetail?.id,
         name: findDetail?.name,
@@ -46,6 +47,7 @@ export default function products() {
         image: findDetail?.image,
         imageSlick1: findDetail?.imageSlick1,
         imageSlick2: findDetail?.imageSlick2,
+        imageSlick3: findDetail?.imageSlick3,
     }
 
     const images = [
@@ -57,6 +59,9 @@ export default function products() {
         },
         {
             image: findDetail?.imageSlick2
+        },
+        {
+            image: findDetail?.imageSlick3
         }
     ]
 

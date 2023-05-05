@@ -46,6 +46,24 @@ export const FormSelect = ({ setData }) => {
         setType(name)
         const arrProduct = [...products]
 
+        // Featured
+        if (name === "Featured") {
+            setData(arrProduct)
+        }
+
+
+        // A - Z
+        if (name === "Alphabetically, A-Z") {
+            const lowText = arrProduct.sort((a, b) => a.name.localeCompare(b.name))
+            setData(lowText)
+        }
+
+        // A - Z
+        if (name === "Alphabetically, Z-A") {
+            const highText = arrProduct.sort((a, b) => b.name.localeCompare(a.name))
+            setData(highText)
+        }
+
         // Price, low to high
         if (name === "Price, low to high") {
             const lowPrice = arrProduct.sort((a, b) => a.price - b.price)
@@ -58,6 +76,8 @@ export const FormSelect = ({ setData }) => {
             const highPrice = arrProduct.sort((a, b) => b.price - a.price)
             setData(highPrice)
         }
+
+
 
     }
     return (

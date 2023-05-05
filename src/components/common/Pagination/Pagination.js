@@ -2,14 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 
 const Pagination = ({ cartPage, totalPage, paginate, crPage }) => {
-    const [color, setColor] = useState('')
+    const [total, setTotal] = useState([])
 
     const pageNumbers = [];
-    for (let i = 1; i < Math.ceil(totalPage / cartPage); i++) {
-        pageNumbers.push(i)
 
+    for (let i = 0; i < Math.ceil(totalPage / cartPage); i++) {
+        pageNumbers.push(i + 1)
     }
-
 
     return (
         <div className=''>
