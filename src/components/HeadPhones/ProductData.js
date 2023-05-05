@@ -1,30 +1,51 @@
 import React, { useEffect, useState } from 'react';
-
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Pagination from '../common/Pagination/Pagination';
 import { FormSelect } from '../common/Form/FormSelect';
 import { productSelector, getProducts } from '../../../store';
 import { useDispatch, useSelector } from 'react-redux';
+import PopupDetailProduct from '../common/PopupDetailProduct';
+import { loadingImage } from '../common/Loading/Loading';
 import axios from 'axios';
 const ProductData = () => {
+    // Router
+    const router = useRouter()
+
+    // Animation
     const [animate, setAnimate] = useState("left-0")
+
+    //Loading
+    const [isLoading, setIsLoading] = useState(false)
 
     // Get data redux
     const dispath = useDispatch()
-
     const products = useSelector(productSelector)
     const [data, setData] = useState([])
 
     useEffect(() => {
+        setIsLoading(true)
         fetch('https://api-test-two-beta.vercel.app/api/v1')
             .then((res) => {
                 return (res.json())
             }).then((data) => {
                 setData(data.data)
+                setIsLoading(false)
             });
         // const res = axios.get('https://api-test-two-beta.vercel.app/api/v1')
         // .then()
     }, [])
+
+    // Hidden-block modal detail
+    const [show, setShow] = useState(false)
+    const [opacity, setOpacity] = useState(0)
+    const showDetail = (id) => {
+        router.query = `${id}`
+        setShow(true)
+        setTimeout(() => {
+            setOpacity(1)
+        }, 500);
+    }
 
     // Pagination
     const [crPage, setCrPage] = useState(1)
@@ -74,46 +95,51 @@ const ProductData = () => {
                 </div>
 
                 <div className={`${animate == "right-0" ? "flex flex-col gap-0" : "flex "} flex-wrap gap-[27px] mt-[24px] relative`}>
-                    {currenCart?.map((product) => (
+                    {!isLoading ?
+                        currenCart?.map((product) => (
 
-                        <div key={product.id} className={`${animate == "right-0" ? "flex flex-row w-[88%]" : ""} w-[31%]  group/item overflow-hidden`}>
-                            <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
-                                <div className={`${animate == "right-0" ? "w-[358px] " : ""} relative`}>
-                                    <img className='' src={product.image} />
-                                    <img className='transition   duration-[600ms] absolute top-0 opacity-[0] group-hover/edit:opacity-100' src={product.imageSlick1} />
-                                </div>
-                                <div className='transition-opacity duration-[600ms] group-hover/edit:bottom-[20px] w-full absolute bottom-1 opacity-[0]  group-hover/edit:opacity-100'>
-                                    <div className='justify-center  text-[15px] tracking-[37px] gap-[10px]  flex'>
-                                        <Link style={{ textDecoration: "none" }} href={`/products/${product.name}`}>
+                            <div key={product.id} className={`${animate == "right-0" ? "flex flex-row w-[88%]" : ""} w-[31%]  group/item overflow-hidden`}>
+                                <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
+                                    <div className={`${animate == "right-0" ? "w-[358px] " : ""} relative`}>
+                                        <img className='' src={product.image} />
+                                        <img className='transition   duration-[600ms] absolute top-0 opacity-[0] group-hover/edit:opacity-100' src={product.imageSlick1} />
+                                    </div>
+                                    <div className='transition-opacity duration-[600ms] group-hover/edit:bottom-[20px] w-full absolute bottom-1 opacity-[0]  group-hover/edit:opacity-100'>
+                                        <div className='justify-center  text-[15px] tracking-[37px] gap-[10px]  flex'>
+                                            <Link style={{ textDecoration: "none" }} href={`/products/${product.name}`}>
+                                                <div className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
+                                                    <i className="text-ink-300 fa-solid fa-link transition duration-[500ms] group-hover:text-[#fff]"></i>
+                                                </div>
+                                            </Link>
                                             <div className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
-                                                <i className="text-ink-300 fa-solid fa-link transition duration-[500ms] group-hover:text-[#fff]"></i>
+                                                <i className="fa-regular fa-heart transition duration-[500ms] group-hover:text-[#fff]"></i>
                                             </div>
-                                        </Link>
-                                        <div className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
-                                            <i className="fa-regular fa-heart transition duration-[500ms] group-hover:text-[#fff]"></i>
-                                        </div>
-                                        <div onClick={() => showDetail(product.id)} className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
-                                            <i className="fa-solid fa-magnifying-glass transition duration-[500ms] group-hover:text-[#fff]" ></i>
+                                            <div onClick={() => showDetail(product.id)} className='w-[45px] group h-[45px] transition duration-[500ms] rounded-[50%] hover:bg-pink-500 flex justify-center items-center pl-[37px] pt-[3px]'>
+                                                <i className="fa-solid fa-magnifying-glass transition duration-[500ms] group-hover:text-[#fff]" ></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={`${animate == "right-0" ? "flex flex-col gap-[20px] mt-[138px] ml-[22px]" : "text-center "}`}>
-                                <div className={`${animate == "right-0" ? "" : "text-center"} tracking-[3px]`}>
-                                    <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                    <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                    <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                    <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                    <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                <div className={`${animate == "right-0" ? "flex flex-col gap-[20px] mt-[138px] ml-[22px]" : "text-center "}`}>
+                                    <div className={`${animate == "right-0" ? "" : "text-center"} tracking-[3px]`}>
+                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                    </div>
+                                    <div className={`${animate == "right-0" ? "" : "text-center"}`}>
+                                        <h3 className='cursor-pointer'>{product.name}</h3>
+                                        <h3 className='text-[22px]'>Rs. {product.price}</h3>
+                                    </div>
                                 </div>
-                                <div className={`${animate == "right-0" ? "" : "text-center"}`}>
-                                    <h3 className='cursor-pointer'>{product.name}</h3>
-                                    <h3 className='text-[22px]'>Rs. {product.price}</h3>
-                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                        : <img src="//cdn.shopify.com/s/files/1/0434/2520/2335/t/5/assets/loading.gif?v=157493769327766696621629093180" />
+                    }
+
                 </div>
+                <PopupDetailProduct show={show} setShow={setShow} opacity={opacity} setOpacity={setOpacity} />
                 <Pagination cartPage={cartPage} totalPage={products.length} paginate={paginate} crPage={crPage} />
 
 

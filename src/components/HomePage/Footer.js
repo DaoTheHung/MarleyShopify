@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div
             style={router.pathname !== "/" ? { marginTop: "30px" } : { marginTop: "100px", bottom: "-84rem" }}
-            className='text-[32px] mt-[100px] bg-footer relative  bg-center h-[356px] bg-cover'
+            className="text-[32px] mt-[100px] bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/footer-bg.jpg?v=1614290780')] relative  bg-center h-[356px] bg-cover"
         >
             <div className='absolute left-[195px] top-[170px] w-[245px]'>
                 <img className='w-full' src='../images/matley-footer-logo.webp' />

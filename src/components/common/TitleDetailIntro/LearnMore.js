@@ -4,7 +4,7 @@ import { Button } from '../hook/Button'
 export default function LearnMore() {
     return (
         <div>
-            <div className='bg-learn-more relative w-full h-[850px] top-[1086px] bg-cover'>
+            <div className="bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/wide-banner_362654f3-dcb6-46e3-88a4-0ed839703d2b.jpg?v=1631093376')] relative w-full h-[850px] top-[1086px] bg-cover">
                 <div className='w-[503px] mt-[61px] absolute top-[46px] left-[323px]'>
                     <div className='flex flex-col gap-[44px]'>
                         <div className='w-[35px] h-[6px] rounded-[5px] bg-pink-500'></div>
