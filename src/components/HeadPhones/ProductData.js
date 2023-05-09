@@ -64,6 +64,13 @@ const ProductData = () => {
 
     }
 
+    // Search products
+    const handleSearchProducts = (e) => {
+        const search = fakeProductPage.filter(products => products.name.toLowerCase().includes(e.target.value.toLowerCase().trim()))
+        setData(search)
+
+    }
+
     return (
 
         <>
@@ -72,21 +79,34 @@ const ProductData = () => {
                 <div className='bg-[#0000000d] py-[16px] px-[18px] flex justify-between'>
                     <div >
                         <div className='flex relative w-[87px]'>
-                            <div className={`text-[22px] text-white transition-allLinear duration-[500ms] absolute  bg-pink-500 w-[50%] h-full ${animate}`}>
-                                <i class="fa-sharp fa-solid fa-list p-[10px] border "></i>
+                            <div className={`transition-allLinear duration-[500ms] absolute bg-pink-500 w-[50%] h-full ${animate}`}>
+
                             </div>
-                            <div onClick={() => setAnimate('left-0')} className='text-[22px] cursor-pointer'>
-                                <i class="fa-sharp fa-solid fa-list p-[10px] border border-[#e9e9e9]"></i>
-                            </div>
-                            <div onClick={() => setAnimate('right-0')} className='text-[22px] ml-[-1px] cursor-pointer'>
-                                <i class="fa-sharp fa-solid fa-list p-[10px] border border-[#e9e9e9]"></i>
+                            <div className='flex relative'>
+                                <div
+                                    onClick={() => setAnimate('translate-x-[0px]')}
+                                    style={animate === "translate-x-[0px]" ? { color: "#fff" } : {}}
+                                    className='text-[22px]  cursor-pointer '>
+                                    <i className="fa-solid fa-table-cells p-[10px] border "></i>
+                                </div>
+                                <div
+                                    onClick={() => setAnimate('translate-x-[44px]')}
+                                    style={animate === "translate-x-[44px]" ? { color: "#fff" } : {}}
+                                    className='text-[22px]  ml-[-1px] cursor-pointer '>
+                                    <i className="fa-solid fa-list p-[10px] border "></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className='flex items-center'>
+                        <label className='text-ink-100 text-[22px] font-normal'>Search <span><i class="text-[15px] fa-solid fa-magnifying-glass"></i></span></label>
+                        <div>
+                            <input
 
-                        <h3 className='text-ink-100 text-[22px] font-normal'>Paginate by</h3>
-
+                                onChange={handleSearchProducts}
+                                className='outline-none  px-[20px] ml-[10px] pt-[3px] focus:border  focus:border-pink-500'
+                                type='text' />
+                        </div>
                     </div>
                     <div className='flex items-center gap-[5px]'>
                         <h3 className='text-ink-100 text-[22px] font-normal'>Sort by</h3>
@@ -126,7 +146,8 @@ const ProductData = () => {
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                        <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
+                                        {product.star == "for" ? <i class="fa-regular text-[12px] fa-star text-[#1a1a1a6b]"></i> : <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>}
+
                                     </div>
                                     <div className={`${animate == "right-0" ? "" : "text-center"}`}>
                                         <h3 className='cursor-pointer'>{product.name}</h3>
@@ -137,6 +158,7 @@ const ProductData = () => {
                         ))
                         : <img src="//cdn.shopify.com/s/files/1/0434/2520/2335/t/5/assets/loading.gif?v=157493769327766696621629093180" />
                     }
+                    {data == "" && <h3 className='text-center tracking-[3px] m-auto'>No results found!</h3>}
 
                 </div>
                 <PopupDetailProduct show={show} setShow={setShow} opacity={opacity} setOpacity={setOpacity} />

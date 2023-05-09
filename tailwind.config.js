@@ -32,12 +32,13 @@ module.exports = {
 
       animation: {
         "appear-slow": "beat ease-in-out 0.3s",
+        "height": "height ease-in-out 0.3s"
       },
 
       keyframes: {
         height: {
           "0%": { height: "0" },
-          "100%": { height: "124px" },
+          "100%": { height: "100%" },
         },
         height1: {
           "0%": { height: "124px" },
