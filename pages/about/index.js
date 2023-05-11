@@ -1,7 +1,10 @@
 import React from 'react'
+import { TitleBaner } from '../../src/components/About/TitleBaner'
 
 export default function index() {
     return (
-        <div>index</div>
+        <div className='w-full mt-[150px]'>
+            <TitleBaner />
+        </div>
     )
 }

@@ -2,23 +2,37 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import PopupCart from '../common/PopupCart'
 import { useRouter } from 'next/router'
-import { cartSelector, getCart } from '../../../store'
+import { cartSelector, getCart, isDataSelector } from '../../../store'
 import { useSelector, useDispatch } from "react-redux"
 
 
 export default function Header() {
   const router = useRouter()
   const [cart, setCart] = useState(true)
+  const [dataProduct, setDataProduct] = useState([])
+
 
   // Get data redux
   const data = useSelector(cartSelector)
+  const isDataProduct = useSelector(isDataSelector)
+
   const dispath = useDispatch()
   useEffect(() => {
     dispath(getCart())
   }, [dispath]);
 
+  useEffect(() => {
+    const json = localStorage.getItem('cart')
+    if (json !== null) {
+      setTimeout(() => {
+        setDataProduct(JSON.parse(json))
+      }, 2000)
+    }
+  }, [isDataProduct])
+
   // Total quantity
-  const countProduct = data?.reduce((int, product) => int + product.quantity, 0)
+  const quantityProduct = dataProduct?.reduce((int, product) => int + product.quantity, 0)
+
 
   // Open modal cart
   const handleModalCart = () => {
@@ -70,10 +84,10 @@ export default function Header() {
               </li>
             </Link>
           </ul>
-          <div className='flex gap-[6px] justify-center'>
+          <div className='flex gap-[6px] justify-center '>
             <i onClick={handleModalCart} className="text-[#fff] text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
-            <div className='w-[20px] border border-[#fff] h-[20px] rounded-[50%] flex justify-center'>
-              <h3 className='text-[12px] text-[#fff] m-auto'>{countProduct}</h3>
+            <div className='w-[20px] h-[20px] rounded-[50%] flex justify-center bg-pink-500'>
+              <h3 className='text-[12px] text-[#fff] m-auto'>{quantityProduct ? quantityProduct : "0"}</h3>
             </div>
           </div>
         </div>

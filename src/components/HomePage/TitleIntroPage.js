@@ -1,9 +1,10 @@
 import React, { useRef } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from 'next/link';
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
-import { slideTitles } from '../common/DataSlide/DataSlide'
+import { slideTitles, slideTitles2 } from '../common/DataSlide/DataSlide'
 import { PaginationSlide } from '../common/DataSlide/DataSlide';
 import LearnMore from '../common/TitleDetailIntro/LearnMore';
 import Sterlined from '../common/TitleDetailIntro/Sterlined';
@@ -28,7 +29,9 @@ export default function TitlePage() {
                             Sit amet risus nullam eget felis eget nunc. Viverra justo nec ultrices dui sapien eget mi proin.
                         </p>
                     </div>
-                    <Button shop="shop now" />
+                    <Link className="text-black" href="/collections/all">
+                        <Button shop="shop now" className="text-black" />
+                    </Link>
                 </div>
                 <div className='w-[554px] '>
                     <Swiper
@@ -61,13 +64,15 @@ export default function TitlePage() {
                             Non blandit massa enim nec dui nunc mattis enim. Donec enim diam vulputate ut pharetra sit amet aliquam id.
                         </p>
                     </div>
-                    <Button shop="shop now" />
+                    <Link className="text-black" href="/collections/all">
+                        <Button shop="shop now" />
+                    </Link>
                 </div>
                 <div className='w-[554px] '>
                     <Swiper
                         modules={[Pagination]}
                     >
-                        {slideTitles.map((image, index) => (
+                        {slideTitles2.map((image, index) => (
                             <SwiperSlide>
                                 <div key={index} className='w-[91%]' >
                                     <img className='rounded-tr-[80px] w-full h-[680px] object-cover' src={image.image} />

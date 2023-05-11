@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../hook/Button'
+import Link from 'next/link'
 
 
 export default function Sterlined() {
@@ -23,7 +24,9 @@ export default function Sterlined() {
                                 Aliquet porttitor lacus luctus accumsan tortor posuere. Nisl purus in mollis nunc sed id semper risus. Ultrices neque ornare aenean.
                             </p>
                         </div>
-                        <Button shop="shop now" />
+                        <Link className="text-black" href="/collections/all">
+                            <Button shop="shop now" />
+                        </Link>
                     </div>
                     <div className='w-[554px] '>
 

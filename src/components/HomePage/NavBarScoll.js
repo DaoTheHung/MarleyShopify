@@ -53,7 +53,7 @@ export default function NavBarScoll() {
     return (
 
         <>
-            <div className={`transition-allLinear duration-[400ms] w-full fixed z-20 bg-[#1a1a1ae3] opacity-[${opacity}] ${navBar ? 'top-[-125px]' : ' top-[0px]'}  shadow-navBar`}>
+            <div className={`transition-allLinear duration-[400ms] w-full fixed z-10 bg-[#1a1a1ae3] opacity-[${opacity}] ${navBar ? 'top-[-125px]' : ' top-[0px]'}  shadow-navBar`}>
                 <div className={`flex py-0 px-[160px] h-[124px] animate-height-slow items-center justify-between`}>
                     <div>
                         <img className='h-[87px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
@@ -99,7 +99,7 @@ export default function NavBarScoll() {
                     </ul>
                     <div className='flex gap-[6px] justify-center'>
                         <i onClick={handleModalCart} className="text-[#fff] cursor-pointer text-[30px] fa-solid fa-bag-shopping rounded-0 "></i>
-                        <div className='w-[20px] border border-[#fff] h-[20px] rounded-[50%] flex justify-center'>
+                        <div className='w-[20px]   h-[20px] rounded-[50%] flex justify-center bg-pink-500'>
                             <h3 className='text-[12px] text-[#fff] m-auto'>{countProduct ? countProduct : "0"}</h3>
                         </div>
                     </div>

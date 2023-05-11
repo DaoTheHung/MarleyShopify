@@ -55,13 +55,15 @@ const ProductData = () => {
     const fakeProductPage = [...products]
     const currenCart = data?.slice(firtCart, lastCart)
     const paginate = (pageNumber) => {
+        setIsLoading(true)
         setCrPage(pageNumber)
-
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-
+        setTimeout(() => {
+            setIsLoading(false)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }, 1000)
     }
 
     // Search products
@@ -74,6 +76,7 @@ const ProductData = () => {
     return (
 
         <>
+            {/* <div className='bg-[#d5d4d46e] fixed top-0 left-0 right-0 bottom-0 z-10'></div> */}
             <div className='w-[845px] ml-[50px]'>
 
                 <div className='bg-[#0000000d] py-[16px] px-[18px] flex justify-between'>

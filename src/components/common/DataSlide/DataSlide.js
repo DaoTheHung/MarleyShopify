@@ -38,7 +38,17 @@ export const slideTitles = [
 
 
 ]
+export const slideTitles2 = [
 
+    {
+        image: "https://cdn.shopify.com/s/files/1/0434/2520/2335/files/home-scroll-3_600x.jpg?v=1614297019"
+    },
+    {
+        image: "https://cdn.shopify.com/s/files/1/0434/2520/2335/files/latest-collection-img2_600x.jpg?v=1614290494"
+    },
+
+
+]
 export const slideComments = [
     {
         image: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/home-02_400x400.jpg?v=1631538136",
@@ -82,15 +92,7 @@ export const NavigationSlide = () => {
     )
 }
 
-export const PaginationSlide = () => {
-    const pagination = {
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-    };
-    return pagination;
-}
+
 
 
 

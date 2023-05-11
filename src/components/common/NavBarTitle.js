@@ -15,11 +15,15 @@ export default function NavBarTitle() {
 
         titleLink:
             router.pathname == '/products/[name]' ? "All" : "" ||
-                router.pathname == '/collections/all' ? "Home" : "",
-        link: router.pathname == '/products/[name]' ? "/collections/all" : "",
+                router.pathname == '/collections/all' ? "Home" : "" ||
+                    router.pathname == '/about' ? "Home" : "",
+        link:
+            router.pathname == '/products/[name]' ? "/collections/all" : "" ||
+                router.pathname == '/about' ? "/" : "",
         description:
             router.pathname == '/products/[name]' ? "BT Headset" : "" ||
-                router.pathname == '/collections/all' ? "Travel Headphones" : ""
+                router.pathname == '/collections/all' ? "Travel Headphones" : "" ||
+                    router.pathname == '/about' ? "About" : "",
     }
     return (
         <div>
