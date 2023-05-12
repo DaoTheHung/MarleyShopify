@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        "intro": "30% 70% 61% 39% / 29% 34% 66% 71% "
+      },
       transitionProperty: {
         "allLinear": "0.3s linear",
         "opacity": "0.3s ease-in",
@@ -32,10 +35,37 @@ module.exports = {
 
       animation: {
         "appear-slow": "beat ease-in-out 0.3s",
-        "height": "height ease-in-out 0.3s"
+        "height": "height ease-in-out 0.3s",
+        "effect": "effect 3s ease-in-out infinite alternate",
+        "effectHover": "effect 3s ease-in-out infinite alternate"
       },
 
       keyframes: {
+        effect: {
+          "0%": {
+            borderRadius: "43% 57% 30% 70% / 52% 30% 70% 48%"
+          },
+          "50%": {
+            borderRadius: "70% 30% 54% 46% / 67% 51% 49% 33%"
+
+          },
+          "100%": {
+            borderRadius: "44% 56% 33% 67% / 53% 40% 60% 47%"
+          }
+        },
+
+        effectHover: {
+          "0%": {
+            borderRadius: "50% 60% 32% 80% / 40% 50% 80% 40%"
+          },
+          "50%": {
+            borderRadius: "75% 31% 50% 43% / 60% 58% 47% 44%"
+
+          },
+          "100%": {
+            borderRadius: "46% 57% 34% 63% / 59% 40% 64% 49%"
+          }
+        },
         height: {
           "0%": { height: "0" },
           "100%": { height: "100%" },
