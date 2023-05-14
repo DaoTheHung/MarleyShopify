@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+
+// Redux
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -8,20 +11,29 @@ import "swiper/css";
 // import required modules
 import { Navigation, Thumbs } from "swiper";
 
-// 
-
-
 import { useRouter } from 'next/router'
-import { productSelector, getProducts, isDataSelector } from '../../store'
+
+// Redux
+import { productSelector, getProducts, isDataSelector, isData } from '../../store'
 import { useSelector, useDispatch } from "react-redux"
+
+//
 import { NavigationSlide } from '../../src/components/common/DataSlide/DataSlide';
 import Tabs from '../../src/components/DetailPage/Tabs';
 import DataDetail from '../../src/components/DetailPage/DataDetail';
 
 export default function products() {
+    const ref = useRef()
 
     // Sliders
     const [slideThumbs, setSlideThumbs] = useState(null);
+
+    // Zoom Image
+    const [origin, setOrigin] = useState({
+
+    })
+
+    const [scale, setScale] = useState(1)
 
     // Quantity product
     const [count, setCount] = useState(1)
@@ -52,21 +64,27 @@ export default function products() {
 
     const images = [
         {
+            id: 1,
             image: findDetail?.image
+
         },
         {
-            image: findDetail?.imageSlick1,
+            id: 2,
+            image: findDetail?.imageSlick1
         },
         {
+            id: 3,
             image: findDetail?.imageSlick2
         },
         {
+            id: 4,
             image: findDetail?.imageSlick3
         }
     ]
 
     // Default slide
-    const [typeImage, setTypeImage] = useState(findDetail?.image)
+    const [typeImage, setTypeImage] = useState(images[0].id)
+
 
     // Prev quantity product
     const handlePrevDown = () => {
@@ -81,6 +99,24 @@ export default function products() {
 
     }
 
+    // Zoom Image
+    const handleZoomImage = (e) => {
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+
+        const a = {
+            x,
+            y,
+        }
+        setOrigin(a)
+        setScale("2")
+    }
+
+    const handleDefautZoom = (e) => {
+        setOrigin("center")
+        setScale(1)
+    }
+
     // Onchange
     const handleChange = (event) => {
 
@@ -89,20 +125,25 @@ export default function products() {
 
         <div className='w-full mt-[74px]'>
             <div className='w-[1226px] m-auto  flex'>
-                <div className='w-[575px] relative '>
-                    <Swiper
-                        thumbs={{ swiper: slideThumbs && !slideThumbs.destroyed ? slideThumbs : null }}
-                        modules={[Navigation, Thumbs]}
-                    >
-                        {
-                            images.map((image, index) => (
-                                <SwiperSlide key={index}>
+                <div className='w-[575px]  relative cursor-pointer '>
+                    <div onMouseMove={handleZoomImage} onMouseLeave={handleDefautZoom} className='overflow-hidden'>
+                        <Swiper
+                            thumbs={{ swiper: slideThumbs && !slideThumbs.destroyed ? slideThumbs : null }}
+                            modules={[Navigation, Thumbs]}
+                        >
 
-                                    <img className='w-full object-cover h-[600px] ml-[36px] mt-[31px]' src={image.image} /></SwiperSlide>
-
-                            ))
-                        }
-                    </Swiper>
+                            {
+                                images.map((image, index) => (
+                                    <SwiperSlide key={index}>
+                                        <img
+                                            style={typeImage === image.id ? { transformOrigin: `${origin.x}px ${origin.y}px`, transform: `scale(${scale})` } : { transform: 'scale(1)' }}
+                                            className={` w-[100%] origin-center object-cover h-auto`}
+                                            src={image.image} />
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
                     <div className='mt-[20px] ml-[20px]'>
                         <Swiper
                             onSwiper={setSlideThumbs}
@@ -115,9 +156,9 @@ export default function products() {
 
                                     <SwiperSlide>
                                         <div
-                                            style={typeImage === image.image ? { border: "4px solid #ef6d9f", opacity: "1" } : {}}
-                                            className='w-[136.75px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
-                                            onClick={() => (setTypeImage(image.image))}
+                                            style={typeImage === image.id ? { border: "4px solid #ef6d9f", opacity: "1" } : {}}
+                                            className=' w-[136.75px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
+                                            onClick={() => (setTypeImage(image.id))}
                                             key={index}
                                         >
 

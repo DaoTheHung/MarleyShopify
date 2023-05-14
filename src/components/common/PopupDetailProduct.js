@@ -156,7 +156,9 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
                 <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick1} /></SwiperSlide>
               <SwiperSlide>
                 <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick2} /></SwiperSlide>
-              <NavigationSlide />
+              <SwiperSlide>
+                <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick3} /></SwiperSlide>
+              <NavigationSlide productDetail={productDetail} />
             </Swiper>
           </div>
 

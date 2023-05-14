@@ -36,15 +36,15 @@ export const TitleBaner = () => {
                         </div>
 
                     </div>
-                    <div className='w-[50%] relative flex flex-col gap-[30px] ml-[70px] '>
-                        <div className='ml-[40px]'>
+                    <div className='w-[50%] relative flex flex-col gap-[30px] ml-[70px]'>
+                        <div className='relative left-[46px]'>
                             <div className='w-[30px] h-[6px] rounded-[5px] bg-pink-500 mb-[30px]'></div>
                             <h3 className='text-pink-500 text-[44px] font-bold tracking-[2px] w-[102%]'>Connect With World
                             </h3>
                         </div>
-                        <div className='text-ink-100 text-[22px] '>
-                            <p className='w-[535px] ml-[-27px]'>Curabitur ut nisl urna. Nam quis mauris in nisi eleifend tristique nec eu ante. Nam magna justo, mollis et enim</p>
-                            <p className='ml-[270px] mt-[-18px]'>ac uisque at blandit nisl.</p>
+                        <div className='text-ink-100 text-[22px] text-right relative right-[31px]'>
+                            <p className='w-[535px] '>Curabitur ut nisl urna. Nam quis mauris in nisi eleifend tristique nec eu ante. Nam magna justo, mollis et enim</p>
+                            <p className='w-[535px] mt-[-18px]'>ac uisque at blandit nisl.</p>
                         </div>
                     </div>
                 </div>

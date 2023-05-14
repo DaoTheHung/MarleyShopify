@@ -13,6 +13,7 @@ module.exports = {
       transitionProperty: {
         "allLinear": "0.3s linear",
         "opacity": "0.3s ease-in",
+        "opacity1": "0.3s ease-in",
         "opacityDetail": "0.3s ease-in",
         "height": "0.3s linear"
       },

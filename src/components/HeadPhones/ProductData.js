@@ -13,7 +13,7 @@ const ProductData = () => {
     const router = useRouter()
 
     // Animation
-    const [animate, setAnimate] = useState("left-0")
+    const [animate, setAnimate] = useState("translate-x-[0px]")
 
     //Loading
     const [isLoading, setIsLoading] = useState(false)
@@ -82,7 +82,7 @@ const ProductData = () => {
                 <div className='bg-[#0000000d] py-[16px] px-[18px] flex justify-between'>
                     <div >
                         <div className='flex relative w-[87px]'>
-                            <div className={`transition-allLinear duration-[500ms] absolute bg-pink-500 w-[50%] h-full ${animate}`}>
+                            <div className={`transition-allLinear duration-[500ms] absolute bg-pink-500 w-[50%] h-[99%] ${animate}`}>
 
                             </div>
                             <div className='flex relative'>

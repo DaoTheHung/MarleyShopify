@@ -1,5 +1,7 @@
 import React from "react"
 import { useSwiper } from "swiper/react"
+import { isDataSelector, isData } from "../../../../store"
+import { useSelector, useDispatch } from "react-redux"
 export const slides = [
     {
         image: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/banner-slider.jpg?v=1614290489",
@@ -72,23 +74,40 @@ export const slideComments = [
 ]
 
 
-export const NavigationSlide = () => {
+export const NavigationSlide = ({ productDetail }) => {
+    // Redux
+    const dispath = useDispatch()
+    const isDataProduct = useSelector(isDataSelector)
+
     const swiper = useSwiper()
+    const handleSlidePrev = () => {
+        swiper.slidePrev()
+        dispath(isData(!isDataProduct))
+    }
+
+    const handleSlideNext = () => {
+        swiper.slideNext()
+        dispath(isData(!isDataProduct))
+
+
+
+
+    }
     return (
         <div className='absolute left-[35px] top-[304px] flex z-10'>
             <div
-                onClick={() => swiper.slidePrev()}
-                style={{ transition: "0.3s linear" }}
-                className=' hover:bg-[#1a1a1a] cursor-pointer text-white w-[45px] h-[45px] bg-[#ef6d9f] absolute left-[10px] flex items-center justify-center '>
+                onClick={handleSlidePrev}
+                style={swiper.activeIndex == 0 ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
+                className={`transition-height duration-300 ${swiper.activeIndex !== 0 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white w-[45px] h-[45px] bg-[#ef6d9f] absolute left-[10px] flex items-center justify-center`}>
                 <div className='w-[12px] h-[12px] border-l-[1px] border-b-[1px] border-white rotate-45 ml-2'></div>
             </div>
             <div
-                onClick={() => swiper.slideNext()}
-                style={{ transition: "0.3s linear" }}
-                className='z-20 hover:bg-[#1a1a1a] cursor-pointer text-white w-[45px] h-[45px] bg-[#ef6d9f]  right-[-514px]  absolute flex items-center justify-center'>
+                onClick={handleSlideNext}
+                style={swiper.activeIndex == "3" ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
+                className={`transition-height duration-300 z-20 ${swiper.activeIndex !== 3 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white w-[45px] h-[45px] bg-[#ef6d9f]  right-[-514px]  absolute flex items-center justify-center`}>
                 <div className='w-[12px] h-[12px] border-r-[1px] border-t-[1px] border-white rotate-45 mr-2'></div>
             </div>
-        </div>
+        </div >
     )
 }
 
