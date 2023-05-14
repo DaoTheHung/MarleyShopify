@@ -36,7 +36,7 @@ export const TitleBaner = () => {
                         </div>
 
                     </div>
-                    <div className='w-[50%] relative flex flex-col gap-[30px] ml-[70px]'>
+                    <div className='w-[50%] relative flex flex-col gap-[30px] '>
                         <div className='relative left-[46px]'>
                             <div className='w-[30px] h-[6px] rounded-[5px] bg-pink-500 mb-[30px]'></div>
                             <h3 className='text-pink-500 text-[44px] font-bold tracking-[2px] w-[102%]'>Connect With World
