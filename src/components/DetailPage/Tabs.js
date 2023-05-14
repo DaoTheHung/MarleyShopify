@@ -17,8 +17,8 @@ export default function Tabs() {
         },
     ]
     return (
-        <div className='w-full'>
-            <div className=' flex gap-[5px] mt-[50px] ml-[199px]'>
+        <div className='w-full '>
+            <div className=' flex gap-[5px] mt-[50px] px-[106px]'>
                 {
                     tabs.map((tab, index) => (
                         <button
@@ -33,7 +33,7 @@ export default function Tabs() {
 
             </div>
 
-            <div className='border ml-[199px] w-[1211px] p-[30px]'>
+            <div className='border ml-[199px] w-[1211px] p-[30px] m-auto'>
                 {type === "Product Description" && <Description />}
                 {type === "Additional information" && <Information />}
                 {type === "Reviews" && <Reviews />}

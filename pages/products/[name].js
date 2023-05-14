@@ -125,7 +125,7 @@ export default function products() {
 
         <div className='w-full mt-[74px]'>
             <div className='w-[1226px] m-auto  flex'>
-                <div className='w-[575px]  relative cursor-pointer '>
+                <div className='w-[527px]  relative cursor-pointer '>
                     <div onMouseMove={handleZoomImage} onMouseLeave={handleDefautZoom} className='overflow-hidden'>
                         <Swiper
                             thumbs={{ swiper: slideThumbs && !slideThumbs.destroyed ? slideThumbs : null }}
