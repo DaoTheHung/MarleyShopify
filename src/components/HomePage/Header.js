@@ -4,12 +4,15 @@ import PopupCart from '../common/PopupCart'
 import { useRouter } from 'next/router'
 import { cartSelector, getCart, isDataSelector } from '../../../store'
 import { useSelector, useDispatch } from "react-redux"
+import { MenuHead } from '../common/MenuHead'
 
 
 export default function Header() {
   const router = useRouter()
   const [cart, setCart] = useState(true)
   const [dataProduct, setDataProduct] = useState([])
+  const [top, setTop] = useState(false)
+  const [opacity, setOpacity] = useState("0")
 
 
   // Get data redux
@@ -47,42 +50,57 @@ export default function Header() {
             <img className='h-[87px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
           </div>
 
-          <ul className='flex  m-auto gap-[46px] pl-0'>
-            <Link style={{ textDecoration: "none" }} href="/" >
-              <li
-                style={{ transition: "0.3s linear" }}
-                className=' text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                Home
-              </li>
-            </Link>
-            <Link style={{ textDecoration: "none" }} href="/collections/all">
-              <li
-                style={{ transition: "0.3s linear" }}
-                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                Headephones
-              </li>
-            </Link>
-            <Link style={{ textDecoration: "none" }} href="/about">
-              <li
-                style={{ transition: "0.3s linear" }}
-                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                About
-              </li>
-            </Link>
-            <Link style={{ textDecoration: "none" }} href="/new">
-              <li
-                style={{ transition: "0.3s linear" }}
-                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                New
-              </li>
-            </Link>
-            <Link style={{ textDecoration: "none" }} href="/contact">
-              <li
-                style={{ transition: "0.3s linear" }}
-                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                Contact
-              </li>
-            </Link>
+          <ul className='flex h-[108px] items-center m-auto gap-[46px] pl-0'>
+            <div className='h-full flex items-center'>
+              <Link style={{ textDecoration: "none" }} href="/" >
+                <li
+                  style={{ transition: "0.3s linear" }}
+                  className=' text-[#fff]   font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  Home
+                </li>
+              </Link>
+            </div>
+
+            <div className='h-full flex items-center' onMouseOut={() => { setTop(false), setOpacity("0") }} onMouseOver={() => { setTop(true), setOpacity("1") }} >
+              <Link style={{ textDecoration: "none" }} href="/collections/all">
+                <li
+                  style={{ transition: "0.3s linear" }}
+                  className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  Headephones
+                </li>
+              </Link>
+              <MenuHead top={top} opacity={opacity} />
+            </div>
+
+            <div className='h-full flex items-center'>
+              <Link style={{ textDecoration: "none" }} href="/about">
+                <li
+                  style={{ transition: "0.3s linear" }}
+                  className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  About
+                </li>
+              </Link>
+            </div>
+
+            <div className='h-full flex items-center'>
+              <Link style={{ textDecoration: "none" }} href="/new">
+                <li
+                  style={{ transition: "0.3s linear" }}
+                  className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  New
+                </li>
+              </Link>
+            </div>
+
+            <div className='h-full flex items-center'>
+              <Link style={{ textDecoration: "none" }} href="/contact">
+                <li
+                  style={{ transition: "0.3s linear" }}
+                  className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  Contact
+                </li>
+              </Link>
+            </div>
           </ul>
           <div className='flex gap-[6px] justify-center '>
             <i onClick={handleModalCart} className="text-[#fff] text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
