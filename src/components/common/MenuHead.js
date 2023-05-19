@@ -39,6 +39,8 @@ export const MenuHead = ({ top, opacity }) => {
         },
     ]
 
+
+
     return (
         <div className={`w-[80%] transition-opacity duration-700 py-[40px] px-[20px] opacity-[${opacity}]   bg-[#fff]  m-auto absolute left-0 right-0 ${top ? 'top-[110px]' : ' top-[100px]'}`}>
             <div className='flex justify-around'>

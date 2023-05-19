@@ -61,16 +61,17 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className='h-full flex items-center' onMouseOut={() => { setTop(false), setOpacity("0") }} onMouseOver={() => { setTop(true), setOpacity("1") }} >
+            <div className='h-full flex items-center ' onMouseOut={() => { setTop(false), setOpacity("0") }} onMouseOver={() => { setTop(true), setOpacity("1") }} >
               <Link style={{ textDecoration: "none" }} href="/collections/all">
                 <li
                   style={{ transition: "0.3s linear" }}
                   className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
                   Headephones
+                  <i className="pl-[5px] text-[11px] fa-solid fa-angle-down"></i>
                 </li>
               </Link>
-              <MenuHead top={top} opacity={opacity} />
             </div>
+            <MenuHead top={top} opacity={opacity} />
 
             <div className='h-full flex items-center'>
               <Link style={{ textDecoration: "none" }} href="/about">
@@ -79,7 +80,9 @@ export default function Header() {
                   className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
                   About
                 </li>
+
               </Link>
+
             </div>
 
             <div className='h-full flex items-center'>
