@@ -15,7 +15,8 @@ module.exports = {
         "opacity": "0.3s ease-in",
         "opacity1": "0.3s ease-in",
         "opacityDetail": "0.3s ease-in",
-        "height": "0.3s linear"
+        "height": "0.3s linear",
+        "navbar": "0.3s ease"
       },
       backgroundImage: {
 

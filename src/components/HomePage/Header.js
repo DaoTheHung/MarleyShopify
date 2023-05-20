@@ -12,7 +12,7 @@ export default function Header() {
   const [cart, setCart] = useState(true)
   const [dataProduct, setDataProduct] = useState([])
   const [top, setTop] = useState(false)
-  const [opacity, setOpacity] = useState("0")
+  const [opacity, setOpacity] = useState(false)
 
 
   // Get data redux
@@ -61,17 +61,19 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className='h-full flex items-center ' >
+            <div
+              onMouseOut={() => setTop(false)} onMouseOver={() => setTop(true)}
+              className='h-full flex items-center cursor-pointer' >
               <Link style={{ textDecoration: "none" }} href="/collections/all">
                 <li
-                  onMouseOut={() => { setTop(false), setOpacity("0") }} onMouseOver={() => { setTop(true), setOpacity("1") }}
+
                   style={{ transition: "0.3s linear" }}
                   className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
                   Headephones
                   <i className="pl-[5px] text-[11px] fa-solid fa-angle-down"></i>
                 </li>
               </Link>
-              <MenuHead top={top} opacity={opacity} />
+              <MenuHead top={top} setTop={setTop} setOpacity={setOpacity} opacity={opacity} />
             </div>
 
             <div className='h-full flex items-center'>

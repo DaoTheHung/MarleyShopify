@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const MenuHead = ({ top, opacity }) => {
+export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
     const dataName = [
         {
             title: "Circumaural",
@@ -39,11 +39,11 @@ export const MenuHead = ({ top, opacity }) => {
         },
     ]
 
-
-
     return (
-        <div className={`w-[80%] transition-opacity duration-700 py-[40px] px-[20px] opacity-[${opacity}]   bg-[#fff]  m-auto absolute left-0 right-0 ${top ? 'top-[110px]' : ' top-[100px]'}`}>
-            <div className='flex justify-around'>
+        <div
+            style={top ? { opacity: "1", top: "110px", visibility: "visible" } : { visibility: "hidden" }}
+            className={`w-[80%] transition-opacity duration-700 py-[40px] px-[20px]  top-[100px] opacity-[0]    bg-[#fff]  m-auto absolute left-0 right-0 `}>
+            <div className={`flex justify-around `}>
                 {dataName.map(name => (
 
                     <div className='w-[280px]'>
