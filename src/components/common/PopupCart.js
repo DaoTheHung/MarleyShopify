@@ -11,7 +11,7 @@ export default function PopupCart({ cart, setCart }) {
     // Get data redux
     const data = useSelector(cartSelector)
     const isDataProduct = useSelector(isDataSelector)
-    const dispath = useDispatch()
+    const dispatch = useDispatch()
     useEffect(() => {
         const json = JSON.parse(localStorage.getItem('cart'))
         if (json !== null) {
@@ -26,7 +26,7 @@ export default function PopupCart({ cart, setCart }) {
         const removeProduct = removeId.filter(product => product.id != id)
         setDataProduct(removeProduct)
         localStorage.setItem('cart', JSON.stringify(removeProduct))
-        dispath(isData(!isDataProduct))
+        dispatch(isData(!isDataProduct))
     }
 
     // Close popup cart
@@ -53,7 +53,7 @@ export default function PopupCart({ cart, setCart }) {
             setDataProduct(prevQuantity)
             localStorage.setItem('cart', JSON.stringify(prevQuantity))
         }
-        dispath(isData(!isDataProduct))
+        dispatch(isData(!isDataProduct))
     }
 
     // Reduce quantity
@@ -69,11 +69,11 @@ export default function PopupCart({ cart, setCart }) {
             setDataProduct(remove)
             localStorage.setItem('cart', JSON.stringify(remove))
         }
-        dispath(isData(!isDataProduct))
+        dispatch(isData(!isDataProduct))
     }
     // Checkout link
     const handleCheckout = () => {
-        router.push(`/checkout`)
+        router.push(`/checkout/information`)
         setCart(false)
     }
 

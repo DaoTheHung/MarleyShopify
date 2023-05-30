@@ -76,25 +76,21 @@ export const addComments = createAsyncThunk('products/commentAdded', async (newC
 const productSlice = createSlice({
     name: "products",
     initialState: {
-        dataLocal: [],
+        dataCheckout: {},
         allProducts: [],
         cart: [],
         comments: [],
         isDataProduct: false,
-        isQuantity: false,
-
-
     },
+
     reducers: {
         isData: (state, action) => {
             state.isDataProduct = action.payload
         },
-        setIsQuantity: (state, action) => {
-            state.isQuantity = action.payload
+        isCheckout: (state, action) => {
+            state.dataCheckout = action.payload
         },
-        setDataLocal: (state, action) => {
-            state.dataLocal = action.payload
-        },
+
     },
     extraReducers: {
         // Get products
@@ -164,14 +160,14 @@ const store = configureStore({
 export const cartSelector = state => state.product.cart
 export const productSelector = state => state.product.allProducts
 export const commentsSelector = state => state.product.comments
+export const dtCheckoutSelector = state => state.product.dataCheckout
 export const isDataSelector = state => state.product.isDataProduct
-export const isQuantitySelector = state => state.product.isQuantity
-export const dataLocalSelector = state => state.product.dataLocal
 
 
 
 // Action export
 export const { isData } = productSlice.actions
+export const { isCheckout } = productSlice.actions
 
 
 export default store 

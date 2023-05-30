@@ -2,10 +2,16 @@ import React from 'react'
 import { Checkbox, LeftOutlined } from 'antd';
 import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+import { dtCheckoutSelector, isCheckout, } from '../../../../../store';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Address() {
     const router = useRouter()
+
+    // Redux
+    const dataCheckout = useSelector(dtCheckoutSelector)
+    const dispatch = useDispatch()
 
     // Form
     const {
@@ -14,13 +20,16 @@ export default function Address() {
         formState: { errors },
     } = useForm({ mode: "onSubmit" });
     const onSubmit = (data) => {
+
         const checkout = {
-            email: data.numberPhone,
+            phone: data.numberPhone,
             name: data.firstname + " " + data.lastname,
+            address: data.address,
             country: data.country,
             city: data.city
         }
         if (data) {
+            dispatch(isCheckout(checkout))
             router.push('/checkout/shipping')
         }
     }
@@ -134,8 +143,8 @@ export default function Address() {
                 </div>
 
                 <div className='flex justify-between  items-center'>
-                    <button className='text-[#1773b0] transition-color duration-300 hover:text-[#1f8dd6]'>
-                        <span onClick={() => router.push('/collections/all')} className='mr-[20px]'><i class="fa-solid fa-angle-left"></i></span>
+                    <button onClick={() => router.push('/collections/all')} className='text-[#1773b0] transition-color duration-300 hover:text-[#1f8dd6]'>
+                        <span className='mr-[20px]'><i class="fa-solid fa-angle-left"></i></span>
                         Return to cart
                     </button>
                     <button

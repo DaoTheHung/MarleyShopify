@@ -6,7 +6,7 @@ const Index = () => {
     return (
         <div className='w-full h-[1041px] flex'>
             <Shipping />
-            <div className='pt-[76px] w-[44%] bg-[#f5f5f5] px-[100px]'>
+            <div className='pt-[76px] w-[44%] bg-[#f5f5f5] '>
                 <ProductCheckOut />
             </div>
 
