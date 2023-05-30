@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "./HomePage/Header";
 import Footer from "./HomePage/Footer";
 import NavBarScoll from './HomePage/NavBarScoll';
-import NavBarTitle from "./common/NavBarTitle";
+import RouterBanner from "./common/router/RouterBanner";
 import BackTop from "./common/BackToTop/BackTop";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -41,12 +41,23 @@ const Layout = ({ children }) => {
 
         </Head>
 
-        <Header />
+        {router.pathname == '/checkout/information'
+            || router.pathname == '/checkout/shipping'
+            ? ""
+            : <Header />}
         {scolling && <BackTop handleBackTop={handleBackTop} />}
         <NavBarScoll />
-        {router.pathname == '/' ? "" : <NavBarTitle />}
+        {router.pathname == '/' ||
+            router.pathname == '/checkout/information' ||
+            router.pathname == '/checkout/shipping'
+            ? ""
+            : <RouterBanner />}
         {children}
-        <Footer />
+        {router.pathname == '/checkout/information' ||
+            router.pathname == '/checkout/shipping'
+            ? ""
+            : <Footer />}
+
 
 
     </>

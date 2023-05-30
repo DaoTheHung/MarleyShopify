@@ -18,7 +18,7 @@ export default function Tabs() {
     ]
     return (
         <div className='w-full '>
-            <div className=' flex gap-[5px] mt-[50px] px-[106px]'>
+            <div className=' flex gap-[5px] mt-[50px] px-[185px]'>
                 {
                     tabs.map((tab, index) => (
                         <button

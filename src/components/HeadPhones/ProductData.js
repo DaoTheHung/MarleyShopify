@@ -149,7 +149,7 @@ const ProductData = () => {
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                                        {product.star == "for" ? <i class="fa-regular text-[12px] fa-star text-[#1a1a1a6b]"></i> : <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>}
+                                        {product.star == "for" ? <i className="fa-regular text-[12px] fa-star text-[#1a1a1a6b]"></i> : <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>}
 
                                     </div>
                                     <div className={`${animate == "right-0" ? "" : "text-center"}`}>

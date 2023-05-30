@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { getCart, cartSelector, isDataSelector, isData } from '../../../store'
 import { useSelector, useDispatch } from "react-redux"
+import Link from 'next/link';
 
 export default function PopupCart({ cart, setCart }) {
     const router = useRouter()
@@ -70,6 +71,12 @@ export default function PopupCart({ cart, setCart }) {
         }
         dispath(isData(!isDataProduct))
     }
+    // Checkout link
+    const handleCheckout = () => {
+        router.push(`/checkout`)
+        setCart(false)
+    }
+
 
     return (
         <>
@@ -122,8 +129,12 @@ export default function PopupCart({ cart, setCart }) {
                                 </div>
                                 <h3 className='text-[15px] text-[#9e9999] font-normal leading-[40px] mt-[9px]'>Shipping, taxes, and discounts will be calculated at checkout.</h3>
                                 <div className='mt-[16px]'>
-                                    <button className='w-full mt-[7px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>Proceed to Checkout</button>
-                                    <button className=' w-full mt-[11px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>View Cart</button></div>
+                                    <button
+                                        onClick={handleCheckout}
+                                        className='w-full mt-[7px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>
+                                        Proceed to Checkout
+                                    </button>
+                                    <button className=' w-full mt-[11px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>Continue shopping</button></div>
                             </div>
                         }
 

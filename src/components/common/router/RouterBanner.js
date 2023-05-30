@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-export default function NavBarTitle() {
+export default function RouterBanner() {
     const router = useRouter()
     const tilteRouter = {
         title:

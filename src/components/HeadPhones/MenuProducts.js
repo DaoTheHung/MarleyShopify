@@ -46,7 +46,7 @@ const MenuProducts = () => {
                             {!position ?
                                 <i className=" fa-sharp fa-solid fa-plus  text-[17px]"></i>
                                 :
-                                <i class="fa-solid fa-minus text-[17px]"></i>}
+                                <i className="fa-solid fa-minus text-[17px]"></i>}
                         </h3>
 
                         <ul className={`list-disc leading-[37px]`}>
@@ -63,7 +63,7 @@ const MenuProducts = () => {
                             {!position1 ?
                                 <i className="fa-sharp fa-solid fa-plus text-[17px]"></i>
                                 :
-                                <i class="fa-solid fa-minus text-[17px]"></i>}
+                                <i className="fa-solid fa-minus text-[17px]"></i>}
                         </h3>
 
                         <ul className='list-disc leading-[37px]'>
@@ -79,7 +79,7 @@ const MenuProducts = () => {
                             {!position2 ?
                                 <i className="fa-sharp fa-solid fa-plus text-[17px]"></i>
                                 :
-                                <i class="fa-solid fa-minus text-[17px]"></i>}
+                                <i className="fa-solid fa-minus text-[17px]"></i>}
                         </h3>
 
                         <ul className='list-disc leading-[37px]'>

@@ -75,7 +75,7 @@ export default function HeadphoneData() {
                 <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                 <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                 <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
-                {product.star == "for" ? <i class="fa-regular text-[12px] fa-star text-[#1a1a1a6b]"></i> : <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>}
+                {product.star == "for" ? <i className="fa-regular text-[12px] fa-star text-[#1a1a1a6b]"></i> : <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>}
               </span>
               <h3 className='text-center cursor-pointer'>{product.name}</h3>
               <h3 className='text-center text-[22px]'>Rs. {product.price}</h3>

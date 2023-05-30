@@ -82,10 +82,10 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
       // Time open modal cart
       setTimeout(() => {
         setIsLoading(false)
-      }, 4000)
+      }, 2000)
       setTimeout(() => {
         setShow(false)
-      }, 2000)
+      }, 1000)
     } else {
       fakeData.push(newProduct)
       setDataProduct(fakeData)
@@ -95,10 +95,10 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
       // Time open modal cart
       setTimeout(() => {
         setIsLoading(false)
-      }, 4000)
+      }, 2000)
       setTimeout(() => {
         setShow(false)
-      }, 2000)
+      }, 1000)
     }
     dispath(isData(!isDataProduct))
   }

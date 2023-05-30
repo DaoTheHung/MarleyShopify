@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
     const dataName = [
         {
+            id: 1,
             title: "Circumaural",
             nameP1: "Bluetooth Headphone",
             nameP2: "Over Ear Headset",
@@ -12,6 +13,7 @@ export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
         },
 
         {
+            id: 2,
             title: "Ear-Fitting",
             nameP1: "Closed Front Headset",
             nameP2: "Red Headset",
@@ -21,6 +23,7 @@ export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
         },
 
         {
+            id: 3,
             title: "In-Ear",
             nameP1: "Commando Headset",
             nameP2: "Stereo Bass",
@@ -30,6 +33,7 @@ export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
         },
 
         {
+            id: 4,
             title: "Mixed Fitting",
             nameP1: "HP BTP1 Headset",
             nameP2: "Wireless Headset",
@@ -41,12 +45,12 @@ export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
 
     return (
         <div
-            style={top ? { opacity: "1", top: "110px", visibility: "visible" } : { visibility: "hidden" }}
-            className={`w-[80%] transition-opacity duration-700 py-[40px] px-[20px]  top-[100px] opacity-[0]    bg-[#fff]  m-auto absolute left-0 right-0 `}>
+            style={top ? { display: "block" } : { display: "none" }}
+            className={`w-[80%] transition-opacity duration-700 py-[40px] px-[20px]  top-[100px]     bg-[#fff]  m-auto absolute left-0 right-0 `}>
             <div className={`flex justify-around `}>
                 {dataName.map(name => (
 
-                    <div className='w-[280px]'>
+                    <div className='w-[280px]' key={name.id}>
                         <div className='border-b w-full cursor-pointer'>
                             <h3 className='text-[16px] font-semibold transition-color duration-300 hover:text-pink-500'>{name.title}</h3>
 
