@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 export const slides = [
     {
         image: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/banner-slider.jpg?v=1614290489",
+        imageSize: "https://cdn.shopify.com/s/files/1/0434/2520/2335/files/Mble_sldr_768x940.jpg?v=1614290811",
         headerText: "Find Best",
         contentText: "Matley ",
         spanText: "Sound",
@@ -13,6 +14,7 @@ export const slides = [
     },
     {
         image: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/slider2-bg.jpg?v=1614296701",
+        imageSize: "https://cdn.shopify.com/s/files/1/0434/2520/2335/files/slider2-bg-res_768x940.jpg?v=1614296701",
         headerText: "Live Smart",
         contentText: "Hear ",
         spanText: "Smart",
@@ -20,6 +22,7 @@ export const slides = [
     },
     {
         image: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/slider3-bg.jpg?v=1614296702",
+        imageSize: "//cdn.shopify.com/s/files/1/0434/2520/2335/files/slider3-bg-res_768x940.jpg?v=1614296702",
         headerText: "Less Noise",
         contentText: "More ",
         spanText: "Sound",
