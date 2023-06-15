@@ -14,9 +14,9 @@ export default function TitlePage() {
     return (
         <>
             <div className=' flex justify-between flex-col md:flex-row md:mx-[234px]'>
-                <div className='w-[503px] mt-[61px] mb-[90px] md:mb-auto'>
-                    <div className='flex w-[374px] m-auto md:m- md:w-auto flex-col gap-[44px]'>
-                        <div className='w-[35px] h-[6px] rounded-[5px] bg-pink-500'></div>
+                <div className='md:w-[503px] mt-[61px] mb-[90px] md:mb-auto'>
+                    <div className='flex w-[374px] ml-[60px] md:m-auto md:w-auto flex-col gap-[44px]'>
+                        <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
                         <h3 className='text-[#1a1a1a] w-[290px] md:w-auto text-[44px] font-semibold md:font-bold leading-[66px] tracking-[3px]'>
                             Loud & Clear
                             <br />
@@ -30,7 +30,9 @@ export default function TitlePage() {
                         </p>
                     </div>
                     <Link className="text-black" href="/collections/all">
-                        <Button shop="shop now" className="text-black" />
+                        <div>
+                            <Button shop="shop now" className="text-black" />
+                        </div>
                     </Link>
                 </div>
                 <div className='w-[364px] md:w-[554px] m-auto md:m-0'>
@@ -50,10 +52,10 @@ export default function TitlePage() {
                 </div>
             </div>
 
-            <div className='relative bottom-[-15rem]  md:bottom-[-53rem] flex-col md:flex-row-reverse m-auto md:mx-[234px] flex justify-between'>
-                <div className='w-[503px]  md:mt-[61px] mb-[90px] md:mb-auto'>
+            <div className='relative bottom-[-15rem]  md:bottom-[-20rem] flex-col md:flex-row-reverse  md:mx-[234px] flex justify-between'>
+                <div className='md:w-[503px]   md:mt-[61px] mb-[90px] md:mb-auto'>
                     <div className='flex flex-col gap-[44px] ml-[62px] md:ml-auto'>
-                        <div className='w-[35px] h-[6px] rounded-[5px] bg-pink-500'></div>
+                        <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
                         <h3 className='text-[#1a1a1a] w-[290px]  text-[44px] font-semibold md:font-bold md:w-[104%] leading-[66px] tracking-[3px]'>
                             Get in the Zone with your favorite music
 
@@ -65,7 +67,9 @@ export default function TitlePage() {
                         </p>
                     </div>
                     <Link className="text-black" href="/collections/all">
-                        <Button shop="shop now" />
+                        <div>
+                            <Button shop="shop now" className="text-black" />
+                        </div>
                     </Link>
                 </div>
                 <div className='w-[364px] md:w-[554px] ml-[44px]  md:m-0'>

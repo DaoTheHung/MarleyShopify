@@ -82,10 +82,10 @@ export default function PopupCart({ cart, setCart }) {
         <>
 
             <div className={`fixed bottom-0  left-0 right-0 top-0 bg-[#00000085] z-50 ${!cart ? "visible" : "invisible"}`}>
-                <span onClick={handleClosePopup} className={`right-[301px] z-50 cursor-pointer ${cart ? "translate-x-[18rem]" : "translate-x-[-100%]"} hover:bg-[#1a1a1a] transition duration-500 w-[33px] h-[33px] bg-pink-500 absolute flex items-center justify-center text-[#fff]`}>
+                <span onClick={handleClosePopup} className={`right-[270px] md:right-[301px] z-50 cursor-pointer ${cart ? "translate-x-[18rem]" : "translate-x-[-100%]"} hover:bg-[#1a1a1a] transition duration-500 w-[30px] h-[30px]  md:w-[33px] md:h-[33px] bg-pink-500 absolute flex items-center justify-center text-[#fff]`}>
                     <i className="fa-solid fa-xmark"></i>
                 </span>
-                <div className={`border-none overflow-y-scroll transition-allLinear duration-500  fixed ${!cart ? "right-[0]" : "right-[-335px]"}  top-0 bottom-0 w-[334px] bg-[#fff]`}>
+                <div className={`border-none overflow-y-scroll transition-allLinear duration-500  fixed ${!cart ? "right-[0]" : "right-[-335px]"}  top-0 bottom-0 w-[300px] md:w-[334px] bg-[#fff]`}>
                     <h3 className='px-[15px] py-[15px] shadow-yourCart text-[22px] text-[#1a1a1a]'>Your Cart</h3>
                     <div className='w-full flex flex-col '>
                         {dataProduct?.map((product, idx) => (
@@ -104,7 +104,7 @@ export default function PopupCart({ cart, setCart }) {
 
                                     <div className='h-[34px] w-[110px] text-center border flex mt-[15px]'>
                                         <button onClick={() => handlePrevDown(product.id, product.quantity, product.price)} className='hover:bg-pink-500 hover:text-[#fff] transition duration-[300ms] w-[30px] h-[31px] py-0 px-[10px] flex items-center text-[20px] text-pink-500'>-</button>
-                                        <input onChange={handleChange} className='text-[#9e9999] w-[46px] h-full text-center border-x-2 text-[20px]' value={product.quantity} />
+                                        <input onChange={handleChange} className='text-[#9e9999] w-[46px] h-full text-center border-x-2 text-[15px] md:text-[20px]' value={product.quantity} />
                                         <button onClick={() => handlePrevUp(product.id, product.quantity, product.price)} className='hover:bg-pink-500 hover:text-[#fff] transition duration-[300ms] w-[33px] h-[31px] py-0 px-[10px] flex items-center text-pink-500 text-[20px]'>+</button>
 
                                     </div>
@@ -124,17 +124,18 @@ export default function PopupCart({ cart, setCart }) {
                         {dataProduct?.length >= 1 &&
                             <div>
                                 <div className='w-full flex justify-between border-y items-center h-[76px] pt-[6px] mt-[37px]'>
-                                    <h3 className='text-[23px] text-[#9e9999]'>Total</h3>
-                                    <h3 className='text-[23px] text-[#9e9999]'>Rs. {total + ".00"}</h3>
+                                    <h3 className='text-[20px] md:text-[23px] text-[#9e9999]'>Total</h3>
+                                    <h3 className='text-[20px] md:text-[23px] text-[#9e9999]'>Rs. {total + ".00"}</h3>
                                 </div>
                                 <h3 className='text-[15px] text-[#9e9999] font-normal leading-[40px] mt-[9px]'>Shipping, taxes, and discounts will be calculated at checkout.</h3>
                                 <div className='mt-[16px]'>
                                     <button
                                         onClick={handleCheckout}
-                                        className='w-full mt-[7px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>
+                                        className='w-full mt-[7px] py-[14px] text-[18px] md:text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>
                                         Proceed to Checkout
                                     </button>
-                                    <button className=' w-full mt-[11px] py-[14px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>Continue shopping</button></div>
+                                    <button className=' w-full mt-[11px] py-[14px] text-[18px] md:text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>{dataProduct?.length > 0 ? "View Cart" : "Continue shopping"}</button>
+                                </div>
                             </div>
                         }
 

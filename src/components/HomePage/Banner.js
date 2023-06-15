@@ -24,7 +24,7 @@ export default function Banner
                             <div className='bg-[#181818da] md:hidden h-[447px] absolute w-[345px] ml-[40px]'></div>
 
                             <div className='h-[448px] md:h-auto'>
-                                <img className='h-full object-cover md:object-none object-[-408px]' width="100%" src={slide.image} />
+                                <img className='h-full object-cover md:object-none md:object-[-138px] object-[-408px]' width="100%" src={slide.image} />
                             </div>
 
                             <div className='absolute top-[173px] ml-[93px]  md:ml-[156px]'>

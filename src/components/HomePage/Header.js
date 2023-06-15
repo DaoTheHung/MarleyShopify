@@ -53,7 +53,7 @@ export default function Header() {
 
           {show && <div className='fixed  bottom-0 left-0 right-0 top-0 bg-[#00000085] md:bg-inherit z-50'>
           </div>}
-          <ul className={`z-[51] m-auto w-[258px] md:w-auto pt-[45px] md:pt-0   pl-0 bg-[#fff] fixed top-0 bottom-0  md:bg-[#fff0]  ${show ? "left-0" : "left-[-259px]"} transition-allLinear duration-500  md:items-center  md:static flex flex-col md:flex-row md:gap-[46px]`}>
+          <ul className={`z-[51] m-auto w-[258px] md:w-auto pt-[45px] md:pt-0   pl-0 bg-[#fff] fixed top-0 bottom-0  md:bg-[#fff0]  ${show ? "right-0" : "right-[-268px]"} transition-allLinear duration-500  md:items-center  md:static flex flex-col md:flex-row md:gap-[46px]`}>
             <div onClick={() => setShow(false)} className="absolute cursor-pointer top-[11px] left-[15px] md:hidden">
               <i class="fa-solid fa-xmark"></i>
             </div>
