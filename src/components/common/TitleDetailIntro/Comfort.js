@@ -8,7 +8,7 @@ export default function Comfort() {
                     <div className='flex flex-col gap-[44px] '>
 
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
-                        <h3 className='w-[334px] text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px]'>
+                        <h3 className='w-[309px] text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px]'>
                             Wear it with ease and comfort ever.
                         </h3>
                         <p className='text-[#9e9999] text-[20px] md:text-[22px] w-[306px] md:w-[310px] leading-[40px]'>
@@ -17,7 +17,7 @@ export default function Comfort() {
                             Enim lobortis scelerisque fermentum dui faucibus in.
                             Nisl suscipit adipiscing.
                         </p>
-                        <div className='w-[373px] md:w-[376px] ml-[-29px] md:ml-auto'>
+                        <div className='sm:w-[373px] md:w-full sm:ml-[-33px] ml-[-54px] md:ml-auto'>
                             <img className='w-full object-scale-down md:object-none h-[517px] md:h-auto' src='https://cdn.shopify.com/s/files/1/0434/2520/2335/files/comfort-ever_360x.png?v=1614290739' />
                         </div>
                     </div>

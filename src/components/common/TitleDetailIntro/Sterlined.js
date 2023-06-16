@@ -6,10 +6,10 @@ import Link from 'next/link'
 export default function Sterlined() {
     return (
         <div>
-            <div className='relative bottom-[-37rem] md:bottom-[-67rem] md:mb-[190px] md:ml-[195px] md:mr-[245px] '>
+            <div className='relative sm:w-[408px] md:w-[1097px] bottom-[-37rem] md:bottom-[-67rem] md:mb-[190px] md:ml-[195px] md:mr-[245px] '>
                 <div className='ml-[60px]'>
                     <div className=' md:w-[35px] md:h-[6px] w-[26px] h-[5px]  rounded-[5px] bg-pink-500'></div>
-                    <h3 className='cursor: default w-[347px] md:w-[512px] text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px] mt-[21px] mb-[72px]'>
+                    <h3 className='cursor: default w-[259px]  md:w-[512px] text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px] mt-[21px] mb-[72px]'>
                         Sterlined Headphone
                         Style 2021
                     </h3>
@@ -27,7 +27,10 @@ export default function Sterlined() {
                             </p>
                         </div>
                         <Link className="text-black" href="/collections/all">
-                            <Button shop="shop now" />
+                            <div className='md:w-[374px]'>
+
+                                <Button shop="shop now" />
+                            </div>
                         </Link>
                     </div>
                     <div className='md:w-[554px] w-[252px] md:ml-auto ml-[60px]'>

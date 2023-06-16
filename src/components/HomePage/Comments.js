@@ -13,7 +13,7 @@ export default function Comments() {
     };
     return (
         <>
-            <div className='w-full relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
+            <div className='w-full sm:w-[420px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
                 <div className=' w-[65%] md:w-[73%] h-full m-auto mb-[36px] md:mb-auto'>
                     <div className='w-[35px] h-[6px] m-auto rounded-[5px] bg-pink-500'></div>
                     <h3 className='text-center text-[44px] md:text-[52px] mt-[39px]'>Our Customers Review</h3>

@@ -16,15 +16,15 @@ export default function Banner
     };
     return (
         <>
-            <div className='relative top-[-110px] w-full z-0 overflow-hidden cursor-grab'>
+            <div className='relative top-[-110px]  sm:w-[420px] md:w-full lg:w-[2000px] z-0 overflow-hidden cursor-grab'>
                 <Slider ref={slider} {...settings} >
                     {slides.map((slide, index) => (
 
                         <div key={index}>
-                            <div className='bg-[#181818da] md:hidden h-[447px] absolute w-[345px] ml-[40px]'></div>
+                            <div className='bg-[#181818da] md:hidden h-[447px] absolute w-[340px] ml-[40px]'></div>
 
                             <div className='h-[448px] md:h-auto'>
-                                <img className='h-full object-cover md:object-none md:object-[-138px] object-[-408px]' width="100%" src={slide.image} />
+                                <img className='h-full object-cover  lg:object-[0px] md:object-[1px] object-[-408px]' width="100%" src={slide.image} />
                             </div>
 
                             <div className='absolute top-[173px] ml-[93px]  md:ml-[156px]'>

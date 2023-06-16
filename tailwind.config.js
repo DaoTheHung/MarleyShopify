@@ -25,13 +25,13 @@ module.exports = {
         "navbar-title": "url(../public/images/navbar-title.webp)"
       },
       screens: {
-        sm: "640px",
+        sm: "320px",
         // => @media (min-width: 576px) { ... }
 
         md: "1024px",
         // => @media (min-width: 960px) { ... }
 
-        lg: "1441x",
+        lg: "1440x",
         // => @media (min-width: 1440px) { ... }
       },
 
