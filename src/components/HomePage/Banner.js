@@ -16,23 +16,23 @@ export default function Banner
     };
     return (
         <>
-            <div className='relative top-[-110px]  sm:w-[420px] md:w-full lg:w-[2000px] z-0 overflow-hidden cursor-grab'>
+            <div className='relative top-[-110px]  ip:w-[404px]  sm:w-[420px] md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
                 <Slider ref={slider} {...settings} >
                     {slides.map((slide, index) => (
 
                         <div key={index}>
-                            <div className='bg-[#181818da] md:hidden h-[447px] absolute w-[340px] ml-[40px]'></div>
+                            <div className='bg-[#181818da] md:hidden h-[447px] ip:w-[326px] absolute w-[340px] ml-[40px]'></div>
 
-                            <div className='h-[448px] md:h-auto'>
+                            <div className='h-[448px] lg:h-[1004px] md:h-auto'>
                                 <img className='h-full object-cover  lg:object-[0px] md:object-[1px] object-[-408px]' width="100%" src={slide.image} />
                             </div>
 
-                            <div className='absolute top-[173px] ml-[93px]  md:ml-[156px]'>
-                                <h3 className='hidden md:block text-white text-[70px]'>{slide.headerText}</h3>
-                                <h3 className='text-[40px] font-bold md:font-medium md:text-[96px] text-[#ff9cb2] mt-[14px] md:mt-[-7px]'>{slide.contentText}
+                            <div className='absolute lg:ml-[213px] lg:top-[282px] top-[173px] ip:ml-[85px] ml-[93px]  md:ml-[156px]'>
+                                <h3 className='hidden md:block lg:text-[98px] text-white text-[70px]'>{slide.headerText}</h3>
+                                <h3 className='text-[40px] ip:ml-[-13px] lg:text-[133px] font-bold md:font-medium md:text-[96px] text-[#ff9cb2] mt-[14px] md:mt-[-7px]'>{slide.contentText}
                                     <span className='text-white'>{slide.spanText}</span>
                                 </h3>
-                                <h3 className='hidden md:block  text-white w-[758px] leading-[40px] text-[20px] mt-[40px] font-normal'>{slide.lastText}</h3>
+                                <h3 className='hidden  md:block lg:w-[809px] text-white md:w-[758px] leading-[40px] text-[20px] mt-[40px] font-normal'>{slide.lastText}</h3>
                                 <button
                                     style={{ transition: "0.3s linear" }}
                                     className='transition-allLinear bg-[#ef6d9f] hover:bg-[#ee8d6d] w-[140px] md:w-[158px] mt-[55px] ml-[52px] md:ml-auto md:mt-[38px] p-[8px] '>

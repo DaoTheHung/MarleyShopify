@@ -13,7 +13,7 @@ import { Button } from '../common/hook/Button';
 export default function TitlePage() {
     return (
         <>
-            <div className=' flex justify-between sm:w-[375px] md:w-[1233px] flex-col md:flex-row md:mx-[234px]'>
+            <div className=' flex justify-between sm:w-[375px] md:w-full flex-col md:flex-row md:justify-center'>
                 <div className='md:w-[503px] sm:w-[347px] mt-[61px] mb-[90px] md:mb-auto'>
                     <div className='flex sm:w-[313px] ml-[60px] md:m-auto md:w-auto flex-col gap-[44px]'>
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
@@ -35,7 +35,7 @@ export default function TitlePage() {
                         </div>
                     </Link>
                 </div>
-                <div className='w-[313px] md:w-[554px] m-auto md:m-0'>
+                <div className='w-[313px] md:w-[554px] ip:ml-[60px] lg:w-[751px]  md:m-0'>
                     <Swiper
                         pagination={PaginationSlide}
                     // modules={[Pagination]}
@@ -43,7 +43,7 @@ export default function TitlePage() {
 
                         {slideTitles.map((image, index) => (
                             <SwiperSlide>
-                                <div key={index} className='w-[91%] rounded-bl-[80px] ' >
+                                <div key={index} className='w-[91%] ip:rounded-tr-[80px] rounded-bl-[80px] ' >
                                     <img className='rounded-bl-[80px] w-full h-[410px] md:h-[680px] object-cover' src={image.image} />
                                 </div>
                             </SwiperSlide>
@@ -52,7 +52,7 @@ export default function TitlePage() {
                 </div>
             </div>
 
-            <div className='relative sm:w-[375px] md:w-[1106px] bottom-[-15rem]  md:bottom-[-20rem] flex-col md:flex-row-reverse  md:mx-[234px] flex justify-between'>
+            <div className='relative sm:w-[375px] md:w-full  bottom-[-15rem]  md:bottom-[-20rem] flex-col md:flex-row-reverse  md:justify-center md:gap-[20px] flex justify-between'>
                 <div className='md:w-[503px]  sm:w-[347px] md:mt-[61px] mb-[90px] md:mb-auto'>
                     <div className='flex flex-col gap-[44px] ml-[62px] md:ml-auto'>
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
@@ -72,13 +72,13 @@ export default function TitlePage() {
                         </div>
                     </Link>
                 </div>
-                <div className='w-[364px] md:w-[554px] ml-[44px]  md:m-0'>
+                <div className='w-[364px] ip:w-[325px] md:w-[554px] ip:ml-[60px] ml-[44px]  md:m-0'>
                     <Swiper
                         modules={[Pagination]}
                     >
                         {slideTitles2.map((image, index) => (
                             <SwiperSlide>
-                                <div key={index} className='w-[91%]' >
+                                <div key={index} className='w-[91%] ' >
                                     <img className='rounded-tr-[80px] w-full h-[410px] md:h-[680px] object-cover' src={image.image} />
                                 </div>
                             </SwiperSlide>

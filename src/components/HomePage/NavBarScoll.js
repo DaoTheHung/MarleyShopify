@@ -53,8 +53,8 @@ export default function NavBarScoll() {
     return (
 
         <>
-            <div className={`transition-allLinear duration-[400ms] hidden md:block w-full fixed z-10 bg-[#1a1a1ae3] opacity-[${opacity}] ${navBar ? 'top-[-125px]' : ' top-[0px]'}  shadow-navBar`}>
-                <div className={`flex py-0 px-[160px] h-[124px] animate-height-slow items-center justify-between`}>
+            <div className={`transition-allLinear  duration-[400ms] hidden  md:block w-full fixed z-10 bg-[#1a1a1ae3] opacity-[${opacity}] ${navBar ? 'top-[-125px]' : ' top-[0px]'}  shadow-navBar`}>
+                <div className={`flex py-0 lg:px-[218px] px-[160px] h-[124px] animate-height-slow items-center justify-between`}>
                     <div>
                         <img className='h-[87px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
                     </div>

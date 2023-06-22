@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div
             style={router.pathname !== "/" ? { marginTop: "30px", bottom: "auto" } : { marginTop: "100px" }}
-            className="text-[32px] sm:w-[425px]  md:border-none border-t-2 pt-[100px] bottom-[-46rem] md:bottom-[-84rem]  md:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/footer-bg.jpg?v=1614290780')] relative  bg-center h-[382px] md:h-[356px] bg-cover"
+            className="text-[32px] sm:w-[425px] md:w-full md:border-none border-t-2 pt-[100px] bottom-[-46rem] md:bottom-[-84rem] ip:w-[404px] md:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/footer-bg.jpg?v=1614290780')] relative  bg-center h-[382px] md:h-[356px] bg-cover"
         >
             <div className='md:absolute m-auto md:m-0 left-[195px] top-[170px]  w-[225px] md:w-[245px]'>
                 <img className='w-full mb-[59px] md:mb-0' src='../images/matley-footer-logo.webp' />

@@ -45,8 +45,8 @@ export default function Header() {
 
   return (
     <div>
-      <div className=' sm:w-[420px] md:w-full md:bg-inherit bg-[#1a1a1a] relative z-20 '>
-        <div className={`flex ${router.pathname == "/" ? "" : "bg-black-300"}  py-0 px-[160px] h-[110px] items-center justify-between`}>
+      <div className=' sm:w-[420px] ip:w-[404px] md:w-full lg:w-full md:bg-inherit bg-[#1a1a1a] relative z-20 '>
+        <div className={`flex ${router.pathname == "/" ? "" : "bg-black-300"} lg:px-[218px]  py-0 px-[160px] h-[110px] items-center justify-between`}>
           <div className=' md:static absolute  left-[50px]'>
             <img className=' md:h-[87px] h-[52px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
           </div>

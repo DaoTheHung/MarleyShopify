@@ -17,7 +17,7 @@ export default function Comfort() {
                             Enim lobortis scelerisque fermentum dui faucibus in.
                             Nisl suscipit adipiscing.
                         </p>
-                        <div className='sm:w-[373px] md:w-full sm:ml-[-33px] ml-[-54px] md:ml-auto'>
+                        <div className='sm:w-[373px] ip-[404px] md:w-full sm:ml-[-33px] ml-[-54px] md:ml-auto'>
                             <img className='w-full object-scale-down md:object-none h-[517px] md:h-auto' src='https://cdn.shopify.com/s/files/1/0434/2520/2335/files/comfort-ever_360x.png?v=1614290739' />
                         </div>
                     </div>
