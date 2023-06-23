@@ -28,11 +28,11 @@ export default function Banner
                             </div>
 
                             <div className='absolute lg:ml-[213px] lg:top-[282px] top-[173px] ip:ml-[85px] ml-[93px]  md:ml-[156px]'>
-                                <h3 className='hidden md:block lg:text-[98px] text-white text-[70px]'>{slide.headerText}</h3>
-                                <h3 className='text-[40px] ip:ml-[-13px] lg:text-[133px] font-bold md:font-medium md:text-[96px] text-[#ff9cb2] mt-[14px] md:mt-[-7px]'>{slide.contentText}
+                                <h3 className='hidden md:block md:text-[65px] lg:text-[98px] text-white text-[70px]'>{slide.headerText}</h3>
+                                <h3 className='ip:ml-[-13px] ip:text-[40px] md:ml-[-3px] lg:text-[133px] font-bold md:font-medium md:text-[87px] text-[#ff9cb2] mt-[14px] md:mt-[-7px]'>{slide.contentText}
                                     <span className='text-white'>{slide.spanText}</span>
                                 </h3>
-                                <h3 className='hidden  md:block lg:w-[809px] text-white md:w-[758px] leading-[40px] text-[20px] mt-[40px] font-normal'>{slide.lastText}</h3>
+                                <h3 className='hidden  md:block lg:w-[809px] text-white md:w-[697px] leading-[40px] md:text-[21px] lg:mt-[22px] md:mt-[19px] font-normal'>{slide.lastText}</h3>
                                 <button
                                     style={{ transition: "0.3s linear" }}
                                     className='transition-allLinear bg-[#ef6d9f] hover:bg-[#ee8d6d] w-[140px] md:w-[158px] mt-[55px] ml-[52px] md:ml-auto md:mt-[38px] p-[8px] '>

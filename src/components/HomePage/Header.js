@@ -61,7 +61,7 @@ export default function Header() {
               <Link style={{ textDecoration: "none" }} href="/" >
                 <li
                   style={{ transition: "0.3s linear" }}
-                  className=' md:text-[#fff] text-black-300   font-normal md:font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  className=' md:text-[#fff] text-black-300   font-normal md:font-semibold md:text-[19px] hover:text-[#ef6d9f]'>
                   Home
                 </li>
               </Link>
@@ -74,7 +74,7 @@ export default function Header() {
                 <li
 
                   style={{ transition: "0.3s linear" }}
-                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold text-[19px] hover:text-[#ef6d9f] flex items-center'>
+                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold md:text-[19px] hover:text-[#ef6d9f] flex items-center'>
                   Headephones
                   <i className="pl-[5px] text-[11px] fa-solid fa-angle-down"></i>
                 </li>
@@ -86,7 +86,7 @@ export default function Header() {
               <Link style={{ textDecoration: "none" }} href="/about">
                 <li
                   style={{ transition: "0.3s linear" }}
-                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold md:text-[19px] hover:text-[#ef6d9f]'>
                   About
                 </li>
 
@@ -98,7 +98,7 @@ export default function Header() {
               <Link style={{ textDecoration: "none" }} href="/new">
                 <li
                   style={{ transition: "0.3s linear" }}
-                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold md:text-[19px] hover:text-[#ef6d9f]'>
                   New
                 </li>
               </Link>
@@ -108,7 +108,7 @@ export default function Header() {
               <Link style={{ textDecoration: "none" }} href="/contact">
                 <li
                   style={{ transition: "0.3s linear" }}
-                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                  className='md:text-[#fff] text-black-300 font-normal md:font-semibold md:text-[19px] hover:text-[#ef6d9f]'>
                   Contact
                 </li>
               </Link>
@@ -121,7 +121,7 @@ export default function Header() {
           </div>
 
           <div className='flex gap-[6px] justify-center absolute right-[53px] md:static'>
-            <i onClick={handleModalCart} className="text-[#fff] text-[24px] md:text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
+            <i onClick={handleModalCart} className="text-[#fff] ip:text-[24px] md:text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
             <div className='w-[20px] h-[20px] rounded-[50%] flex justify-center bg-pink-500'>
               <h3 className='text-[12px] text-[#fff] m-auto'>{quantityProduct ? quantityProduct : "0"}</h3>
             </div>

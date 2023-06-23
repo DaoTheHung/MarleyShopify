@@ -4,20 +4,20 @@ export default function Comfort() {
     return (
         <div className='w-full relative bottom-[-34rem] md:bottom-[-80rem] '>
             <div className=' w-[73%] gap-[50px] md:gap-0 h-full ml-[54px]  md:m-auto flex-col-reverse md:flex-row flex'>
-                <div className='w-[38%] '>
+                <div className='w-[38%] lg:ml-[64px]'>
                     <div className='flex flex-col gap-[44px] '>
 
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
-                        <h3 className='w-[309px] text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px]'>
+                        <h3 className='md:w-[309px] ip:w-[277px] lg:w-full  text-[#1a1a1a] text-[39px] md:text-[44px] font-bold leading-[66px] tracking-[3px]'>
                             Wear it with ease and comfort ever.
                         </h3>
-                        <p className='text-[#9e9999] text-[20px] md:text-[22px] w-[306px] md:w-[310px] leading-[40px]'>
+                        <p className='text-[#9e9999] ip:w-[277px] lg:w-[542px] text-[20px] md:text-[22px]  md:w-[310px] leading-[40px]'>
                             At risus viverra adipiscing at.
                             Iaculis urna id volutpat lacus laoreet non curabitur.
                             Enim lobortis scelerisque fermentum dui faucibus in.
                             Nisl suscipit adipiscing.
                         </p>
-                        <div className='sm:w-[373px] ip-[404px] md:w-full sm:ml-[-33px] ml-[-54px] md:ml-auto'>
+                        <div className='sm:w-[373px] ip:w-[404px] md:w-full sm:ml-[-33px] ml-[-54px] md:ml-auto'>
                             <img className='w-full object-scale-down md:object-none h-[517px] md:h-auto' src='https://cdn.shopify.com/s/files/1/0434/2520/2335/files/comfort-ever_360x.png?v=1614290739' />
                         </div>
                     </div>

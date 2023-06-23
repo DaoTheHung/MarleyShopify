@@ -3,7 +3,7 @@ import React from 'react'
 export default function Submit() {
     return (
         <div>
-            <div className='w-full sm:w-[420px] ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
+            <div className='md:w-full sm:w-[420px] ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
                 <div className='w-[87%] md:w-[73%] h-full m-auto'>
                     <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] m-auto rounded-[5px] bg-pink-500'></div>
                     <h3 className='text-center text-[45px] md:text-[52px] mt-[39px]'>Say hello to us</h3>

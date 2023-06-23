@@ -127,11 +127,13 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
 
   return (
     <div>
+
       {isLoading && <div className='fixed bottom-0 left-0 right-0 top-0  bg-[#f0eeeec9]  z-50 transition-opacityDetail'>
         <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]'>
           <Spinner animation="border" variant="danger" />
         </div>
       </div>}
+
       <div className={`fixed bottom-0 ${show ? "visible " : "invisible"}  left-0 right-0 top-0  bg-[#0b0b0bc9]  z-50 transition-opacityDetail  `}>
 
         {opacity == 0 &&
@@ -139,25 +141,25 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
             Loading...
           </div>
         }
-        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail  flex overflow-hidden  w-[1160px] h-[663px] bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
+        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail  flex ip:flex-col ip:w-[361px] ip:overflow-y-scroll md:overflow-hidden lg:overflow-hidden ip:h-[954px] md:lg:h-auto lg:h-auto  w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
 
           <button onClick={hiddenDetail} className='group absolute transition duration-[300ms] right-[7px] top-[7px] py-[5px] hover:bg-black  px-[11px]'>
             <i className="group-hover:text-[#fff]  text-[12px] fa-solid fa-x text-[#9e9999]"></i>
           </button>
 
-          <div className='w-[550px] relative '>
+          <div className='w-[550px] ip:w-[361px] relative '>
             <Swiper
               modules={[Navigation]}
               slidesPerView="auto"
             >
               <SwiperSlide>
-                <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.image} /></SwiperSlide>
+                <img className='w-[95%]  object-cover h-[91%] ip:ml-0 ml-[36px] mt-[31px]' src={productDetail?.image} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick1} /></SwiperSlide>
+                <img className='w-[95%]  object-cover h-[91%] ip:ml-0 ml-[36px] mt-[31px]' src={productDetail?.imageSlick1} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick2} /></SwiperSlide>
+                <img className='w-[95%]  object-cover h-[91%] ip:ml-0 ml-[36px] mt-[31px]' src={productDetail?.imageSlick2} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] object-cover h-[91%] ml-[36px] mt-[31px]' src={productDetail?.imageSlick3} /></SwiperSlide>
+                <img className='w-[95%]  object-cover h-[91%] ip:ml-0 ml-[36px] mt-[31px]' src={productDetail?.imageSlick3} /></SwiperSlide>
               <NavigationSlide productDetail={productDetail} />
             </Swiper>
           </div>
@@ -174,7 +176,8 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
 
               <div className=' flex gap-[104px] mt-[15px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Type:</div>
-                <div className='flex gap-[13px]'>
+
+                <div className='flex gap-[13px] ip:flex-col'>
 
                   <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Wireless</h3>
@@ -190,7 +193,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
               <div className=' flex gap-[81px] mt-[28px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Weight:</div>
 
-                <div className='flex gap-[13px] flex-wrap'>
+                <div className='flex gap-[13px] flex-wrap ip:flex-col'>
 
                   <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>289 g</h3>
@@ -214,7 +217,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
               <div className=' flex gap-[72px] mt-[28px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Material:</div>
 
-                <div className='flex gap-[13px] flex-wrap'>
+                <div className='flex gap-[13px] flex-wrap ip:flex-col'>
 
                   <div className='border-2  border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Silicon</h3>
