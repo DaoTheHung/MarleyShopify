@@ -59,7 +59,7 @@ export default function NavBarScoll() {
                         <img className='h-[87px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
                     </div>
 
-                    <ul className='flex m-auto gap-[46px] pl-0'>
+                    <ul className='flex m-auto lg:gap-[73px] md:gap-[73px] pl-0'>
                         <Link style={{ textDecoration: "none" }} href="/" >
                             <li
                                 style={{ transition: "0.3s linear" }}
@@ -74,18 +74,18 @@ export default function NavBarScoll() {
                                 Headphones
                             </li>
                         </Link>
-                        <Link style={{ textDecoration: "none" }} href="/new">
-                            <li
-                                style={{ transition: "0.3s linear" }}
-                                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
-                                New
-                            </li>
-                        </Link>
                         <Link style={{ textDecoration: "none" }} href="/about">
                             <li
                                 style={{ transition: "0.3s linear" }}
                                 className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
                                 About
+                            </li>
+                        </Link>
+                        <Link style={{ textDecoration: "none" }} href="/new">
+                            <li
+                                style={{ transition: "0.3s linear" }}
+                                className='text-[#fff] font-semibold text-[19px] hover:text-[#ef6d9f]'>
+                                New
                             </li>
                         </Link>
 

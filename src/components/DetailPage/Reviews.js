@@ -30,8 +30,8 @@ export default function Reviews() {
             <h3>
                 Customer Reviews
             </h3>
-            <div className='w-full border-t border-b flex justify-between'>
-                <div className='flex  gap-[20px] pt-[20px] pb-[30px]'>
+            <div className='w-full ip:flex-col md:flex-row lg:flex-row border-t border-b flex justify-between'>
+                <div className='flex ip:flex-col md:flex-row lg:flex-row  gap-[20px] pt-[20px] pb-[30px]'>
                     <span className=' tracking-[3px]'>
                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[30px]"></i>
                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[30px]"></i>

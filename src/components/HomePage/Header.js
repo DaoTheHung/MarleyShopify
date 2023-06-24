@@ -55,7 +55,7 @@ export default function Header() {
           </div>}
           <ul className={`z-[51] m-auto w-[258px] md:w-auto pt-[45px] md:pt-0   pl-0 bg-[#fff] fixed top-0 bottom-0  md:bg-[#fff0]  ${show ? "right-0" : "right-[-268px]"} transition-allLinear duration-500  md:items-center  md:static flex flex-col md:flex-row md:gap-[46px]`}>
             <div onClick={() => setShow(false)} className="absolute cursor-pointer top-[11px] left-[15px] md:hidden">
-              <i class="fa-solid fa-xmark"></i>
+              <i className="fa-solid fa-xmark"></i>
             </div>
             <div className='flex w-full p-[10px] md:items-center md:border-none  border-t-[1px]'>
               <Link style={{ textDecoration: "none" }} href="/" >
@@ -117,7 +117,7 @@ export default function Header() {
 
           </ul>
           <div onClick={() => setShow(true)} className='md:hidden cursor-pointer text-[#fff] absolute right-[135px] text-[19px]'>
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </div>
 
           <div className='flex gap-[6px] justify-center absolute right-[53px] md:static'>

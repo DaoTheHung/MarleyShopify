@@ -97,7 +97,7 @@ export const NavigationSlide = ({ productDetail }) => {
 
     }
     return (
-        <div className='absolute left-[35px] ip:top-[209px] ip:left-[7px] top-[304px] flex z-10'>
+        <div className='absolute left-[35px] md:top-[282px] lg:top-[282px] ip:top-[176px] ip:left-[7px] top-[304px] flex z-10'>
             <div
                 onClick={handleSlidePrev}
                 style={swiper.activeIndex == 0 ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
@@ -107,7 +107,7 @@ export const NavigationSlide = ({ productDetail }) => {
             <div
                 onClick={handleSlideNext}
                 style={swiper.activeIndex == "3" ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
-                className={`transition-height duration-300 z-20 ${swiper.activeIndex !== 3 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white ip:w-[40px] ip:h-[40px] w-[45px] h-[45px] bg-[#ef6d9f]  right-[-514px]  absolute flex items-center justify-center`}>
+                className={`transition-height duration-300 z-20 ${swiper.activeIndex !== 3 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white ip:w-[40px] ip:h-[40px] w-[45px] h-[45px] bg-[#ef6d9f]  md:right-[-537px]  lg:right-[-538px] absolute flex items-center justify-center ip:right-[-337px]`}>
                 <div className='w-[12px] h-[12px] border-r-[1px] border-t-[1px] border-white rotate-45 mr-2'></div>
             </div>
         </div >

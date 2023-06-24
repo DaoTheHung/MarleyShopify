@@ -17,15 +17,15 @@ export default function Tabs() {
         },
     ]
     return (
-        <div className='w-full '>
-            <div className=' flex gap-[5px] mt-[50px] px-[185px]'>
+        <div className='w-full md:mt-[45px] lg:mt-[45px]'>
+            <div className='flex gap-[5px]  md:m-auto lg:m-auto  md:w-[1211px]  mt-[50px] md:px-0 ip:px-[50px]  ip:flex-col md:flex-row lg:flex-row'>
                 {
                     tabs.map((tab, index) => (
                         <button
                             key={index}
                             onClick={() => setType(tab.name)}
                             style={type === tab.name ? { background: "#1a1a1a" } : {}}
-                            className='transition duration-[300ms] py-[17px] px-[40px] bg-pink-500 text-[20px] hover:bg-[#1a1a1a] text-[#fff]'>
+                            className='transition  ip:w-[308px] duration-[300ms] py-[17px] px-[40px] bg-pink-500 md:text-[20px] ip:text-[18px] hover:bg-[#1a1a1a] text-[#fff]'>
                             {tab.name}
                         </button>
                     ))
@@ -33,7 +33,7 @@ export default function Tabs() {
 
             </div>
 
-            <div className='border ml-[199px] w-[1211px] p-[30px] m-auto'>
+            <div className='border ml-[199px] ip:w-[308px] ip:mt-[20px] md:w-[1211px]  p-[30px] ip:ml-[50px] md:m-auto'>
                 {type === "Product Description" && <Description />}
                 {type === "Additional information" && <Information />}
                 {type === "Reviews" && <Reviews />}

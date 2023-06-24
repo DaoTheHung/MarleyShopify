@@ -124,8 +124,8 @@ export default function products() {
     return (
 
         <div className='w-full mt-[74px]'>
-            <div className='w-[1226px] m-auto  flex'>
-                <div className='w-[578px]  relative cursor-pointer '>
+            <div className='ip:w-[404px] md:w-[1226px] m-auto  flex ip:flex-col lg:flex-row md:flex-row'>
+                <div className='md:w-[578px] lg:w-[578px] ip:w-[404px] relative cursor-pointer '>
                     <div onMouseMove={handleZoomImage} onMouseLeave={handleDefautZoom} className='overflow-hidden'>
                         <Swiper
                             thumbs={{ swiper: slideThumbs && !slideThumbs.destroyed ? slideThumbs : null }}
@@ -144,7 +144,7 @@ export default function products() {
                             }
                         </Swiper>
                     </div>
-                    <div className='mt-[20px] ml-[20px]'>
+                    <div className='mt-[20px] ip:ml-[40px] md:ml-[20px] lg:ml-[20px]'>
                         <Swiper
                             onSwiper={setSlideThumbs}
                             slidesPerView={4}
@@ -154,10 +154,10 @@ export default function products() {
                             {
                                 images.map((image, index) => (
 
-                                    <SwiperSlide>
+                                    <SwiperSlide key={index}>
                                         <div
                                             style={typeImage === image.id ? { border: "4px solid #ef6d9f", opacity: "1" } : {}}
-                                            className=' w-[136.75px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
+                                            className='md:w-[136.75px] lg:w-[136.75px] ip:w-[61px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
                                             onClick={() => (setTypeImage(image.id))}
                                             key={index}
                                         >
@@ -172,19 +172,19 @@ export default function products() {
                     </div>
 
                 </div>
-                <div className='w-[601px] py-[37px] px-[82px]'>
+                <div className='md:w-[601px] lg:w-[601px] ip:w-[404px] ip:px-[49px] py-[37px] md:px-[82px] lg:px-[82px]'>
                     <h3 className='text-[40px] tracking-[1px]'>{productDetail?.name}</h3>
 
                     <div className='mt-[25px]'>
 
-                        <div className=' flex gap-[104px]'>
+                        <div className=' flex gap-[104px] md:justify-start lg:justify-start ip:justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Price:</h3>
                             <span className='text-pink-500 text-[23px] font-medium'>Rs. {productDetail?.price * count + ".00"}</span>
                         </div>
 
-                        <div className=' flex gap-[104px] mt-[15px]'>
+                        <div className=' flex gap-[104px] mt-[15px] md:justify-start lg:justify-start ip:justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Type:</div>
-                            <div className='flex gap-[13px]'>
+                            <div className='flex gap-[13px] ip:flex-col  md:flex-row lg:flex-row'>
 
                                 <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Wireless</h3>
@@ -197,10 +197,10 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[81px] mt-[28px]'>
+                        <div className=' flex gap-[81px] mt-[28px] md:justify-start lg:justify-start ip:justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Weight:</div>
 
-                            <div className='flex gap-[13px] '>
+                            <div className='flex gap-[13px] ip:flex-col md:flex-row lg:flex-row'>
 
                                 <div className='border-2 border-[#ef6d9f] h-[37px] w-[83px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>289 g</h3>
@@ -221,10 +221,10 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[72px] mt-[28px]'>
+                        <div className=' flex gap-[72px] mt-[28px] md:justify-start lg:justify-start ip:justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Material:</div>
 
-                            <div className='flex gap-[13px] '>
+                            <div className='flex gap-[13px] ip:flex-col md:flex-row lg:flex-row'>
 
                                 <div className='border-2  border-[#ef6d9f] h-[37px] px-[12px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Silicon</h3>
@@ -245,24 +245,24 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[80px] mt-[20px]'>
+                        <div className=' flex gap-[80px] mt-[20px] md:justify-start lg:justify-start ip:justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Vendor:</h3>
                             <h3 className='text-black font-normal text-[23px] cursor-pointer hover:text-pink-500 transition duration-[500ms]'>Bloom</h3>
                         </div>
 
-                        <div className=' flex gap-[103px] mt-[20px]'>
+                        <div className=' flex gap-[103px] mt-[20px] md:justify-start lg:justify-start ip:justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Type:</h3>
                             <h3 className='text-ink-100 font-normal text-[23px] '>Headphone</h3>
 
                         </div>
 
-                        <div className=' flex gap-[48px] mt-[20px]'>
+                        <div className=' flex gap-[48px] mt-[20px] md:justify-start lg:justify-start ip:justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Availability:</h3>
                             <h3 className='text-green-400 font-normal text-[23px] '>In stock!</h3>
 
                         </div>
 
-                        <div className=' flex gap-[68px] mt-[20px]'>
+                        <div className=' flex gap-[68px] mt-[20px]  md:justify-start lg:justify-start ip:justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Quantity:</div>
                             <div className='h-[34px] w-[110px] text-center border flex'>
                                 <button
@@ -282,7 +282,7 @@ export default function products() {
                         </div>
 
 
-                        <div className=' flex gap-[19px] mt-[28px] w-[483px]'>
+                        <div className=' flex gap-[19px] mt-[28px] ip:w-[270px] md:w-[483px] ip:flex-col md:flex-row lg:flex-row'>
                             <button
                                 className='transition duration-[300ms] py-[17px] px-[32px] bg-pink-500 text-[19px] hover:bg-[#1a1a1a] text-[#fff]'>
                                 Add to Cart
@@ -291,7 +291,7 @@ export default function products() {
                                 Buy it now
                             </button>
                         </div>
-                        <div className=' flex gap-[19px] mt-[20px] w-[483px]'>
+                        <div className=' flex gap-[19px] mt-[20px] ip:w-[270px] md:w-[483px]'>
                             <button
                                 className='transition duration-[300ms] py-[17px] px-[32px] bg-pink-500 text-[19px] hover:bg-[#1a1a1a] text-[#fff]'>
                                 Add to wishlist
