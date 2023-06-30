@@ -37,14 +37,14 @@ export default function DataDetail() {
 
     return (
         <div className='w-full relative mt-[109px] '>
-            <div className=' w-[73%] h-full m-auto'>
-                <h3 className='text-center text-[33px] md:w-auto lg:w-auto ip:w-[134%] mt-[39px] font-medium'>Recommended products</h3>
+            <div className=' w-[73%] h-full m-auto ip:flex'>
+                <h3 className='text-center text-[33px] md:w-auto lg:w-auto ip:w-[153%] mt-[39px] font-medium'>Recommended products</h3>
             </div>
 
-            <div className='md:w-[73%] lg:w-[58%] ip:w-[404px] m-auto flex ip:flex-col md:flex-row lg:flex-row justify-between '>
+            <div className='md:w-[73%] lg:w-[58%] ip:w-[425px] m-auto flex ip:flex-col md:flex-row lg:flex-row justify-between items-center'>
                 {data?.slice(3, 7).map((product) => (
 
-                    <div key={product.id} className='md:w-[31%] lg:w-[31%] ip:w-[404px] h-[700px] group/item overflow-hidden'>
+                    <div key={product.id} className='md:w-[31%] lg:w-[31%] ip:w-[357px] h-[700px] group/item overflow-hidden'>
                         <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
                             <div className='relative '>
                                 <img className='' src={product.image} />

@@ -123,7 +123,7 @@ export default function products() {
     }
     return (
 
-        <div className='w-full mt-[74px]'>
+        <div className='w-full ip:w-[425px] mt-[74px]'>
             <div className='ip:w-[404px] md:w-[1226px] m-auto  flex ip:flex-col lg:flex-row md:flex-row'>
                 <div className='md:w-[578px] lg:w-[578px] ip:w-[404px] relative cursor-pointer '>
                     <div onMouseMove={handleZoomImage} onMouseLeave={handleDefautZoom} className='overflow-hidden'>

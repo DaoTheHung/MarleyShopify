@@ -16,18 +16,18 @@ export default function Banner
     };
     return (
         <>
-            <div className='relative top-[-110px]  ip:w-[404px]  sm:w-[420px] md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
+            <div className='relative top-[-110px]  ip:w-[425px]  sm:w-[420px] md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
                 <Slider ref={slider} {...settings} >
                     {slides.map((slide, index) => (
 
                         <div key={index}>
-                            <div className='bg-[#181818da] md:hidden h-[447px] ip:w-[326px] absolute w-[340px] ml-[40px]'></div>
+                            <div className='bg-[#181818da] md:hidden h-[447px] ip:w-[346px] absolute w-[340px] ml-[40px]'></div>
 
                             <div className='h-[448px] lg:h-[1004px] md:h-auto'>
                                 <img className='h-full object-cover  lg:object-[0px] md:object-[1px] object-[-408px]' width="100%" src={slide.image} />
                             </div>
 
-                            <div className='absolute lg:ml-[213px] lg:top-[282px] top-[173px] ip:ml-[85px] ml-[93px]  md:ml-[156px]'>
+                            <div className='absolute lg:ml-[213px] lg:top-[282px] top-[173px] ip:ml-[96px] ml-[93px]  md:ml-[156px]'>
                                 <h3 className='hidden md:block md:text-[65px] lg:text-[98px] text-white text-[70px]'>{slide.headerText}</h3>
                                 <h3 className='ip:ml-[-13px] ip:text-[40px] md:ml-[-3px] lg:text-[133px] font-bold md:font-medium md:text-[87px] text-[#ff9cb2] mt-[14px] md:mt-[-7px]'>{slide.contentText}
                                     <span className='text-white'>{slide.spanText}</span>

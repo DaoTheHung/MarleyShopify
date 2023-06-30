@@ -30,7 +30,7 @@ const MenuProducts = () => {
 
     return (
 
-        <div className="w-[314px] ">
+        <div className="w-[314px] md:block ip:hidden">
             <div className='sticky top-0'>
                 <div>
                     <h3 className='text-[22px] font-semibold'>Category</h3>

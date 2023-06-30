@@ -82,7 +82,7 @@ export const FormSelect = ({ setData }) => {
     }
     return (
         <>
-            <div onClick={() => setShow(!show)} className='w-[223px] cursor-pointer  h-[30px] bg-pink-500 px-[10px] flex items-center justify-between relative'>
+            <div onClick={() => setShow(!show)} className='w-[223px] ip:ml-[11px] md:ml-0 cursor-pointer  h-[30px] bg-pink-500 px-[10px] flex items-center justify-between relative'>
                 <div className='text-[18px] text-white'>Featured</div>
                 <div className='mt-[-6px] text-white text-[12px]'><i class="fa-solid fa-sort-down"></i></div>
                 {show && <div className=' w-[223px] h-[218px] bg-[#fff] absolute top-[35px] left-0 z-10 overflow-y-scroll '>
