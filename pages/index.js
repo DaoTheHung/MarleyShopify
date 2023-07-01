@@ -12,13 +12,13 @@ export default function Home() {
 
 
   return (
-    <>
+    <div>
       <NavBarScoll />
       <Banner />
       <TitleIntroPage />
       <HeadphoneData />
       <Comments />
       <Submit />
-    </>
+    </div>
   )
 }

@@ -141,7 +141,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
             Loading...
           </div>
         }
-        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail flex ip:flex-col md:flex-row lg:flex-row ip:w-[361px] ip:overflow-y-scroll md:overflow-hidden lg:overflow-hidden ip:h-[954px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
+        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail flex ip:flex-col md:flex-row lg:flex-row ip:w-[361px] ip:overflow-y-scroll md:overflow-hidden lg:overflow-hidden ip:h-[770px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
 
           <button onClick={hiddenDetail} className='group absolute transition duration-[300ms] right-[7px] top-[7px] py-[5px] hover:bg-black  px-[11px]'>
             <i className="group-hover:text-[#fff]  text-[12px] fa-solid fa-x text-[#9e9999]"></i>

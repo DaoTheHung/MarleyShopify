@@ -8,12 +8,15 @@ export default function index() {
     // Redux
 
     return (
-        <div className='w-full h-[1041px] flex'>
-            <Information />
-            <div className='pt-[76px] w-[44%] bg-[#f5f5f5] '>
-                <ProductCheckOut />
-            </div>
+        <>
+            <h3 className='font-semibold ip:block md:hidden text-[28px] p-[10px]'>Marley Theme</h3>
+            <div className='w-full ip:h-auto md:h-[1041px] flex ip:flex-col-reverse md:flex-row'>
+                <Information />
+                <div className='pt-[76px] ip:w-full md:w-[44%] bg-[#f5f5f5] '>
+                    <ProductCheckOut />
+                </div>
 
-        </div>
+            </div>
+        </>
     )
 }

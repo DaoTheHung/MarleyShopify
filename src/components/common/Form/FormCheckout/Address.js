@@ -142,7 +142,7 @@ export default function Address() {
                     <Checkbox onChange={onChange}>Save this information for next time</Checkbox>
                 </div>
 
-                <div className='flex justify-between  items-center'>
+                <div className='flex justify-between md:gap-0 ip:gap-[20px] ip:flex-col-reverse md:flex-row  items-center'>
                     <button onClick={() => router.push('/collections/all')} className='text-[#1773b0] transition-color duration-300 hover:text-[#1f8dd6]'>
                         <span className='mr-[20px]'><i class="fa-solid fa-angle-left"></i></span>
                         Return to cart
@@ -150,7 +150,7 @@ export default function Address() {
                     <button
 
                         type='submit'
-                        className='bg-[#1773b0] transition-color duration-300 hover:bg-[#105989] rounded-[7px]  text-[#fff] p-[25px]'>Continue to shipping</button>
+                        className='bg-[#1773b0] ip:w-full md:w-auto transition-color duration-300 hover:bg-[#105989] rounded-[7px]  text-[#fff]  ip:p-[20px] md:p-[25px]'>Continue to shipping</button>
                 </div>
             </form>
         </div>

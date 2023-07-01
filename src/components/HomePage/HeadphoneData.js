@@ -36,15 +36,15 @@ export default function HeadphoneData() {
 
 
   return (
-    <div className='md:w-full lg:w-full sm:w-[420px] ip:w-[425px] relative mt-[109px] bottom-[-36rem] md:bottom-[-80rem]'>
-      <div className='md:w-full  sm:w-[413px] h-full m-auto '>
+    <div className='md:w-full lg:w-full sm:w-full ip:w-[425px] relative mt-[109px] bottom-[-36rem] md:bottom-[-80rem]'>
+      <div className='md:w-full  sm:w-full h-full m-auto '>
         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] m-auto rounded-[5px] bg-pink-500'></div>
         <h3 className='text-center text-[45px] md:text-[52px] mt-[39px]'>Choose your wireless<br />
           headphone</h3>
         <p className='text-center text-[24px] text-[#9e9999] mt-[29px]'>Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum raucibus pulvinar elementum integer</p>
       </div>
 
-      <div className='w-[89%] md:w-[73%] m-auto flex-col md:flex-row flex justify-between '>
+      <div className='w-[89%]    md:w-[73%] m-auto flex-col sm:flex-row md:flex-row flex justify-between '>
         {data?.slice(0, 3).map((product) => (
 
           <div key={product.id} className='w-full sm:w-[] md:w-[31%] h-auto md:h-[700px] group/item overflow-hidden'>

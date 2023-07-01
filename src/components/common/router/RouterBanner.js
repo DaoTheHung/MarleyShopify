@@ -26,7 +26,7 @@ export default function RouterBanner() {
                     router.pathname == '/about' ? "About" : "",
     }
     return (
-        <div className='ip:w-[425px] md:w-full lg:w-full'>
+        <div className='ip:w-[425px] sm:w-full md:w-full lg:w-full'>
             <div className='text-center  w-[full] relative   h-auto  bg-center'>
                 <div className=''>
                     <img className='md:w-full lg:w-full ip:h-[253px] ip:object-cover' src="//cdn.shopify.com/s/files/1/0434/2520/2335/files/breadcrumb_c3095538-703a-405c-8e89-e3ef1a1cae12.jpg?v=1631520809" />

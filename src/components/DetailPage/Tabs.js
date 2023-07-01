@@ -17,8 +17,8 @@ export default function Tabs() {
         },
     ]
     return (
-        <div className='w-full md:mt-[45px] lg:mt-[45px]'>
-            <div className='flex gap-[5px]  md:m-auto lg:m-auto  md:w-[1211px]  mt-[50px] md:px-0 ip:px-[50px]  ip:flex-col md:flex-row lg:flex-row'>
+        <div className='w-full md:w-[1530px] md:mt-[45px] lg:mt-[45px]'>
+            <div className='flex gap-[5px] ip:items-center md:m-auto  lg:m-auto  md:w-[1211px]  mt-[50px] md:px-0 ip:px-[50px]   sm:flex-row  ip:flex-col md:flex-row lg:flex-row'>
                 {
                     tabs.map((tab, index) => (
                         <button
@@ -33,7 +33,7 @@ export default function Tabs() {
 
             </div>
 
-            <div className='border ml-[199px] ip:w-[308px] ip:mt-[20px] md:w-[1211px]  p-[30px] ip:ml-[50px] md:m-auto'>
+            <div className='border ml-[199px] ip:w-[308px] sm:w-[86%] ip:mt-[20px] md:w-[1211px]  p-[30px] ip:ml-[59px] md:m-auto'>
                 {type === "Product Description" && <Description />}
                 {type === "Additional information" && <Information />}
                 {type === "Reviews" && <Reviews />}

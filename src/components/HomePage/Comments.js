@@ -13,18 +13,18 @@ export default function Comments() {
     };
     return (
         <>
-            <div className='md:w-full sm:w-[420px] ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
-                <div className=' w-[65%] md:w-[73%] h-full m-auto mb-[36px] md:mb-auto'>
+            <div className='md:w-full sm:w-full ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
+                <div className=' w-[65%]  md:w-[73%] h-full m-auto mb-[36px] md:mb-auto'>
                     <div className='w-[35px] h-[6px] m-auto rounded-[5px] bg-pink-500'></div>
                     <h3 className='text-center text-[44px] md:text-[52px] mt-[39px]'>Our Customers Review</h3>
                     <p className='text-center text-[20px] md:text-[24px] text-[#9e9999] mt-[29px]'>Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam fames ac turpis egestas</p>
                 </div>
-                <div className=' w-[73%] h-full md:mt-[56px] ml-[60px] md:ml-[318px] cursor-grab'>
+                <div className=' w-[73%] h-full sm:mt-[56px] md:mt-[56px] ml-[60px] sm:ml-[150px] md:ml-[318px] cursor-grab'>
                     <Slider {...settings} >
                         {slideComments.map((slide, index) => (
                             <div className='flex' key={index}>
-                                <div className='flex flex-col ml-[28px] w-full md:ml-0 md:w-auto md:flex-row gap-[35px]'>
-                                    <div className='w-[82%] md:w-[14%]'>
+                                <div className='flex flex-col ml-[28px] w-full sm:w-auto md:ml-0 md:w-auto sm:flex-row md:flex-row gap-[35px]'>
+                                    <div className='w-[82%] sm:w-[14%] md:w-[14%]'>
                                         <img className='rounded-[50%]' src={slide.image} />
                                     </div>
                                     <div className='flex flex-col gap-[34px] mt-[22px]'>

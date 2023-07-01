@@ -27,7 +27,7 @@ module.exports = {
       screens: {
         ip: "320px",
 
-        sm: "1024px",
+        sm: "767px",
 
         md: "1440px",
 

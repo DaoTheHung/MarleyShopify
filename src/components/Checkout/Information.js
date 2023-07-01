@@ -14,9 +14,9 @@ export default function Information() {
     };
     return (
 
-        <div className=' w-[56%] border-[#be8686] border-r-2  relative'>
-            <div className='absolute w-[640px] top-[60px] right-[80px]'>
-                <h3 className='font-semibold text-[28px]'>Marley Theme</h3>
+        <div className='ip:w-full sm:w-[56%] md:w-[56%] border-[#be8686] sm:border-none sm:border-r-2 md:border-r-2  relative'>
+            <div className='md:absolute sm:absolute ip:w-full ip:static ip:p-[14px] md:p-0  md:w-[640px] sm:w-[640px] top-[60px] right-[80px]'>
+                <h3 className='font-semibold ip:hidden md:block text-[28px]'>Marley Theme</h3>
                 <RouterCheckout />
                 <Address />
 

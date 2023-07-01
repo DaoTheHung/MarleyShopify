@@ -15,8 +15,8 @@ export default function Shipping() {
         alert("Order Success")
     }
     return (
-        <div className=' w-[56%] border-[#be8686] border-r-2  relative'>
-            <div className='absolute w-[640px] top-[60px] right-[80px]'>
+        <div className=' md:w-[56%] ip:w-full border-[#be8686] ip:border-none md:border-r-2  relative'>
+            <div className='md:absolute sm:absolute ip:w-full ip:static ip:p-[14px] md:w-[640px] top-[60px] right-[80px]'>
                 <h3 className='font-semibold text-[28px]'>Marley Theme</h3>
                 <RouterCheckout />
                 <div className='w-full border rounded-[5px] p-[15px]'>
