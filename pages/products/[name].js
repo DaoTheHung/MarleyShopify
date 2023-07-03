@@ -21,9 +21,15 @@ import { useSelector, useDispatch } from "react-redux"
 import { NavigationSlide } from '../../src/components/common/DataSlide/DataSlide';
 import Tabs from '../../src/components/DetailPage/Tabs';
 import DataDetail from '../../src/components/DetailPage/DataDetail';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 export default function products() {
     const ref = useRef()
+    const [dataProduct, setDataProduct] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
+
 
     // Sliders
     const [slideThumbs, setSlideThumbs] = useState(null);
@@ -121,10 +127,66 @@ export default function products() {
     const handleChange = (event) => {
 
     }
+
+    // Add to cart
+    useEffect(() => {
+        const json = JSON.parse(localStorage.getItem('cart'))
+        if (json !== null) {
+            setDataProduct(json)
+        }
+    }, [isDataProduct])
+
+    const handleAddtoCart = () => {
+        const checkProductDetail = dataProduct?.find(product => product.id == productDetail?.id)
+        const newProduct = {
+            id: productDetail?.id,
+            name: productDetail?.name,
+            price: productDetail?.price,
+            image: productDetail?.image,
+            quantity: productDetail?.quantity,
+        }
+        const fakeData = [...dataProduct]
+
+        if (checkProductDetail) {
+
+            // Update quantity and price in localstotage
+            const updatedCart = dataProduct.map((p) =>
+                p.id === productDetail?.id ? { ...p, quantity: p.quantity + 1 } : p
+            )
+            localStorage.setItem('cart', JSON.stringify(updatedCart))
+            setDataProduct(updatedCart)
+            setIsLoading(true)
+
+            // Time open modal cart
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 2000)
+
+        } else {
+            fakeData.push(newProduct)
+            setDataProduct(fakeData)
+            localStorage.setItem('cart', JSON.stringify(fakeData))
+            setIsLoading(true)
+
+            // Time open modal cart
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 2000)
+
+        }
+        dispath(isData(!isDataProduct))
+    }
+
+
     return (
 
         <div className='w-full ip:w-[425px] sm:w-[99%] mt-[74px]'>
-            <div className='ip:w-[404px]  md:w-[1460px] justify-center m-auto  flex ip:flex-col sm:flex-row lg:flex-row md:flex-row'>
+            {isLoading && <div className='fixed bottom-0 left-0 right-0 top-0  bg-[#f0eeeec9]  z-50 transition-opacityDetail'>
+                <div className='fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]'>
+                    <Spinner animation="border" variant="danger" />
+                </div>
+            </div>}
+            <div className='ip:w-[404px]  md:w-[1402px] justify-center m-auto  flex ip:flex-col sm:flex-row lg:flex-row md:flex-row'>
                 <div className='md:w-[578px] lg:w-[578px] ip:w-[404px] relative cursor-pointer '>
                     <div onMouseMove={handleZoomImage} onMouseLeave={handleDefautZoom} className='overflow-hidden'>
                         <Swiper
@@ -284,6 +346,7 @@ export default function products() {
 
                         <div className=' flex gap-[19px] mt-[28px] ip:w-[270px] md:w-[483px] ip:flex-col md:flex-row lg:flex-row'>
                             <button
+                                onClick={handleAddtoCart}
                                 className='transition duration-[300ms] py-[17px] px-[32px] bg-pink-500 text-[19px] hover:bg-[#1a1a1a] text-[#fff]'>
                                 Add to Cart
                             </button>
