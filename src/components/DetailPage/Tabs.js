@@ -17,7 +17,7 @@ export default function Tabs() {
         },
     ]
     return (
-        <div className='w-full md:w-[1530px] md:mt-[45px] lg:mt-[45px]'>
+        <div className='w-full md:w-[1530px] lg:w-full md:mt-[45px] lg:mt-[45px]'>
             <div className='flex gap-[5px] ip:items-center md:m-auto  lg:m-auto  md:w-[1211px]  mt-[50px] md:px-0 ip:px-[50px]   sm:flex-row  ip:flex-col md:flex-row lg:flex-row'>
                 {
                     tabs.map((tab, index) => (

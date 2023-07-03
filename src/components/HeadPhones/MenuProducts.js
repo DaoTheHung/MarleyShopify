@@ -33,12 +33,12 @@ const MenuProducts = () => {
     return (
 
         <div>
-
+            {show && <div className='fixed top-0 md:hidden lg:hidden left-0 right-0 bottom-0 bg-[#f1f1f1b3] z-10'></div>}
             <div onClick={() => setShow(true)} className='fixed flex ip:visible hover:bg-black-300 md:hidden justify-center items-center left-0 top-[50%] bottom-0 z-10 bg-pink-500 w-[50px] h-[50px]'>
                 <i className="fa-solid fa-caret-right text-[#fff] text-[22px] text-center"></i>
             </div>
 
-            <div className={`md:w-[314px] md:static md:p-0 ip:w-[381px] ip:pt-[102px] ip:px-[20px] transition-allLinear duration-500 ip:fixed ip:top-0 ip:bottom-0 ip:z-20 ip:bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
+            <div className={`md:w-[314px] md:static md:p-0 ip:w-[381px] ip:pt-[102px] ip:px-[20px] transition-allLinear ip:overflow-y-scroll duration-500 ip:fixed ip:top-0 ip:bottom-0 ip:z-20 ip:bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
                 <div onClick={() => setShow(false)} className='ip:block md:hidden absolute top-[20px] text-ink-100 right-[20px] text-[20px]'>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
