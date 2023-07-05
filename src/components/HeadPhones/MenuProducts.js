@@ -38,7 +38,7 @@ const MenuProducts = () => {
                 <i className="fa-solid fa-caret-right text-[#fff] text-[22px] text-center"></i>
             </div>
 
-            <div className={`md:w-[314px] md:static md:p-0 ip:w-[381px] ip:pt-[102px] ip:px-[20px] transition-allLinear ip:overflow-y-scroll duration-500 ip:fixed ip:top-0 ip:bottom-0 ip:z-20 ip:bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
+            <div className={`md:w-[314px] md:sticky md:p-0 ip:w-[381px] ip:pt-[102px] ip:px-[20px] transition-allLinear ip:overflow-y-scroll md:overflow-y-auto duration-500 ip:fixed ip:top-0 ip:bottom-0 ip:z-20 ip:bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
                 <div onClick={() => setShow(false)} className='ip:block md:hidden absolute top-[20px] text-ink-100 right-[20px] text-[20px]'>
                     <i class="fa-solid fa-xmark"></i>
                 </div>

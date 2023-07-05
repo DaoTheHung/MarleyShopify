@@ -3,8 +3,8 @@ import React from 'react'
 export default function Comfort() {
     return (
         <div className='w-full relative bottom-[-34rem] md:bottom-[-80rem] '>
-            <div className=' w-[73%] sm:w-[93%] gap-[50px] md:gap-0 h-full ml-[54px]  md:m-auto flex-col-reverse md:flex-row flex'>
-                <div className='w-[38%] sm:w-full  lg:ml-[64px]'>
+            <div className=' md:w-[73%] sm:w-[93%] gap-[50px] md:gap-0 h-full md:m-auto flex-col-reverse md:flex-row flex'>
+                <div className='md:w-[38%] sm:w-full  lg:ml-[64px]'>
                     <div className='flex flex-col gap-[44px] '>
 
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>

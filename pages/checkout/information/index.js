@@ -31,8 +31,9 @@ export default function index() {
                 <Information showCart={showCart} />
                 <div className='md:pt-[76px] lg:w-[50%] lg:pt-[76px] ip:pb-[20px] md:pb-0 lg:pb-0  ip:pt-[16px] ip:w-full md:w-[49%] bg-[#f5f5f5] '>
 
-                    <div onClick={() => setShowCart(!showCart)} className='w-full items-center mb-[36px] h-[42px]  ip:visible md:hidden lg:hidden flex justify-between px-[10px]'>
-                        <div className='flex items-center text-[#1773b0]'>
+                    <div onClick={() => setShowCart(!showCart)} className='w-full  h-[154px]  ip:visible md:hidden lg:hidden flex justify-between px-[10px]'>
+
+                        <div className='flex  text-[#1773b0]'>
                             <i className="fa-solid fa-cart-shopping "></i>
                             <span className='ml-[12px] text-[14px]'>
                                 Show order summary
@@ -46,6 +47,7 @@ export default function index() {
                         <div className='text-[17px] text-[#1773b0] font-semibold'>
                             ${total}.00
                         </div>
+
                     </div>
 
                     <ProductCheckOut />
