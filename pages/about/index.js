@@ -5,7 +5,7 @@ import { OurTeam } from '../../src/components/About/OurTeam'
 
 export default function index() {
     return (
-        <div className='w-full mt-[150px]'>
+        <div className='md:w-full ip:w-[425px] mt-[150px]'>
             <TitleBaner />
             <ProductIntro />
             <OurTeam />

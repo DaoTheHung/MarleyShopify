@@ -13,7 +13,7 @@ export const ProductIntro = () => {
                         <h1 className='text-center mt-[40px] text-[#1a1a1a] text-[44px] font-bold tracking-[2px]'>Move With Beat</h1>
                     </div>
 
-                    <div className='flex flex-wrap mt-[50px] gap-[32px]'>
+                    <div className='flex flex-wrap mt-[50px] gap-[32px] justify-center'>
 
                         <div className='group flex flex-col justify-center items-center w-[300px]'>
                             <div className='w-[180px] h-[180px] bg-[#ee8d6d] group-hover:bg-pink-500    transition duration-500  rounded-intro animate-effect flex justify-center items-center'>
