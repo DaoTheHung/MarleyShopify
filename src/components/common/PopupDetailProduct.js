@@ -164,7 +164,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
             </Swiper>
           </div>
 
-          <div className='w-[601px] py-[37px] ip:px-[51px] px-[46px]'>
+          <div className='ip:w-[358px] md:w-[601px] py-[37px] ip:px-[51px] px-[46px]'>
             <h3 className='text-[40px] tracking-[1px] md:w-full lg:w-full ip:w-[200px]'>{productDetail?.name}</h3>
 
             <div className='mt-[25px]'>
@@ -269,7 +269,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
                 </button>
               </div>
               <Link style={{ textDecoration: "none", color: "black" }} href={`/products/${productDetail?.name}`}>
-                <button onClick={() => setShow(false)} className=' hover:text-pink-500 transition duration-[300ms] flex gap-[19px] mt-[22px] w-[483px] text-[22px] items-center font-medium'>
+                <button onClick={() => setShow(false)} className='ip:w-[286px] hover:text-pink-500 transition duration-[300ms] flex gap-[19px] mt-[22px] md:w-[483px] text-[22px] items-center font-medium'>
                   View Product
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
