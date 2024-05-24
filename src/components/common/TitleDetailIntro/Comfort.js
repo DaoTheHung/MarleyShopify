@@ -3,7 +3,7 @@ import React from 'react'
 export default function Comfort() {
     return (
         <div className='w-full relative bottom-[-34rem] md:bottom-[-80rem] '>
-            <div className='ip:ml-[60px] md:ml-0 md:w-[73%] sm:w-[93%] gap-[50px] md:gap-0 h-full md:m-auto flex-col-reverse md:flex-row flex'>
+            <div className='ip:ml-[60px] md:!mx-auto md:ml-0 md:w-[73%] sm:w-[93%] gap-[50px] md:gap-0 h-full md:m-auto flex-col-reverse md:flex-row flex'>
                 <div className='md:w-[38%] sm:w-full  lg:ml-[64px]'>
                     <div className='flex flex-col gap-[44px] '>
 

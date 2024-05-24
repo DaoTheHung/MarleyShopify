@@ -2,10 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { configureStore } from '@reduxjs/toolkit'
 import { loadingImage } from '../src/components/common/Loading/Loading'
 import axios from 'axios'
+import configApi from '../config/config'
 
 // Reducer Thunk Product
 export const getProducts = createAsyncThunk('products/productsFetched', async () => {
-    const res = await axios.get('https://api-test-two-beta.vercel.app/api/v1')
+    const res = await axios.get(configApi.API_PRODUCTS)
     return res.data.data
 })
 
