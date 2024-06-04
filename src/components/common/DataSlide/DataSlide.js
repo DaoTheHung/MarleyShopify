@@ -97,17 +97,17 @@ export const NavigationSlide = ({ productDetail }) => {
 
     }
     return (
-        <div className='absolute left-[35px] md:top-[282px] lg:top-[282px] ip:top-[176px] ip:left-[7px] top-[304px] flex z-10'>
+        <div className='absolute left-[35px] md:top-[282px] lg:top-[282px] top-[176px] left-[7px] top-[304px] flex z-10'>
             <div
                 onClick={handleSlidePrev}
                 style={swiper.activeIndex == 0 ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
-                className={`transition-height duration-300 ${swiper.activeIndex !== 0 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white ip:w-[40px] ip:h-[40px] w-[45px] h-[45px] bg-[#ef6d9f] absolute left-[10px] flex items-center justify-center`}>
+                className={`transition-height duration-300 ${swiper.activeIndex !== 0 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] bg-[#ef6d9f] absolute left-[10px] flex items-center justify-center`}>
                 <div className='w-[12px] h-[12px] border-l-[1px] border-b-[1px] border-white rotate-45 ml-2'></div>
             </div>
             <div
                 onClick={handleSlideNext}
                 style={swiper.activeIndex == "3" ? { opacity: "0.5", cursor: "auto" } : { opacity: "1" }}
-                className={`transition-height duration-300 z-20 ${swiper.activeIndex !== 3 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white ip:w-[40px] ip:h-[40px] w-[45px] h-[45px] bg-[#ef6d9f]  md:right-[-537px]  lg:right-[-538px] absolute flex items-center justify-center ip:right-[-337px]`}>
+                className={`transition-height  duration-300 z-20 ${swiper.activeIndex !== 3 ? "hover:bg-[#1a1a1a]" : ""} cursor-pointer text-white w-[40px] h-[40px] lg:w-[45px] lg:h-[45px] bg-[#ef6d9f]  md:right-[-537px]  lg:right-[-538px] absolute flex items-center justify-center right-[-337px]`}>
                 <div className='w-[12px] h-[12px] border-r-[1px] border-t-[1px] border-white rotate-45 mr-2'></div>
             </div>
         </div >

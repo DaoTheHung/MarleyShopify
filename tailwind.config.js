@@ -24,15 +24,15 @@ module.exports = {
         "footer": "url('../public/images/footer-bg.webp')",
         "navbar-title": "url(../public/images/navbar-title.webp)"
       },
-      screens: {
-        ip: "320px",
+      // screens: {
+      //   ip: "320px",
 
-        sm: "767px",
+      //   sm: "767px",
 
-        md: "1374px",
+      //   md: "1374px",
 
-        lg: "1600px",
-      },
+      //   lg: "1600px",
+      // },
 
       animation: {
         "appear-slow": "beat ease-in-out 0.3s",

@@ -46,7 +46,7 @@ export const MenuHead = ({ top, opacity, setTop, setOpacity }) => {
     return (
         <div
 
-            className={`w-[80%] sm:hidden ip:hidden  ${top ? "md:block" : "md:hidden"}  transition-opacity duration-700 py-[40px] px-[20px]  top-[100px]     bg-[#fff]  m-auto absolute left-0 right-0 `}>
+            className={`w-[80%] sm:hidden hidden  ${top ? "md:block" : "md:hidden"}  transition-opacity duration-700 py-[40px] px-[20px]  top-[100px]     bg-[#fff]  m-auto absolute left-0 right-0 `}>
 
             <div className={`flex justify-around `}>
                 {dataName.map(name => (

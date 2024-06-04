@@ -17,8 +17,8 @@ export default function index() {
         <div>
             <div className='w-full mt-[100px] '>
 
-                <div className='md:w-[78%] ip:w-[425px] m-auto '>
-                    <div className='flex lg:gap-[216px] md:gap-0'>
+                <div className='md:w-[93%] xl:w-[78%]  m-auto '>
+                    <div className='flex justify-between'>
                         <MenuProducts />
                         <ProductData />
                     </div>

@@ -26,12 +26,12 @@ export default function index() {
 
     return (
         <>
-            <h3 className='font-semibold ip:block md:hidden text-[28px] p-[10px]'>Marley Theme</h3>
-            <div className='w-full ip:h-auto lg:h-[1041px] md:h-[1041px] flex ip:flex-col-reverse md:flex-row'>
+            <h3 className='font-semibold block md:hidden text-[28px] p-[10px]'>Marley Theme</h3>
+            <div className='w-full  lg:h-[1041px] flex flex-col-reverse md:flex-row justify-between'>
                 <Information showCart={showCart} />
-                <div className='md:pt-[76px] lg:w-[50%] lg:pt-[76px] ip:pb-[20px] md:pb-0 lg:pb-0  ip:pt-[16px] ip:w-full md:w-[49%] bg-[#f5f5f5] '>
+                <div className='md:pt-[76px] lg:w-[50%] lg:pt-[76px] pb-[20px] md:pb-0 lg:pb-0  pt-[16px] w-full md:w-[49%] bg-[#f5f5f5] '>
 
-                    <div onClick={() => setShowCart(!showCart)} className='w-full  h-[154px]  ip:visible md:hidden lg:hidden flex justify-between px-[10px]'>
+                    <div onClick={() => setShowCart(!showCart)} className='w-full  h-[58px]  visible md:hidden lg:hidden flex justify-between px-[10px]'>
 
                         <div className='flex  text-[#1773b0]'>
                             <i className="fa-solid fa-cart-shopping "></i>

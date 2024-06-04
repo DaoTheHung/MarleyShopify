@@ -16,26 +16,26 @@ export default function Banner
     };
     return (
         <>
-            <div className='relative top-[-110px]  ip:w-[425px]  sm:w-full md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
+            <div className='relative  ip:w-[425px]  sm:w-full md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
                 <Slider ref={slider} {...settings} >
                     {slides.map((slide, index) => (
 
-                        <div key={index}>
-                            <div className='bg-[#181818da] sm:top-[118px] sm:mt-[192px] sm:ml-[102px] md:hidden h-[447px] ip:w-[346px] absolute w-[340px] sm:h-[191px] ml-[40px]'></div>
+                        <div key={index} className='relative'>
+                            <div className='bg-[#706464da] absolute lg:hidden top-0 left-0 right-0 bottom-0'></div>
 
                             <div className='h-[448px] sm:h-[700px] lg:h-[1004px] md:h-auto'>
                                 <img className='h-full object-cover sm:object-[-308px] lg:object-[0px] md:object-[1px] object-[-408px]' width="100%" src={slide.image} />
                             </div>
 
-                            <div className='absolute sm:ml-[170px] sm:top-[275px] lg:ml-[213px] lg:top-[282px] top-[173px] ip:ml-[96px] ml-[93px]  md:ml-[156px]'>
+                            <div className='absolute top-[58%] left-1/2  w-full lg:left-[65%] translate-x-[-50%] translate-y-[-50%] flex flex-col lg:items-start items-center justify-center gap-4'>
                                 <h3 className='hidden md:block md:text-[65px] lg:text-[98px] text-white text-[70px]'>{slide.headerText}</h3>
-                                <h3 className='ip:ml-[-13px]  ip:text-[40px] md:ml-[-3px] lg:text-[133px] font-bold md:font-medium md:text-[87px] text-[#ff9cb2] mt-[14px] sm:mt-[40px] md:mt-[-7px]'>{slide.contentText}
+                                <h3 className='ip:ml-[-13px]  text-[40px] md:ml-[-3px] lg:text-[133px] font-bold md:font-medium md:text-[87px] text-[#ff9cb2] mt-[14px] sm:mt-[40px] md:mt-[-7px]'>{slide.contentText}
                                     <span className='text-white'>{slide.spanText}</span>
                                 </h3>
                                 <h3 className='hidden  md:block lg:w-[809px] text-white md:w-[697px] leading-[40px] md:text-[21px] lg:mt-[22px] md:mt-[19px] font-normal'>{slide.lastText}</h3>
                                 <button
                                     style={{ transition: "0.3s linear" }}
-                                    className='transition-allLinear bg-[#ef6d9f] hover:bg-[#ee8d6d] w-[140px] md:w-[158px] mt-[55px] ml-[52px] md:ml-auto md:mt-[38px] p-[8px] '>
+                                    className='transition-allLinear bg-[#ef6d9f] hover:bg-[#ee8d6d] w-[140px] md:w-[158px]   md:mt-[38px] p-[8px] '>
                                     <h3 className='text-white text-[17px] md:text-[20px] mt-2 font-medium'>Shop Now</h3>
                                 </button>
                             </div>

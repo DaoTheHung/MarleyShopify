@@ -3,7 +3,7 @@ import React from 'react'
 export default function Submit() {
     return (
         <div>
-            <div className='md:w-full sm:w-full ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
+            <div className='md:w-full sm:w-full relative mt-[109px] bottom-[-39rem] md:bottom-[-40rem]'>
                 <div className='w-[87%]  md:w-[73%] h-full m-auto'>
                     <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] m-auto rounded-[5px] bg-pink-500'></div>
                     <h3 className='text-center text-[45px] sm:text-[52px] md:text-[52px] mt-[39px]'>Say hello to us</h3>
@@ -12,7 +12,7 @@ export default function Submit() {
                     </p>
                 </div>
                 <form className=' flex justify-center mt-[62px]'>
-                    <div className='h-[78px] ip:w-[354px] sm:w-[625px] md:w-[625px] text-[19px] md:text-[23px] relative'>
+                    <div className='h-[78px] w-[354px]  md:w-[625px] text-[19px] md:text-[23px] relative'>
                         <input
 
                             type="email"

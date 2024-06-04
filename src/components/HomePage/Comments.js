@@ -13,7 +13,7 @@ export default function Comments() {
     };
     return (
         <>
-            <div className='md:w-full sm:w-full ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-80rem]'>
+            <div className='md:w-full sm:w-full ip:w-[404px] relative mt-[109px] bottom-[-39rem] md:bottom-[-40rem]'>
                 <div className=' w-[65%]  md:w-[73%] h-full m-auto mb-[36px] md:mb-auto'>
                     <div className='w-[35px] h-[6px] m-auto rounded-[5px] bg-pink-500'></div>
                     <h3 className='text-center text-[44px] md:text-[52px] mt-[39px]'>Our Customers Review</h3>
@@ -32,7 +32,7 @@ export default function Comments() {
                                             <h3 className=' text-[26px] md:text-[29px] font-medium'>{slide.name}</h3>
                                             <h3 className='text-[18px] font-normal md:font-medium text-[#9e9999] mt-[16px]'>{slide.title}</h3>
                                         </div>
-                                        <p className='text-[17px] w-[264px] md:text-[18px] md:w-[642px] text-[#9e9999] font-light'>{slide.text}</p>
+                                        <p className='text-[17px] xl:w-[264px] md:text-[18px] md:w-[500px] text-[#9e9999] font-light'>{slide.text}</p>
                                         <div className='text-[17px] md:text-[20px] tracking-[4px]'>
                                             <i className="fa-sharp fa-solid fa-star text-pink-500"></i>
                                             <i className="fa-sharp fa-solid fa-star text-pink-500"></i>

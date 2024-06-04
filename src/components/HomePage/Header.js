@@ -45,9 +45,9 @@ export default function Header() {
 
   return (
     <div>
-      <div className='  ip:w-[425px] md:w-full sm:w-full lg:w-full md:bg-inherit bg-[#1a1a1a] relative z-20 '>
-        <div className={`flex ${router.pathname == "/" ? "" : "bg-black-300"} lg:px-[218px]  py-0 px-[160px] h-[110px] items-center justify-between`}>
-          <div className=' md:static absolute  left-[50px]'>
+      <div className=' md:w-full sm:w-full lg:w-full relative lg:absolute md:bg-inherit bg-[#1a1a1a]  z-20 '>
+        <div className={`flex ${router.pathname == "/" ? "" : "bg-black-300"} px-4   py-0  h-[110px] items-center justify-between`}>
+          <div className=' md:static   left-[50px]'>
             <img className=' md:h-[87px] h-[52px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
           </div>
 
@@ -68,7 +68,7 @@ export default function Header() {
             </div>
 
             <div
-              onMouseOut={() => setTop(false)} onMouseOver={() => setTop(true)}
+              // onMouseOut={() => setTop(false)} onMouseOver={() => setTop(true)}
               className='  w-full  p-[10px] md:border-none  border-t-[1px] md:items-center cursor-pointer' >
               <Link style={{ textDecoration: "none" }} href="/collections/all">
                 <li
@@ -116,14 +116,16 @@ export default function Header() {
 
 
           </ul>
-          <div onClick={() => setShow(true)} className='md:hidden cursor-pointer text-[#fff] absolute right-[135px] text-[19px]'>
-            <i className="fa-solid fa-bars"></i>
-          </div>
+          <div className='flex items-center gap-6'>
+            <div onClick={() => setShow(true)} className='md:hidden cursor-pointer text-[#fff]  right-[135px] text-[19px]'>
+              <i className="fa-solid fa-bars"></i>
+            </div>
 
-          <div className='flex gap-[6px] justify-center absolute right-[53px] md:static'>
-            <i onClick={handleModalCart} className="text-[#fff] ip:text-[24px] md:text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
-            <div className='w-[20px] h-[20px] rounded-[50%] flex justify-center bg-pink-500'>
-              <h3 className='text-[12px] text-[#fff] m-auto'>{quantityProduct ? quantityProduct : "0"}</h3>
+            <div className='flex gap-[6px] justify-center '>
+              <i onClick={handleModalCart} className="text-[#fff] text-[24px] md:text-[30px] fa-solid fa-bag-shopping rounded-0 cursor-pointer"></i>
+              <div className='w-[20px] h-[20px] rounded-[50%] flex justify-center bg-pink-500'>
+                <h3 className='text-[12px] text-[#fff] m-auto'>{quantityProduct ? quantityProduct : "0"}</h3>
+              </div>
             </div>
           </div>
         </div>

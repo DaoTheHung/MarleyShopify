@@ -4,7 +4,7 @@ import { Button } from '../hook/Button'
 export default function LearnMore() {
     return (
 
-        <div className="sm:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/wide-banner_362654f3-dcb6-46e3-88a4-0ed839703d2b.jpg?v=1631093376')] md:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/wide-banner_362654f3-dcb6-46e3-88a4-0ed839703d2b.jpg?v=1631093376')] lg:h-[1010px] bg-[#ef6d9f8a] relative ip:w-[425px] sm:w-full md:w-full h-[653px] md:h-[850px] top-[437px] md:top-[705px]  bg-cover">
+        <div className="sm:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/wide-banner_362654f3-dcb6-46e3-88a4-0ed839703d2b.jpg?v=1631093376')] md:bg-[url('https://cdn.shopify.com/s/files/1/0434/2520/2335/files/wide-banner_362654f3-dcb6-46e3-88a4-0ed839703d2b.jpg?v=1631093376')] lg:h-[1010px] bg-[#ef6d9f8a] relative ip:w-[425px] sm:w-full md:w-full h-[653px] md:h-[850px] top-[8rem] lg:top-[14rem] md:top-[705px]  bg-cover">
             <div className='md:w-[503px] sm:w-[687px] lg:w-[687px] lg:left-[435px] mt-[61px] absolute top-[46px]  md:left-[323px]'>
                 <div className='flex flex-col gap-[44px] md:ml-auto ml-[60px]'>
                     <div className='md:w-[35px]   md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>

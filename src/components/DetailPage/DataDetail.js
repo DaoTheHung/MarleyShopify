@@ -37,14 +37,14 @@ export default function DataDetail() {
 
     return (
         <div className='w-full relative mt-[109px] '>
-            <div className=' w-[73%] h-full m-auto md:block ip:flex'>
-                <h3 className='text-center text-[33px] md:w-auto lg:w-auto ip:w-[153%] mt-[39px] font-medium'>Recommended products</h3>
+            <div className=' w-[73%] h-full m-auto md:block flex'>
+                <h3 className='text-center text-[33px] md:w-auto lg:w-auto w-[153%] mt-[39px] font-medium'>Recommended products</h3>
             </div>
 
-            <div className='md:w-[73%] sm:w-[725px] lg:w-[58%] md:flex-nowrap sm:flex-wrap ip:w-[425px] m-auto flex ip:flex-col sm:flex-row md:flex-row lg:flex-row justify-between items-center'>
+            <div className='  lg:w-[88%] md:flex-nowrap sm:flex-wrap  m-auto flex flex-col sm:flex-row md:flex-row lg:flex-row justify-between items-center'>
                 {data?.slice(3, 7).map((product) => (
 
-                    <div key={product.id} className='md:w-[31%] lg:w-[31%] ip:w-[357px] h-[700px] group/item overflow-hidden'>
+                    <div key={product.id} className='md:w-[31%] lg:w-[31%] w-[357px] h-[700px] group/item overflow-hidden'>
                         <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
                             <div className='relative '>
                                 <img className='' src={product.image} />

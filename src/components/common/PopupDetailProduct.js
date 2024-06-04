@@ -141,31 +141,31 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
             Loading...
           </div>
         }
-        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail flex ip:flex-col md:flex-row lg:flex-row ip:w-[361px] ip:overflow-y-scroll md:overflow-hidden lg:overflow-hidden ip:h-[770px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
+        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail py-[31px] lg:py-0 flex flex-col md:flex-row lg:flex-row w-[361px] overflow-y-scroll md:overflow-hidden lg:overflow-hidden h-[770px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
 
           <button onClick={hiddenDetail} className='group absolute transition duration-[300ms] right-[7px] top-[7px] py-[5px] hover:bg-black  px-[11px]'>
             <i className="group-hover:text-[#fff]  text-[12px] fa-solid fa-x text-[#9e9999]"></i>
           </button>
 
-          <div className='md:w-[550px] ip:w-[361px] relative mt-[31px] ip:mt-[37px]'>
+          <div className='md:w-[595px] w-[361px] relative mt-[31px] '>
             <Swiper
               modules={[Navigation]}
               slidesPerView="auto"
             >
               <SwiperSlide>
-                <img className='w-[95%] ip:w-full  object-cover h-[91%] ip:ml-0 ml-[36px] ' src={productDetail?.image} /></SwiperSlide>
+                <img className=' w-full  object-cover h-[91%] ml-0  ' src={productDetail?.image} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] ip:w-full object-cover h-[91%] ip:ml-0 ml-[36px] ' src={productDetail?.imageSlick1} /></SwiperSlide>
+                <img className=' w-full object-cover h-[91%] ml-0  ' src={productDetail?.imageSlick1} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] ip:w-full object-cover h-[91%] ip:ml-0 ml-[36px] ' src={productDetail?.imageSlick2} /></SwiperSlide>
+                <img className=' w-full object-cover h-[91%] ml-0  ' src={productDetail?.imageSlick2} /></SwiperSlide>
               <SwiperSlide>
-                <img className='w-[95%] ip:w-full object-cover h-[91%] ip:ml-0 ml-[36px] ' src={productDetail?.imageSlick3} /></SwiperSlide>
+                <img className=' w-full object-cover h-[91%] ml-0  ' src={productDetail?.imageSlick3} /></SwiperSlide>
               <NavigationSlide productDetail={productDetail} />
             </Swiper>
           </div>
 
-          <div className='ip:w-[358px] md:w-[601px] py-[37px] ip:px-[51px] px-[46px]'>
-            <h3 className='text-[40px] tracking-[1px] md:w-full lg:w-full ip:w-[200px]'>{productDetail?.name}</h3>
+          <div className='w-[358px] md:w-[601px] py-[37px] px-[51px] '>
+            <h3 className='text-[40px] tracking-[1px] md:w-full lg:w-full w-[200px]'>{productDetail?.name}</h3>
 
             <div className='mt-[25px]'>
 
@@ -177,7 +177,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
               <div className=' flex gap-[104px] mt-[15px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Type:</div>
 
-                <div className='flex gap-[13px] ip:flex-col  md:flex-row lg:flex-row'>
+                <div className='flex gap-[13px] flex-col  md:flex-row lg:flex-row'>
 
                   <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Wireless</h3>
@@ -193,7 +193,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
               <div className=' flex gap-[81px] mt-[28px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Weight:</div>
 
-                <div className='flex gap-[13px] flex-wrap ip:flex-col  md:flex-row lg:flex-row'>
+                <div className='flex gap-[13px] flex-wrap flex-col  md:flex-row lg:flex-row'>
 
                   <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>289 g</h3>
@@ -217,7 +217,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
               <div className=' flex gap-[72px] mt-[28px]'>
                 <div className='text-[20px] font-medium pt-[4px]'> Material:</div>
 
-                <div className='flex gap-[13px] flex-wrap ip:flex-col md:flex-row lg:flex-row'>
+                <div className='flex gap-[13px] flex-wrap flex-col md:flex-row lg:flex-row'>
 
                   <div className='border-2  border-[#ef6d9f] h-[37px] px-[12px]'>
                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Silicon</h3>
@@ -252,7 +252,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
 
               </div>
 
-              <div className=' flex gap-[19px] mt-[28px] md:w-[483px] ip:flex-col md:flex-row lg:flex-row ip:w-[267px]'>
+              <div className=' flex gap-[19px] mt-[28px] md:w-[483px] flex-col md:flex-row lg:flex-row w-[267px]'>
                 <button onClick={() =>
                   handleAddToCart(
                     productDetail.id,
@@ -269,7 +269,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
                 </button>
               </div>
               <Link style={{ textDecoration: "none", color: "black" }} href={`/products/${productDetail?.name}`}>
-                <button onClick={() => setShow(false)} className='ip:w-[286px] hover:text-pink-500 transition duration-[300ms] flex gap-[19px] mt-[22px] md:w-[483px] text-[22px] items-center font-medium'>
+                <button onClick={() => setShow(false)} className='w-[286px] hover:text-pink-500 transition duration-[300ms] flex gap-[19px] mt-[22px] md:w-[483px] text-[22px] items-center font-medium'>
                   View Product
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>

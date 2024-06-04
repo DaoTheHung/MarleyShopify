@@ -22,7 +22,7 @@ export default function ProductCheckOut() {
 
     return (
         <>
-            <div className='flex flex-col ip:px-[15px]  md:px-[50px] ip:w-full md:w-[559px] gap-[15px]'>
+            <div className='flex flex-col px-[15px]  md:px-[50px] w-full md:w-[559px] gap-[15px]'>
 
                 {dataProduct?.map(product => (
                     <div className='flex justify-between items-center' key={product.id}>

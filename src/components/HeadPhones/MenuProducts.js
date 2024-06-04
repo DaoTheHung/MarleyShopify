@@ -32,19 +32,19 @@ const MenuProducts = () => {
 
     return (
 
-        <div>
-            {show && <div className='fixed top-0 md:hidden lg:hidden left-0 right-0 bottom-0 bg-[#f1f1f1b3] z-10'></div>}
-            <div onClick={() => setShow(true)} className='fixed flex ip:visible hover:bg-black-300 md:hidden justify-center items-center left-0 top-[50%] bottom-0 z-10 bg-pink-500 w-[50px] h-[50px]'>
+        <div className='md:w-[442px]'>
+            {show && <div className='fixed top-0 hidden lg:block left-0 right-0 bottom-0 bg-[#f1f1f1b3] z-10'></div>}
+            <div onClick={() => setShow(true)} className='fixed flex visible hover:bg-black-300 md:hidden justify-center items-center left-0 top-[50%] bottom-0 z-10 bg-pink-500 w-[50px] h-[50px]'>
                 <i className="fa-solid fa-caret-right text-[#fff] text-[22px] text-center"></i>
             </div>
 
-            <div className={`md:w-[314px] md:sticky md:p-0 ip:w-[381px] ip:pt-[102px] ip:px-[20px] transition-allLinear ip:overflow-y-scroll md:overflow-y-auto duration-500 ip:fixed ip:top-0 ip:bottom-0 ip:z-20 ip:bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
-                <div onClick={() => setShow(false)} className='ip:block md:hidden absolute top-[20px] text-ink-100 right-[20px] text-[20px]'>
+            <div className={` w-full md:sticky md:p-0  pt-[102px] px-[20px] transition-allLinear overflow-y-scroll md:overflow-y-auto duration-500 fixed top-0 bottom-0 z-20 bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
+                <div onClick={() => setShow(false)} className='block md:hidden absolute top-[20px] text-ink-100 right-[20px] text-[20px]'>
                     <i class="fa-solid fa-xmark"></i>
                 </div>
                 <div className='sticky top-0'>
                     <div>
-                        <h3 className='md:text-[22px] ip:text-[24px] font-semibold'>Category</h3>
+                        <h3 className='md:text-[22px] text-[24px] font-semibold'>Category</h3>
                         <div className='w-full h-[2px]  bg-pink-500'></div>
                     </div>
 
@@ -52,50 +52,50 @@ const MenuProducts = () => {
                         <div className=''>
                             <h3
                                 onClick={handleClickTab}
-                                className='md:text-[22px] ip:text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
+                                className='md:text-[22px] text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
                                 Travel Headphones
                                 {!position ?
-                                    <i className=" fa-sharp fa-solid fa-plus  ip:text-[22px] md:text-[17px]"></i>
+                                    <i className=" fa-sharp fa-solid fa-plus  text-[22px] md:text-[17px]"></i>
                                     :
-                                    <i className="fa-solid fa-minus ip:text-[22px] md:text-[17px]"></i>}
+                                    <i className="fa-solid fa-minus text-[22px] md:text-[17px]"></i>}
                             </h3>
 
                             <ul className={`list-disc leading-[37px]`}>
-                                <li className='hover:text-pink-500 transition duration-[300ms] ip:text-[19px] cursor-pointer '>Noise Isolated</li>
-                                <li className='hover:text-pink-500 cursor-pointer transition ip:text-[19px] duration-[300ms]'>Closed Back Headset</li>
+                                <li className='hover:text-pink-500 transition duration-[300ms] text-[19px] cursor-pointer '>Noise Isolated</li>
+                                <li className='hover:text-pink-500 cursor-pointer transition text-[19px] duration-[300ms]'>Closed Back Headset</li>
                             </ul>
 
                         </div>
                         <div className={` h-[74px] bg-[#fff] transition-allLinear duration-[500ms] ${position ? "mt-[-51px]" : "mt-[-118px]"} flex flex-col `}>
                             <h3
                                 onClick={handleClickTab1}
-                                className='md:text-[22px] ip:text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
+                                className='md:text-[22px] text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
                                 Wireless Headphones
                                 {!position1 ?
-                                    <i className="fa-sharp fa-solid fa-plus ip:text-[22px]  md:text-[17px]"></i>
+                                    <i className="fa-sharp fa-solid fa-plus text-[22px]  md:text-[17px]"></i>
                                     :
-                                    <i className="fa-solid fa-minus ip:text-[22px] md:text-[17px]"></i>}
+                                    <i className="fa-solid fa-minus text-[22px] md:text-[17px]"></i>}
                             </h3>
 
                             <ul className='list-disc leading-[37px]'>
-                                <li className='hover:text-pink-500 transition duration-[300ms] ip:text-[19px] cursor-pointer '>HP Gaming Headset</li>
-                                <li className='hover:text-pink-500 transition duration-[300ms] ip:text-[19px] cursor-pointer '>Red Headset</li>
+                                <li className='hover:text-pink-500 transition duration-[300ms] text-[19px] cursor-pointer '>HP Gaming Headset</li>
+                                <li className='hover:text-pink-500 transition duration-[300ms] text-[19px] cursor-pointer '>Red Headset</li>
                             </ul>
                         </div>
-                        <div className={` h-[74px] bg-[#fff] transition-allLinear duration-[500ms] ${position1 ? "mt-[21px]" : "mt-[-67px]"} flex flex-col `}>
+                        <div className={` h-[74px] bg-[#fff] transition-allLinear duration-[500ms] ${position1 ? "mt-[21px]" : "mt-[-71px]"} flex flex-col `}>
                             <h3
                                 onClick={handleClickTab2}
-                                className='md:text-[22px] ip:text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
+                                className='md:text-[22px] text-[29px] cursor-pointer flex justify-between font-normal items-center hover:text-pink-500 transition duration-[300ms] '>
                                 Hi-Res Headphones
                                 {!position2 ?
-                                    <i className="fa-sharp fa-solid fa-plus ip:text-[22px] md:text-[17px]"></i>
+                                    <i className="fa-sharp fa-solid fa-plus text-[22px] md:text-[17px]"></i>
                                     :
-                                    <i className="fa-solid fa-minus ip:text-[22px] md:text-[17px]"></i>}
+                                    <i className="fa-solid fa-minus text-[22px] md:text-[17px]"></i>}
                             </h3>
 
                             <ul className='list-disc leading-[37px]'>
-                                <li className='hover:text-pink-500 transition duration-[300ms] ip:text-[19px] cursor-pointer '>X2 Noise Isolated</li>
-                                <li className='hover:text-pink-500 transition duration-[300ms] ip:text-[19px] cursor-pointer '>X2 Stereo</li>
+                                <li className='hover:text-pink-500 transition duration-[300ms] text-[19px] cursor-pointer '>X2 Noise Isolated</li>
+                                <li className='hover:text-pink-500 transition duration-[300ms] text-[19px] cursor-pointer '>X2 Stereo</li>
                             </ul>
                         </div>
                     </div>
