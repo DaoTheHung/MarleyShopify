@@ -16,7 +16,7 @@ export default function Banner
     };
     return (
         <>
-            <div className='relative  ip:w-[425px]  sm:w-full md:w-full lg:w-full  z-0 overflow-hidden cursor-grab'>
+            <div className='relative  top-[-56px] lg:top-0 w-full  z-0 overflow-hidden cursor-grab'>
                 <Slider ref={slider} {...settings} >
                     {slides.map((slide, index) => (
 

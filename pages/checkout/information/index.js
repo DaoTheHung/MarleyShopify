@@ -27,7 +27,7 @@ export default function index() {
     return (
         <>
             <h3 className='font-semibold block md:hidden text-[28px] p-[10px]'>Marley Theme</h3>
-            <div className='w-full  lg:h-[1041px] flex flex-col-reverse md:flex-row justify-between'>
+            <div className='w-full lg:h-[100dvh]  flex flex-col-reverse md:flex-row justify-between'>
                 <Information showCart={showCart} />
                 <div className='md:pt-[76px] lg:w-[50%] lg:pt-[76px] pb-[20px] md:pb-0 lg:pb-0  pt-[16px] w-full md:w-[49%] bg-[#f5f5f5] '>
 

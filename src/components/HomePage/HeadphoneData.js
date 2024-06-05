@@ -36,7 +36,7 @@ export default function HeadphoneData() {
 
 
   return (
-    <div className='md:w-full lg:w-full sm:w-full ip:w-[425px] relative mt-[109px] bottom-[-41rem] md:bottom-[-40rem]'>
+    <div className=' relative bottom-[-29rem] md:bottom-[-40rem]'>
       <div className='md:w-full  sm:w-full h-full m-auto '>
         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] m-auto rounded-[5px] bg-pink-500'></div>
         <h3 className='text-center text-[45px] md:text-[52px] mt-[39px]'>Choose your wireless<br />
