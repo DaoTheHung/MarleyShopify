@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Comfort() {
     return (
-        <div className='w-full relative bottom-[-22rem] lg:bottom-[-40rem] '>
+        <div className='w-[88%] mx-auto relative bottom-[-22rem] lg:bottom-[-40rem] '>
             <div className='flex lg:flex-row flex-col gap-[40px]'>
-                <div className='md:w-[38%] sm:w-full  lg:ml-[64px]'>
+                <div className='sm:w-full  '>
                     <div className='flex flex-col gap-[44px] w-[314px] mx-auto md:w-full'>
 
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
@@ -22,7 +22,7 @@ export default function Comfort() {
                         </div>
                     </div>
                 </div>
-                <div className='lg:w-[27%] '>
+                <div className=' '>
                     <div className='flex flex-col gap-[79px] items-center'>
 
                         <div className='group/item '>
@@ -56,7 +56,7 @@ export default function Comfort() {
                         </div>
                     </div>
                 </div>
-                <div className='xl:w-[27%] mt-[172px] hidden md:block ml-[65px]'>
+                <div className=' mt-[172px] hidden md:block '>
                     <div className='flex flex-col gap-[79px]'>
 
                         <div className='group/item'>

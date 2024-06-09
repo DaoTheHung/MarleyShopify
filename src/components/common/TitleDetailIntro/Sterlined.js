@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Sterlined() {
     return (
         <div>
-            <div className='relative flex flex-col items-center lg:items-start lg:m-auto lg:w-[1325px] sm:w-full md:w-[1097px] bottom-[-15rem] md:bottom-[-27rem] md:mb-[190px] md:ml-[136px] lg::ml-[195px] md:mr-[245px] '>
+            <div className='relative flex flex-col items-center lg:items-start lg:m-auto  sm:w-full md:w-[1097px] bottom-[-15rem] md:bottom-[-27rem] md:mb-[190px] md:ml-[136px] lg::ml-[195px] md:mr-[245px] '>
                 <div className=''>
                     <div className=' md:w-[35px] md:h-[6px] w-[26px] h-[5px]  rounded-[5px] bg-pink-500'></div>
                     <h3 className='sm:w-[70%] cursor: default w-[259px]  md:w-[512px] text-[#1a1a1a] text-[39px]  md:text-[40px] font-bold leading-[66px] tracking-[3px] mt-[21px] mb-[72px]'>
@@ -15,8 +15,8 @@ export default function Sterlined() {
                     </h3>
                 </div>
 
-                <div className='flex flex-col-reverse md:ml-[63px] md:w-full lg:w-[1132px] lg:ml-[50px] md:flex-row-reverse justify-between'>
-                    <div className='md:w-[439px] mt-[53px] '>
+                <div className='flex flex-col-reverse md:w-full gap-6  md:flex-row-reverse justify-between'>
+                    <div className='md:w-1/2 mt-[53px] '>
                         <div className='flex flex-col gap-[44px] md:ml-auto '>
 
                             <p className=' text-[#9e9999]  text-[20px] lg:text-[22px] md:text-[21px] w-[306px] sm:w-[92%] md:w-full lg:w-[467px] leading-[40px]'>

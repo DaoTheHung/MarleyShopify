@@ -23,16 +23,16 @@ export default function Comments() {
                     <Slider {...settings} >
                         {slideComments.map((slide, index) => (
                             <div className='flex' key={index}>
-                                <div className='flex flex-col ml-[28px] w-full sm:w-auto md:ml-0 md:w-auto sm:flex-row md:flex-row gap-[35px]'>
+                                <div className='flex flex-col  w-full sm:w-auto md:ml-0 md:w-auto sm:flex-row md:flex-row gap-[35px]'>
                                     <div className='w-[82%] sm:w-[14%] md:w-[14%]'>
                                         <img className='rounded-[50%]' src={slide.image} />
                                     </div>
-                                    <div className='flex flex-col gap-[34px] mt-[22px]'>
+                                    <div className='flex flex-col gap-[34px] mt-[22px] lg:w-[90%]'>
                                         <div>
                                             <h3 className=' text-[26px] md:text-[29px] font-medium'>{slide.name}</h3>
                                             <h3 className='text-[18px] font-normal md:font-medium text-[#9e9999] mt-[16px]'>{slide.title}</h3>
                                         </div>
-                                        <p className='text-[17px] xl:w-[264px] md:text-[18px] md:w-[500px] text-[#9e9999] font-light'>{slide.text}</p>
+                                        <p className='text-[17px]  md:text-[18px]  text-[#9e9999] font-light'>{slide.text}</p>
                                         <div className='text-[17px] md:text-[20px] tracking-[4px]'>
                                             <i className="fa-sharp fa-solid fa-star text-pink-500"></i>
                                             <i className="fa-sharp fa-solid fa-star text-pink-500"></i>
