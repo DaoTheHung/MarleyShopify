@@ -13,7 +13,7 @@ import { Button } from '../common/hook/Button';
 export default function TitlePage() {
     return (
         <div >
-            <div className=' flex justify-between  sm:w-full lg:gap-[93px] md:w-full flex-col items-center md:flex-row md:justify-center'>
+            <div className=' flex justify-between mt-[75px]  sm:w-full lg:gap-[93px] md:w-full flex-col items-center md:flex-row md:justify-center'>
                 <div className='md:w-[503px] sm:w-full mt-[61px] mb-[90px] md:mb-auto'>
                     <div className='flex sm:w-[655px]  md:m-auto md:w-auto flex-col gap-[44px]'>
                         <div className='md:w-[35px] md:h-[6px] w-[26px] h-[5px] rounded-[5px] bg-pink-500'></div>
@@ -43,7 +43,7 @@ export default function TitlePage() {
 
                         {slideTitles.map((image, index) => (
                             <SwiperSlide>
-                                <div key={index} className='lg:w-[91%] ip:rounded-tr-[80px] rounded-bl-[80px] ' >
+                                <div key={index} className='lg:w-full ip:rounded-tr-[80px] rounded-bl-[80px] ' >
                                     <img className='rounded-bl-[80px] w-full h-[410px] md:h-[680px] object-cover' src={image.image} />
                                 </div>
                             </SwiperSlide>

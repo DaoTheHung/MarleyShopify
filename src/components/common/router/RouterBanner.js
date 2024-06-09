@@ -12,7 +12,8 @@ export default function RouterBanner() {
                         router.pathname == '/collections/all' ? "COLLECTION" : "" ||
                             router.pathname == '/contact' ? "CONTACT" : "" ||
                                 router.pathname == '/account/login' ? "ACCOUNT" : "" ||
-                                    router.pathname == '/account/register' ? "ACCOUNT" : ""
+                                    router.pathname == '/account/register' ? "ACCOUNT" : "" ||
+                                        router.pathname == '/account' ? "ACCOUNT" : ""
         ,
 
         titleLink:
@@ -20,7 +21,8 @@ export default function RouterBanner() {
                 router.pathname == '/collections/all' ? "Home" : "" ||
                     router.pathname == '/about' ? "Home" : "" ||
                         router.pathname == '/account/login' ? "Home" : "" ||
-                            router.pathname == '/account/register' ? "Home" : "",
+                            router.pathname == '/account/register' ? "Home" : "" ||
+                                router.pathname == '/account' ? "Home" : "",
 
         link:
             router.pathname == '/products/[name]' ? "/collections/all" : "" ||
@@ -30,7 +32,9 @@ export default function RouterBanner() {
                 router.pathname == '/collections/all' ? "Products" : "" ||
                     router.pathname == '/about' ? "About" : "" ||
                         router.pathname == '/account/login' ? "Account" : "" ||
-                            router.pathname == '/account/register' ? "Account" : ""
+                            router.pathname == '/account/register' ? "Account" : "" ||
+                                router.pathname == '/account' ? "Account" : ""
+
     }
     return (
         <div className='ip:w-[425px] sm:w-full md:w-full lg:w-full'>

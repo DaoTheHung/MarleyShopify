@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/account/login/index.js",
-    "pages/account/register/index.js"
+    "pages/account/register/index.js",
+    "pages/account/index.js"
   ],
   "exclude": ["node_modules"]
 }

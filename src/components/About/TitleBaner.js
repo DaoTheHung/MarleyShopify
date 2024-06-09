@@ -45,8 +45,8 @@ export const TitleBaner = () => {
                             </h3>
                         </div>
                         <div className='text-ink-100 text-[22px]  text-left md:text-right relative  right-[-3px] md:right-[31px]'>
-                            <p className=' w-[347px] md:w-[535px] '>Curabitur ut nisl urna. Nam quis mauris in nisi eleifend tristique nec eu ante. Nam magna justo, mollis et enim</p>
-                            <p className=' w-[347px] md:w-[535px] mt-[-18px]'>ac uisque at blandit nisl.</p>
+                            <p className='  md:w-[535px] '>Curabitur ut nisl urna. Nam quis mauris in nisi eleifend tristique nec eu ante. Nam magna justo, mollis et enim</p>
+                            <p className='  md:w-[535px] mt-[-18px]'>ac uisque at blandit nisl.</p>
                         </div>
                     </div>
                 </div>

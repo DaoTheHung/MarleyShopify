@@ -5,11 +5,12 @@ import Layout from '../src/components/Layout';
 import { Provider } from 'react-redux';
 import store from '../store';
 import Head from 'next/head'
-
+import { ScreenLoading } from '../src/components/common/Loading/Loading'
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Layout >
+        <ScreenLoading />
         <Head>
           <meta
             name="viewport"

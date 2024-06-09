@@ -74,6 +74,48 @@ export const addComments = createAsyncThunk('products/commentAdded', async (newC
 })
 
 
+// login
+
+export const getUsers = createAsyncThunk('accout/usersFetched', async () => {
+    const res = await axios.get(configApi.API_USER)
+    return res.data
+})
+export const registerAccount = createAsyncThunk('accout/login', async (dataLogin) => {
+    await axios.post(configApi.API_USER,
+        dataLogin,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => {
+            return res.data
+        })
+})
+
+export const isLogin = createAsyncThunk('accout/isLogin', async (data) => {
+    await axios.put(configApi.API_USER + '/' + data.id,
+        {
+            login: data.login
+        },
+        {
+            headers: {
+                'Content-Type': 'application/json'
+
+            }
+        })
+        .then(res => res.data)
+
+
+})
+
+// detail user
+export const getUser = createAsyncThunk('accout/usersDetail', async (id) => {
+    const res = await axios.get(configApi.API_USER + '/' + id)
+    return res.data
+})
+
+
 const productSlice = createSlice({
     name: "products",
     initialState: {
@@ -81,7 +123,9 @@ const productSlice = createSlice({
         allProducts: [],
         cart: [],
         comments: [],
+        login: [],
         isDataProduct: false,
+        isUser: false,
     },
 
     reducers: {
@@ -90,6 +134,9 @@ const productSlice = createSlice({
         },
         isCheckout: (state, action) => {
             state.dataCheckout = action.payload
+        },
+        isUser: (state, action) => {
+            state.isUser = action.payload
         },
 
     },
@@ -135,14 +182,47 @@ const productSlice = createSlice({
         },
         [getComment.rejected]: (state, action) => {
         },
+
         // Add comments
 
         [addComments.fulfilled]: (state, action) => {
             state.comments = action.payload
         },
+
         [addComments.rejected]: (state, action) => {
         },
 
+        // Get users
+
+        [getUsers.fulfilled]: (state, action) => {
+            state.login = action.payload
+        },
+        [getUsers.rejected]: (state, action) => {
+        },
+
+        // register
+        [registerAccount.fulfilled]: (state, action) => {
+            state.login = action.payload
+        },
+
+        [registerAccount.rejected]: (state, action) => {
+        },
+
+        // isLogin
+        [isLogin.fulfilled]: (state, action) => {
+            state.login = action.payload
+        },
+
+        [isLogin.rejected]: (state, action) => {
+        },
+
+        // detail user
+        [getUser.fulfilled]: (state, action) => {
+            state.login = action.payload
+        },
+
+        [getUser.rejected]: (state, action) => {
+        },
     },
 
 })
@@ -161,14 +241,17 @@ const store = configureStore({
 export const cartSelector = state => state.product.cart
 export const productSelector = state => state.product.allProducts
 export const commentsSelector = state => state.product.comments
+export const loginSelector = state => state.product.login
 export const dtCheckoutSelector = state => state.product.dataCheckout
 export const isDataSelector = state => state.product.isDataProduct
+export const isUserSelector = state => state.product.isUser
 
 
 
 // Action export
 export const { isData } = productSlice.actions
 export const { isCheckout } = productSlice.actions
+export const { isUser } = productSlice.actions
 
 
 export default store 

@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import PopupCart from '../common/PopupCart'
 import { useRouter } from 'next/router'
-import { cartSelector, getCart, isDataSelector } from '../../../store'
-import { useSelector, useDispatch } from "react-redux"
+import { cartSelector, getCart, isDataSelector, getUser, isUserSelector } from '../../../store'
 import { MenuHead } from '../common/MenuHead'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { loginSelector } from '../../../store';
+import Cookies from 'js-cookie'
 
 export default function Header() {
+
+
+
   const router = useRouter()
   const [cart, setCart] = useState(true)
   const [dataProduct, setDataProduct] = useState([])
@@ -21,6 +25,19 @@ export default function Header() {
   const isDataProduct = useSelector(isDataSelector)
 
   const dispath = useDispatch()
+
+  const listUser = useSelector(loginSelector)
+  const isUserSelect = useSelector(isUserSelector)
+
+  const [isLogin, setIsLogin] = useState('')
+  useEffect(() => {
+    const id = Cookies.get('token')
+    if (id) {
+      setIsLogin(id)
+      dispath(getUser(id))
+    }
+  }, [dispath, listUser, isUserSelect,router])
+
   useEffect(() => {
     dispath(getCart())
   }, [dispath]);
@@ -32,7 +49,7 @@ export default function Header() {
         setDataProduct(JSON.parse(json))
       }, 2000)
     }
-  }, [isDataProduct])
+  }, [isUserSelect])
 
   // Total quantity
   const quantityProduct = dataProduct?.reduce((int, product) => int + product.quantity, 0)
@@ -42,7 +59,6 @@ export default function Header() {
   const handleModalCart = () => {
     setCart(false)
   }
-
   return (
     <div>
       <div className=' relative  md:bg-inherit bg-[#1a1a1a]  z-20 '>
@@ -118,9 +134,12 @@ export default function Header() {
           </ul>
 
           <div className='flex items-center gap-4'>
-            <Link href='/account/login'>
-              <div className='text-[24px] md:text-[27px] text-[#fff]'><i class="fa-solid fa-user"></i></div>
-            </Link>
+            {
+              isLogin ? <Link href='/account' className='text-white text-xl hidden lg:block no-underline'>{listUser.fullname}</Link> : <Link href='/account/login'>
+                <div className='text-[24px] md:text-[27px] text-[#fff]'><i class="fa-solid fa-user"></i></div>
+              </Link>
+            }
+
 
             <div className='flex items-center gap-6'>
               <div onClick={() => setShow(true)} className='md:hidden cursor-pointer text-[#fff]  right-[135px] text-[19px]'>
