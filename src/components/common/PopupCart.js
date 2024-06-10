@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getCart, cartSelector, isDataSelector, isData } from '../../../store'
+import { getCart, cartSelector, isDataSelector, isData, showCartSelector, showCart } from '../../../store'
 import { useSelector, useDispatch } from "react-redux"
 import Link from 'next/link';
 
@@ -12,12 +12,22 @@ export default function PopupCart({ cart, setCart }) {
     const data = useSelector(cartSelector)
     const isDataProduct = useSelector(isDataSelector)
     const dispatch = useDispatch()
+    const showCartS = useSelector(showCartSelector)
+
+    const dispath = useDispatch()
     useEffect(() => {
         const json = JSON.parse(localStorage.getItem('cart'))
         if (json !== null) {
             setDataProduct(json)
         }
     }, [isDataProduct])
+
+    useEffect(() => {
+        if (router) {
+            dispath(showCart(true))
+
+        }
+    }, [router])
 
 
     // Remove product in cart
@@ -31,7 +41,7 @@ export default function PopupCart({ cart, setCart }) {
 
     // Close popup cart
     const handleClosePopup = () => {
-        setCart(true)
+        dispath(showCart(true))
     }
 
     // Total product 
@@ -74,19 +84,20 @@ export default function PopupCart({ cart, setCart }) {
     // Checkout link
     const handleCheckout = () => {
         router.push(`/checkout/information`)
-        setCart(false)
+        dispath(showCart(false))
     }
+
 
 
     return (
         <>
 
-            <div className={`fixed bottom-0  left-0 right-0 top-0 bg-[#00000085] z-50 ${!cart ? "visible" : "invisible"}`}>
-                <span onClick={handleClosePopup} className={`right-[270px] md:right-[301px] z-50 cursor-pointer ${cart ? "translate-x-[18rem]" : "translate-x-[-100%]"} hover:bg-[#1a1a1a] transition duration-500 w-[30px] h-[30px]  md:w-[33px] md:h-[33px] bg-pink-500 absolute flex items-center justify-center text-[#fff]`}>
+            <div className={`fixed bottom-0  left-0 right-0 top-0 bg-[#00000085] z-50 ${!showCartS ? "visible" : "invisible"}`}>
+                <span onClick={handleClosePopup} className={`right-[270px] md:right-[301px] z-50 cursor-pointer ${showCartS ? "translate-x-[18rem]" : "translate-x-[-100%]"} hover:bg-[#1a1a1a] transition duration-500 w-[30px] h-[30px]  md:w-[33px] md:h-[33px] bg-pink-500 absolute flex items-center justify-center text-[#fff]`}>
                     <i className="fa-solid fa-xmark"></i>
                 </span>
-                <div className={`border-none overflow-y-scroll transition-allLinear duration-500  fixed ${!cart ? "right-[0]" : "right-[-335px]"}  top-0 bottom-0 w-[300px] md:w-[334px] bg-[#fff]`}>
-                    <h3 className='px-[15px] py-[15px] shadow-yourCart text-[22px] text-[#1a1a1a]'>Your Cart</h3>
+                <div className={`border-none overflow-y-scroll transition-allLinear duration-500  fixed ${!showCartS ? "right-[0]" : "right-[-335px]"}  top-0 bottom-0 w-[300px] md:w-[334px] bg-[#fff]`}>
+                    <h3 className='px-[15px] py-[15px] shadow-yourCart lg:text-[22px] text-base text-[#1a1a1a]'>Your Cart</h3>
                     <div className='w-full flex flex-col '>
                         {dataProduct?.map((product, idx) => (
                             <div className='flex gap-[10px] mt-[11px] ml-[15px] group' key={idx} >
@@ -117,8 +128,8 @@ export default function PopupCart({ cart, setCart }) {
                     <div className='px-[15px] mt-[24px] w-[99%] h-[33%]'>
                         {dataProduct?.length == 0 &&
                             <>
-                                <h3 className='text-[22px] text-[#9e9999] font-normal'>Your cart is currently empty.</h3>
-                                <button className='w-full mt-[7px] py-[16px] text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'>Continue Shopping</button>
+                                <h3 className='lg:text-[22px] text-base text-[#9e9999] font-normal'>Your cart is currently empty.</h3>
+                                <button className='w-full mt-[7px] py-[16px] lg:text-[20px] bg-pink-500 hover:bg-[#1a1a1a] transition duration-500 text-[#fff]'><Link className='no-underline text-white' href='/collections/all'>Continue Shopping</Link></button>
                             </>
                         }
                         {dataProduct?.length >= 1 &&

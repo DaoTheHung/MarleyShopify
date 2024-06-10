@@ -87,7 +87,7 @@ const ProductData = () => {
 
         <>
             {/* <div className='bg-[#d5d4d46e] fixed top-0 left-0 translate-x-[44px] bottom-0 z-10'></div> */}
-            <div className='xl:w-[1240px] md:w-[425px] ml-0 md:ml-[50px]'>
+            <div className='xl:w-[1240px] md:w-[676px] ml-0 md:ml-[50px]'>
 
                 <div className='bg-[#0000000d] py-[16px] px-[18px] flex justify-between md:w-full  w-[343px] m-auto flex-col md:flex-row'>
                     <div className='hidden lg:flex justify-center'>

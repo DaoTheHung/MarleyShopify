@@ -126,6 +126,7 @@ const productSlice = createSlice({
         login: [],
         isDataProduct: false,
         isUser: false,
+        showCart: true,
     },
 
     reducers: {
@@ -137,6 +138,9 @@ const productSlice = createSlice({
         },
         isUser: (state, action) => {
             state.isUser = action.payload
+        },
+        showCart: (state, action) => {
+            state.showCart = action.payload
         },
 
     },
@@ -245,6 +249,7 @@ export const loginSelector = state => state.product.login
 export const dtCheckoutSelector = state => state.product.dataCheckout
 export const isDataSelector = state => state.product.isDataProduct
 export const isUserSelector = state => state.product.isUser
+export const showCartSelector = state => state.product.showCart
 
 
 
@@ -252,6 +257,7 @@ export const isUserSelector = state => state.product.isUser
 export const { isData } = productSlice.actions
 export const { isCheckout } = productSlice.actions
 export const { isUser } = productSlice.actions
+export const { showCart } = productSlice.actions
 
 
 export default store 

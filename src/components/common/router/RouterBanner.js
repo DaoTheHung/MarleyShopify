@@ -46,10 +46,10 @@ export default function RouterBanner() {
                     <h3 className='text-[#fff]  uppercase text-[38px] tracking-[2px]'>{tilteRouter.title}</h3>
                     <div className='flex text-[#fff] ab justify-center items-center gap-[9px] mt-[20px]'>
                         <Link style={{ textDecoration: "none" }} href={tilteRouter.link}>
-                            <h3 className='font-normal hover:text-pink-500 transition duration-[500ms] text-[#fff] text-[23px]'>{tilteRouter.titleLink}</h3>
+                            <h3 className='font-normal hover:text-pink-500 transition duration-[500ms] text-[#fff] lg:text-[23px] text-lg'>{tilteRouter.titleLink}</h3>
                         </Link>
-                        <h3 className='text-[23px] font-normal'>/</h3>
-                        <h3 className='text-[23px] font-normal'>{tilteRouter.description}</h3>
+                        <h3 className='lg:text-[23px] text-lg font-normal'>/</h3>
+                        <h3 className='lg:text-[23px] text-lg font-normal'>{tilteRouter.description}</h3>
                     </div></div>
             </div>
         </div>

@@ -32,8 +32,8 @@ const MenuProducts = () => {
 
     return (
 
-        <div className='md:w-[442px]'>
-            {show && <div className='fixed top-0 hidden lg:block left-0 right-0 bottom-0 bg-[#f1f1f1b3] z-10'></div>}
+        <div className='md:w-[260px] xl:w-[442px]'>
+            {show && <div className='fixed top-0 hidden md:hidden xl:block left-0 right-0 bottom-0 bg-[#f1f1f1b3] z-10'></div>}
             <div onClick={() => setShow(true)} className='fixed flex visible hover:bg-black-300 md:hidden justify-center items-center left-0 top-[50%] bottom-0 z-10 bg-pink-500 w-[50px] h-[50px]'>
                 <i className="fa-solid fa-caret-right text-[#fff] text-[22px] text-center"></i>
             </div>
