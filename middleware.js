@@ -7,7 +7,7 @@ export function middleware(req) {
     const url = req.url
 
 
-    if (!token && url.includes('/account') && !url.includes('/account/login')) {
+    if (!token && url.includes('/account') && !url.includes('/account/register') && !url.includes('/account/login')) {
         return NextResponse.redirect(new URL('/account/login', url))
     }
 

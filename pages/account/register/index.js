@@ -46,15 +46,15 @@ export default function index() {
 
     return (
         <>
-            <form onSubmit={handleSubmit(onSubmit)} className='w-[700px] mx-auto my-11 flex flex-col gap-6'>
+            <form onSubmit={handleSubmit(onSubmit)} className='w-[89%] lg:w-[700px] mx-auto my-11 flex flex-col gap-6'>
                 <div className='flex flex-col gap-2'>
-                    <div className='flex gap-2 justify-between'>
-                        <div className='flex flex-col gap-2 w-1/2'>
+                    <div className='flex lg:gap-2 justify-between lg:flex-row flex-col gap-6 '>
+                        <div className='flex flex-col gap-2 lg:w-1/2'>
                             <input
                                 style={errors.firtName?.type ? { border: "3px solid #dd1d1d" } : {}}
                                 type='firstName'
                                 placeholder='First Name'
-                                className='py-[10px] px-5 border outline-none focus:ring-1 focus:ring-[#f96e89]'
+                                className='py-[10px] px-5 border  text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                                 {...register("firstName", {
                                     required: true,
                                     maxLength: 10
@@ -62,20 +62,20 @@ export default function index() {
                                 })}
                             />
                             {errors.firstName?.type === "required" && (
-                                <div className="text-red-500 text-[16px] ">Enter a First Name</div>
+                                <div className="text-red-500 text-sm lg:text-base ">Enter a First Name</div>
                             )}
 
 
                             {errors.firstName?.type === "maxLength" && (
-                                <div className="text-red-500 text-[16px] ">First Name maximum 10 characters</div>
+                                <div className="text-red-500 text-sm lg:text-base ">First Name maximum 10 characters</div>
                             )}
                         </div>
-                        <div className='flex flex-col gap-2 w-1/2'>
+                        <div className='flex flex-col gap-2 lg:w-1/2'>
                             <input
                                 style={errors.firtName?.type ? { border: "3px solid #dd1d1d" } : {}}
                                 type='lastName'
                                 placeholder='Last Name'
-                                className='py-[10px] px-5 border outline-none focus:ring-1 focus:ring-[#f96e89]'
+                                className='py-[10px] px-5 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                                 {...register("lastName", {
                                     required: true,
                                     maxLength: 10
@@ -83,12 +83,12 @@ export default function index() {
                                 })}
                             />
                             {errors.lastName?.type === "required" && (
-                                <div className="text-red-500 text-[16px] ">Enter a Last Name</div>
+                                <div className="text-red-500 text-sm lg:text-base ">Enter a Last Name</div>
                             )}
 
 
                             {errors.lastName?.type === "maxLength" && (
-                                <div className="text-red-500 text-[16px] ">Last Name maximum 10 characters</div>
+                                <div className="text-red-500 text-sm lg:text-base ">Last Name maximum 10 characters</div>
                             )}
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export default function index() {
                     <input
                         type='email'
                         placeholder='Email'
-                        className='py-[10px] px-5 border outline-none focus:ring-1 focus:ring-[#f96e89]'
+                        className='py-[10px] px-5 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                         style={errors.email?.type ? { border: "3px solid #dd1d1d" } : {}}
                         {...register("email", {
                             required: true,
@@ -107,11 +107,11 @@ export default function index() {
                         })}
                     />
                     {errors.email?.type === "required" && (
-                        <div className="text-red-500 text-[16px] ">Enter a email</div>
+                        <div className="text-red-500 text-sm lg:text-base ">Enter a email</div>
                     )}
 
                     {errors.email?.type === "pattern" && (
-                        <div className="text-red-500 text-[16px] ">Enter a valid email</div>
+                        <div className="text-red-500 text-sm lg:text-base ">Enter a valid email</div>
                     )}
                 </div>
                 <div className='flex flex-col gap-2'>
@@ -119,7 +119,7 @@ export default function index() {
                         style={errors.password?.type ? { border: "3px solid #dd1d1d" } : {}}
                         type='password'
                         placeholder='Password'
-                        className='py-[10px] px-5 border outline-none focus:ring-1 focus:ring-[#f96e89]'
+                        className='py-[10px] px-5 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                         {...register("password", {
                             required: true,
                             minLength: 5,
@@ -128,14 +128,14 @@ export default function index() {
                         })}
                     />
                     {errors.password?.type === "required" && (
-                        <div className="text-red-500 text-[16px] ">Enter a password</div>
+                        <div className="text-red-500 text-sm lg:text-base ">Enter a password</div>
                     )}
 
                     {errors.password?.type === "minLength" && (
-                        <div className="text-red-500 text-[16px] ">Password must be at least 5 characters or more</div>
+                        <div className="text-red-500 text-sm lg:text-base ">Password must be at least 5 characters or more</div>
                     )}
                     {errors.password?.type === "maxLength" && (
-                        <div className="text-red-500 text-[16px] ">Password maximum 50 characters</div>
+                        <div className="text-red-500 text-sm lg:text-base ">Password maximum 50 characters</div>
                     )}
                 </div>
 
@@ -145,23 +145,23 @@ export default function index() {
                         style={errors.confirm_password?.type ? { border: "3px solid #dd1d1d" } : {}}
                         type='password'
                         placeholder='Confirm Password'
-                        className='py-[10px] px-5 border outline-none focus:ring-1 focus:ring-[#f96e89]'
+                        className='py-[10px] px-5 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                         {...register("confirm_password", {
                             required: true,
                             validate: (value) => value === watch("password") || "Passwords do not match"
                         })}
                     />
-                    {errors.confirm_password && <div className="text-red-500 text-[16px] ">{errors.confirm_password.message}</div>}
+                    {errors.confirm_password && <div className="text-red-500 text-sm lg:text-base ">{errors.confirm_password.message}</div>}
                 </div>
 
                 {
                     Object.keys(isData).length !== 0 && !isLogin &&
-                    <div className='text-red-500 text-[16px] '>Email already exists</div>
+                    <div className='text-red-500 text-sm lg:text-base '>Email already exists</div>
                 }
                 {
                     Object.keys(isData).length !== 0 && isLogin &&
-                    <div className='text-green-500 text-[16px] '>Sign Up Success {'-->'}<span className='text-base cursor-pointer text-black-500'>
-                        <Link className='underline decoration-0' href='/account/login'>Log In now</Link>
+                    <div className='text-green-500 text-sm lg:text-base '>Sign Up Success <span>{'-->'}</span><span className='text-base cursor-pointer text-black-500'>
+                        <Link className=' decoration-0 no-underline ' href='/account/login'>Log In now</Link>
                     </span></div>
                 }
 

@@ -14,7 +14,7 @@ import { Navigation, Thumbs } from "swiper";
 import { useRouter } from 'next/router'
 
 // Redux
-import { productSelector, getProducts, isDataSelector, isData } from '../../store'
+import { productSelector, getProducts, isDataSelector, isData, showCartSelector, showCart, loginSelector } from '../../store'
 import { useSelector, useDispatch } from "react-redux"
 
 //
@@ -49,6 +49,9 @@ export default function products() {
     // Get data redux
     const data = useSelector(productSelector)
     const isDataProduct = useSelector(isDataSelector)
+    const listUser = useSelector(loginSelector)
+
+
     const dispath = useDispatch()
     useEffect(() => {
         dispath(getProducts())
@@ -146,35 +149,43 @@ export default function products() {
             quantity: productDetail?.quantity,
         }
         const fakeData = [...dataProduct]
-
-        if (checkProductDetail) {
-
-            // Update quantity and price in localstotage
-            const updatedCart = dataProduct.map((p) =>
-                p.id === productDetail?.id ? { ...p, quantity: p.quantity + 1 } : p
-            )
-            localStorage.setItem('cart', JSON.stringify(updatedCart))
-            setDataProduct(updatedCart)
-            setIsLoading(true)
-
-            // Time open modal cart
-            setTimeout(() => {
-                setIsLoading(false)
-            }, 2000)
-
+        if (!listUser.fullname) {
+            router.push('/account/login')
         } else {
-            fakeData.push(newProduct)
-            setDataProduct(fakeData)
-            localStorage.setItem('cart', JSON.stringify(fakeData))
-            setIsLoading(true)
 
-            // Time open modal cart
-            setTimeout(() => {
-                setIsLoading(false)
-            }, 2000)
+            if (checkProductDetail) {
 
+                // Update quantity and price in localstotage
+                const updatedCart = dataProduct.map((p) =>
+                    p.id === productDetail?.id ? { ...p, quantity: p.quantity + 1 } : p
+                )
+                localStorage.setItem('cart', JSON.stringify(updatedCart))
+                setDataProduct(updatedCart)
+                setIsLoading(true)
+
+                // Time open modal cart
+                setTimeout(() => {
+                    setIsLoading(false)
+                    dispath(showCart(false))
+
+                }, 2000)
+
+            } else {
+                fakeData.push(newProduct)
+                setDataProduct(fakeData)
+                localStorage.setItem('cart', JSON.stringify(fakeData))
+                setIsLoading(true)
+
+                // Time open modal cart
+                setTimeout(() => {
+                    setIsLoading(false)
+                    dispath(showCart(false))
+
+                }, 2000)
+
+            }
+            dispath(isData(!isDataProduct))
         }
-        dispath(isData(!isDataProduct))
     }
 
 
@@ -207,7 +218,7 @@ export default function products() {
                         </Swiper>
                     </div>
 
-                    <div className='mt-[20px] ml-[40px] md:ml-[20px] lg:ml-[20px]'>
+                    <div className='mt-[20px] ml-[40px] md:ml-[20px] xl:ml-[20px]'>
                         <Swiper
                             onSwiper={setSlideThumbs}
                             slidesPerView={4}
@@ -220,7 +231,7 @@ export default function products() {
                                     <SwiperSlide key={index}>
                                         <div
                                             style={typeImage === image.id ? { border: "4px solid #ef6d9f", opacity: "1" } : {}}
-                                            className='md:w-[136.75px] lg:w-[136.75px] w-[61px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
+                                            className='md:w-[136.75px] xl:w-[136.75px] w-[61px] transition duration-[300ms] opacity-[0.5] mr-[10px] cursor-pointer hover:border-4 hover:border-pink-500 hover:opacity-[1]'
                                             onClick={() => (setTypeImage(image.id))}
                                             key={index}
                                         >
@@ -235,19 +246,19 @@ export default function products() {
                     </div>
 
                 </div>
-                <div className='lg:w-[601px] px-[49px] py-[37px] md:px-[82px] lg:px-[82px]'>
+                <div className='xl:w-[601px] px-[49px] py-[37px] md:px-[82px] xl:px-[82px]'>
                     <h3 className='text-[40px] tracking-[1px]'>{productDetail?.name}</h3>
 
                     <div className='mt-[25px]'>
 
-                        <div className=' flex gap-[104px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[104px] md:justify-start xl:justify-start justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Price:</h3>
                             <span className='text-pink-500 text-[23px] font-medium'>Rs. {productDetail?.price * count + ".00"}</span>
                         </div>
 
-                        <div className=' flex gap-[104px] mt-[15px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[104px] mt-[15px] md:justify-start xl:justify-start justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Type:</div>
-                            <div className='flex gap-[13px] flex-col  md:flex-row lg:flex-row'>
+                            <div className='flex gap-[13px] flex-col  md:flex-row xl:flex-row'>
 
                                 <div className='border-2 border-[#ef6d9f] h-[37px] px-[12px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Wireless</h3>
@@ -260,10 +271,10 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[81px] mt-[28px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[81px] mt-[28px] md:justify-start xl:justify-start justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Weight:</div>
 
-                            <div className='flex gap-[13px] flex-col md:flex-row lg:flex-row'>
+                            <div className='flex gap-[13px] flex-col md:flex-row xl:flex-row'>
 
                                 <div className='border-2 border-[#ef6d9f] h-[37px] w-[83px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>289 g</h3>
@@ -284,10 +295,10 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[72px] mt-[28px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[72px] mt-[28px] md:justify-start xl:justify-start justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Material:</div>
 
-                            <div className='flex gap-[13px] flex-col md:flex-row lg:flex-row'>
+                            <div className='flex gap-[13px] flex-col md:flex-row xl:flex-row'>
 
                                 <div className='border-2  border-[#ef6d9f] h-[37px] px-[12px]'>
                                     <h3 className='text-[22px]  text-pink-500 h-full flex justify-center items-center'>Silicon</h3>
@@ -308,24 +319,24 @@ export default function products() {
                             </div>
                         </div>
 
-                        <div className=' flex gap-[80px] mt-[20px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[80px] mt-[20px] md:justify-start xl:justify-start justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Vendor:</h3>
                             <h3 className='text-black font-normal text-[23px] cursor-pointer hover:text-pink-500 transition duration-[500ms]'>Bloom</h3>
                         </div>
 
-                        <div className=' flex gap-[103px] mt-[20px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[103px] mt-[20px] md:justify-start xl:justify-start justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Type:</h3>
                             <h3 className='text-ink-100 font-normal text-[23px] '>Headphone</h3>
 
                         </div>
 
-                        <div className=' flex gap-[48px] mt-[20px] md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[48px] mt-[20px] md:justify-start xl:justify-start justify-between'>
                             <h3 className='text-[20px] font-medium pt-[4px]'> Availability:</h3>
                             <h3 className='text-green-400 font-normal text-[23px] '>In stock!</h3>
 
                         </div>
 
-                        <div className=' flex gap-[68px] mt-[20px]  md:justify-start lg:justify-start justify-between'>
+                        <div className=' flex gap-[68px] mt-[20px]  md:justify-start xl:justify-start justify-between'>
                             <div className='text-[20px] font-medium pt-[4px]'> Quantity:</div>
                             <div className='h-[34px] w-[110px] text-center border flex'>
                                 <button
@@ -345,7 +356,7 @@ export default function products() {
                         </div>
 
 
-                        <div className=' flex gap-[19px] mt-[28px] w-[270px] md:w-[483px] flex-col md:flex-row lg:flex-row'>
+                        <div className=' flex gap-[19px] mt-[28px] w-[270px] md:w-[483px] flex-col md:flex-row xl:flex-row'>
                             <button
                                 onClick={handleAddtoCart}
                                 className='transition duration-[300ms] py-[17px] px-[32px] bg-pink-500 text-[19px] hover:bg-[#1a1a1a] text-[#fff]'>

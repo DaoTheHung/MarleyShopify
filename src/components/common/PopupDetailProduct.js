@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper";
 import { useRouter } from 'next/router'
-import { productSelector, getProducts, isData, isDataSelector, cartSelector } from '../../../store'
+import { productSelector, getProducts, isData, isDataSelector, cartSelector, showCart, showCartSelector, loginSelector } from '../../../store'
 import { useSelector, useDispatch } from "react-redux"
 import { NavigationSlide } from './DataSlide/DataSlide';
 import Spinner from 'react-bootstrap/Spinner';
@@ -22,6 +22,8 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
   const data = useSelector(productSelector)
   const dataCart = useSelector(cartSelector)
   const isDataProduct = useSelector(isDataSelector)
+  const showCartS = useSelector(showCartSelector)
+  const listUser = useSelector(loginSelector)
 
   const dispath = useDispatch()
   useEffect(() => {
@@ -69,38 +71,49 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
       quantity: countQuantity,
     }
     const fakeData = [...dataProduct]
-    if (checkProductDetail) {
-
-      // Update quantity and price in localstotage
-      const updatedCart = dataProduct.map((p) =>
-        p.id === id ? { ...p, quantity: p.quantity + 1 } : p
-      )
-      localStorage.setItem('cart', JSON.stringify(updatedCart))
-      setDataProduct(updatedCart)
-      setIsLoading(true)
-
-      // Time open modal cart
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 2000)
-      setTimeout(() => {
-        setShow(false)
-      }, 1000)
+    if (!listUser.fullname) {
+      router.push('/account/login')
     } else {
-      fakeData.push(newProduct)
-      setDataProduct(fakeData)
-      localStorage.setItem('cart', JSON.stringify(fakeData))
-      setIsLoading(true)
 
-      // Time open modal cart
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 2000)
-      setTimeout(() => {
-        setShow(false)
-      }, 1000)
+      if (checkProductDetail) {
+
+        // Update quantity and price in localstotage
+        const updatedCart = dataProduct.map((p) =>
+          p.id === id ? { ...p, quantity: p.quantity + 1 } : p
+        )
+        localStorage.setItem('cart', JSON.stringify(updatedCart))
+        setDataProduct(updatedCart)
+        setIsLoading(true)
+
+        // Time open modal cart
+        setTimeout(() => {
+          setIsLoading(false)
+          dispath(showCart(false))
+
+        }, 2000)
+        setTimeout(() => {
+          setShow(false)
+
+        }, 1000)
+      } else {
+        fakeData.push(newProduct)
+        setDataProduct(fakeData)
+        localStorage.setItem('cart', JSON.stringify(fakeData))
+        setIsLoading(true)
+
+        // Time open modal cart
+        setTimeout(() => {
+          setIsLoading(false)
+          dispath(showCart(false))
+
+        }, 2000)
+        setTimeout(() => {
+          setShow(false)
+
+        }, 1000)
+      }
+      dispath(isData(!isDataProduct))
     }
-    dispath(isData(!isDataProduct))
   }
 
 
@@ -141,7 +154,7 @@ export default function PopupDetailProduct({ show, setShow, opacity, setOpacity 
             Loading...
           </div>
         }
-        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail py-[31px] lg:py-0 flex flex-col md:flex-row lg:flex-row w-[361px] overflow-y-scroll md:overflow-hidden lg:overflow-hidden h-[770px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
+        <div className={`opacity-[${opacity}] ${show ? "visible " : "invisible"} transition-opacityDetail py-[31px] lg:py-0 flex flex-col md:flex-row lg:flex-row w-[361px] overflow-y-scroll md:overflow-hidden lg:overflow-hidden h-[645px] md:h-auto lg:h-auto lg:w-[1160px] md:w-[1160px]  bg-[#fff] fixed left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]`}>
 
           <button onClick={hiddenDetail} className='group absolute transition duration-[300ms] right-[7px] top-[7px] py-[5px] hover:bg-black  px-[11px]'>
             <i className="group-hover:text-[#fff]  text-[12px] fa-solid fa-x text-[#9e9999]"></i>
