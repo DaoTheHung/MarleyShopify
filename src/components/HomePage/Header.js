@@ -76,7 +76,7 @@ export default function Header() {
     <div>
       <div className=' relative  lg:bg-inherit bg-[#1a1a1a]  z-20 '>
         <div className={`flex ${router.pathname == "/" ? "lg:absolute  mx-auto w-full" : "bg-black-300"} px-4 lg:px-8   py-0 h-[81px]  lg:h-[110px] items-center justify-between`}>
-          <div className=' lg:static   left-[50px]'>
+          <div onClick={() => router.push('/')} className=' lg:static   left-[50px]'>
             <img className=' lg:h-[87px] h-[52px]' src='//cdn.shopify.com/s/files/1/0434/2520/2335/files/logo_300x300.png?v=1631012061' />
           </div>
 

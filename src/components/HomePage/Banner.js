@@ -3,7 +3,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { slides } from '../common/DataSlide/DataSlide';
-
+import Link from 'next/link'
 export default function Banner
     () {
     const slider = useRef()
@@ -36,7 +36,8 @@ export default function Banner
                                 <button
                                     style={{ transition: "0.3s linear" }}
                                     className='transition-allLinear bg-[#ef6d9f] hover:bg-[#ee8d6d] w-[140px] md:w-[158px]   md:mt-[38px] p-[8px] '>
-                                    <h3 className='text-white text-[17px] md:text-[20px] mt-2 font-medium'>Shop Now</h3>
+                                    <h3 className='text-white   text-[17px] md:text-[20px] mt-2 font-medium'>
+                                        <Link className='no-underline text-[#fff]' href='/collections/all'>Shop Now</Link></h3>
                                 </button>
                             </div>
 
