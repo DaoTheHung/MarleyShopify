@@ -119,7 +119,7 @@ export default function NavBarScoll() {
                     </ul>
                     <div className='flex items-center gap-4'>
                         {
-                            listUser.fullname ? <Link href='/account' className='text-white text-xl hidden lg:block no-underline'>{listUser.fullname}</Link> : <Link href='/account/login'>
+                            listUser?.fullname ? <Link href='/account' className='text-white text-xl hidden lg:block no-underline'>{listUser?.fullname}</Link> : <Link href='/account/login'>
                                 <div className='text-[24px] lg:text-[27px] text-[#fff]'><i class="fa-solid fa-user"></i></div>
                             </Link>
                         }
