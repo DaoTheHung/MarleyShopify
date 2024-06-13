@@ -10,6 +10,8 @@ import { loadingImage } from '../common/Loading/Loading';
 import axios from 'axios';
 import useDbounce from '../common/hook/useDebounce';
 import useDebounce from '../common/hook/useDebounce';
+
+import configApi from '../../../config/config';
 // import configApi from '../../../config/config '
 const ProductData = () => {
     // Router
@@ -30,14 +32,13 @@ const ProductData = () => {
     const dispath = useDispatch()
     const products = useSelector(productSelector)
     const [data, setData] = useState([])
-
     useEffect(() => {
         setIsLoading(true)
-        fetch('https://api-test-git-master-daothehungs-projects.vercel.app/api/v1')
+        fetch(configApi?.API_PRODUCTS)
             .then((res) => {
                 return (res.json())
             }).then((data) => {
-                setData(data.data)
+                setData(data)
                 setIsLoading(false)
             });
 

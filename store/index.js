@@ -7,7 +7,7 @@ import configApi from '../config/config'
 // Reducer Thunk Product
 export const getProducts = createAsyncThunk('products/productsFetched', async () => {
     const res = await axios.get(configApi.API_PRODUCTS)
-    return res.data.data
+    return res.data
 })
 
 export const updateProductsData = createAsyncThunk('products/productsUpdated', async (newProduct) => {
@@ -24,13 +24,13 @@ export const updateProductsData = createAsyncThunk('products/productsUpdated', a
 
 // Reducer Thunk Cart
 export const getCart = createAsyncThunk('products/cartFetched', async () => {
-    const res = await axios.get('https://64100ce3864814e5b645d8c5.mockapi.io/api/v1/cart')
+    const res = await axios.get(configApi?.API_PRODUCTS)
     return res.data
 })
 
 // Add new product in cart
 export const addProduct = createAsyncThunk('products/productAdded', async (newProduct) => {
-    await axios.post('https://64100ce3864814e5b645d8c5.mockapi.io/api/v1/cart',
+    await axios.post(configApi?.API_PRODUCTS,
         newProduct,
         {
             headers: {
