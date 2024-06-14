@@ -6,8 +6,30 @@ import RouterBanner from "./common/router/RouterBanner";
 import BackTop from "./common/BackToTop/BackTop";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { loginSelector, isUserSelector, getUser } from '../../store/index'
+import { useDispatch, useSelector } from 'react-redux'
+import Cookies from 'js-cookie'
+import ProductsManagement from '../../src/components/admin/products-management'
 
 const Layout = ({ children }) => {
+
+    const listUser = useSelector(loginSelector)
+    const isUserSelect = useSelector(isUserSelector)
+    const dispath = useDispatch()
+
+
+    useEffect(() => {
+        const id = Cookies.get('token')
+        if (id) {
+
+            dispath(getUser(id))
+        } else {
+
+            dispath(getUser(''))
+        }
+
+
+    }, [dispath, isUserSelect])
 
     // Scolling & Back to top
     const router = useRouter()
@@ -29,6 +51,12 @@ const Layout = ({ children }) => {
         })
     }
 
+    // if (router.pathname === '/admin' && listUser?.fullname?.includes('Admin')) {
+    //     return <ProductsManagement />
+    // }
+
+
+
     return (<>
         <Head>
 
@@ -46,7 +74,7 @@ const Layout = ({ children }) => {
             : <Header />}
         {scolling && <BackTop handleBackTop={handleBackTop} />}
         <NavBarScoll />
-        {router.pathname == '/' ||
+        {router.pathname == '/admin' || router.pathname == '/' ||
             router.pathname == '/checkout/information' ||
             router.pathname == '/checkout/shipping'
             ? ""
