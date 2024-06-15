@@ -1,31 +1,45 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux'
-import { addProduct, isData, isDataSelector } from '../../../../store/index';
+import { updateProduct, isData, isDataSelector } from '../../../../store/index';
 
-export const CreateProduct = ({ showForm, setShowForm }) => {
+export const EditProduct = ({ showForm, setShowForm, data }) => {
     const dispath = useDispatch()
     const isDataState = useSelector(isDataSelector)
 
     const {
         handleSubmit,
         register,
+        setValue,
         formState: { errors },
     } = useForm({
         mode: "onSubmit",
         defaultValues: {
-            quantity: 1,
-            star: 'five'
+            id: data.id,
+            name: data.name,
+            price: data.price,
+            quantity: data.quantity,
+            star: data.star,
+            titleImage: data.image,
+            imageSlick1: data.imageSlick1,
+            imageSlick2: data.imageSlick2,
+            imageSlick3: data.imageSlick3,
         }
     });
 
     const onSubmit = (data) => {
         if (data) {
-            dispath(addProduct({ ...data, image: data.tilteImage }))
-            setShowForm(false)
+            console.log(data)
+            dispath(updateProduct({ ...data, image: data.titleImage }))
+            setShowForm('')
             dispath(isData(!isDataState))
         }
     }
+
+
+    const handleImageChange = (e) => {
+        setValue('name', e.target.value);
+    };
 
     return (
         <div
@@ -47,6 +61,7 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
                                     maxLength: 50
 
                                 })}
+                                onChange={handleImageChange}
                             />
                             {errors.name?.type === "required" && (
                                 <div className="text-red-500 text-sm lg:text-base ">Enter a First Name</div>
@@ -121,24 +136,24 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
                     </div>
 
                     <div className='flex flex-col gap-2 lg:w-full'>
-                        <label htmlFor='tilteImage'>Title Image</label>
+                        <label htmlFor='titleImage'>Title Image</label>
 
                         <input
-                            id='tilteImage'
-                            type='tilteImage'
+                            id='titleImage'
+                            type='titleImage'
                             className='py-[10px] px-2 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
-                            {...register("tilteImage", {
+                            {...register("titleImage", {
                                 required: true,
-                                pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
+                                // pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
 
                             })}
                         />
-                        {errors.tilteImage?.type === "required" && (
+                        {errors.titleImage?.type === "required" && (
                             <div className="text-red-500 text-sm lg:text-base ">Enter a Title Image</div>
                         )}
-                        {errors.tilteImage?.type === "pattern" && (
+                        {/* {errors.titleImage?.type === "pattern" && (
                             <div className="text-red-500 text-sm lg:text-base ">Please enter a valid image URL</div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className='flex flex-col gap-2 lg:w-full'>
@@ -150,16 +165,16 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
                             className='py-[10px] px-2 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                             {...register("imageSlick1", {
                                 required: true,
-                                pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
+                                // pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
 
                             })}
                         />
                         {errors.imageSlick1?.type === "required" && (
                             <div className="text-red-500 text-sm lg:text-base ">Enter a Image Slick - 1</div>
                         )}
-                        {errors.imageSlick1?.type === "pattern" && (
+                        {/* {errors.imageSlick1?.type === "pattern" && (
                             <div className="text-red-500 text-sm lg:text-base ">Please enter a valid image URL</div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className='flex flex-col gap-2 lg:w-full'>
@@ -171,16 +186,16 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
                             className='py-[10px] px-2 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                             {...register("imageSlick2", {
                                 required: true,
-                                pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
+                                // pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
 
                             })}
                         />
                         {errors.imageSlick2?.type === "required" && (
                             <div className="text-red-500 text-sm lg:text-base ">Enter a Image Slick - 2</div>
                         )}
-                        {errors.imageSlick2?.type === "pattern" && (
+                        {/* {errors.imageSlick2?.type === "pattern" && (
                             <div className="text-red-500 text-sm lg:text-base ">Please enter a valid image URL</div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className='flex flex-col gap-2 lg:w-full'>
@@ -192,16 +207,16 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
                             className='py-[10px] px-2 border text-sm lg:text-base outline-none focus:ring-1 focus:ring-[#f96e89]'
                             {...register("imageSlick3", {
                                 required: true,
-                                pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
+                                // pattern: /\.(jpeg|jpg|png|gif|bmp)$/i,
 
                             })}
                         />
                         {errors.imageSlick3?.type === "required" && (
                             <div className="text-red-500 text-sm lg:text-base ">Enter a Image Slick - 2</div>
                         )}
-                        {errors.imageSlick3?.type === "pattern" && (
+                        {/* {errors.imageSlick3?.type === "pattern" && (
                             <div className="text-red-500 text-sm lg:text-base ">Please enter a valid image URL</div>
-                        )}
+                        )} */}
                     </div>
                     <div className='w-full flex justify-center'>
                         <button type='sbmit' className='py-[10px] px-[28px] bg-[#f96e89] text-white' >Create</button>

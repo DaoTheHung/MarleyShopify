@@ -43,15 +43,29 @@ export const addProduct = createAsyncThunk('products/productAdded', async (newPr
 })
 
 //Update product in cart
-export const updateProduct = createAsyncThunk('products/productUpdated', async (id, name, price, quantity, image) => {
-
+export const updateProduct = createAsyncThunk('products/productUpdated', async (newProduct) => {
+    await axios.put(configApi?.API_PRODUCTS + '/' + newProduct.id,
+        newProduct,
+        {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => {
+            return res.data
+        })
 })
 
 // Delete product in cart
+
 export const removeProduct = createAsyncThunk('products/productDeleted', async (id) => {
-    await axios.delete(`https://64100ce3864814e5b645d8c5.mockapi.io/api/v1/cart/${id}`)
+    await axios.delete(configApi?.API_PRODUCTS + '/' + id)
     return id
 })
+// export const removeProduct = createAsyncThunk('products/productDeleted', async (id) => {
+//     await axios.delete(`https://64100ce3864814e5b645d8c5.mockapi.io/api/v1/cart/${id}`)
+//     return id
+// })
 //
 
 // Reducer Thunk Comment
@@ -176,7 +190,10 @@ const productSlice = createSlice({
         // Delete product in cart
         [removeProduct.fulfilled]: (state, action) => {
             const id = action.payload
-            state.cart = state.cart.filter(product => product.id !== action.payload)
+            state.cart = state?.cart?.filter(product => product.id !== id)
+        },
+
+        [removeProduct.rejected]: (state, action) => {
         },
 
         // Get commtent
