@@ -39,7 +39,11 @@ export default function index() {
 
             if (checkUsersLogin) {
                 Cookies.set('token', checkUsersId.id)
-                router.push('/')
+                if(data.email !== 'admin@gmail.com'){
+                    router.push('/')
+                }else{
+                    router.push('/admin')
+                }
 
             }
 
@@ -51,6 +55,8 @@ export default function index() {
         }
 
     }
+
+  
 
 
 

@@ -31,7 +31,7 @@ export const CreateProduct = ({ showForm, setShowForm }) => {
         <div
             onClick={() => setShowForm(false)}
             className='fixed top-0 left-0 bottom-0 right-0 bg-black-300/90 z-[9999999]'>
-            <div onClick={(e) => e.stopPropagation()} className='bg-white p-6 h-[75dvh] lg:h-fit w-[96%] overflow-y-auto lg:w-fit  rounded-md absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>
+            <div onClick={(e) => e.stopPropagation()} className='bg-white p-6 h-[75dvh]     w-[96%] overflow-y-auto lg:w-fit  rounded-md absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>
                 <div onClick={() => setShowForm(false)} className='flex justify-end cursor-pointer'><i className="fa-solid fa-xmark"></i></div>
                 <form className='flex flex-col gap-6' onSubmit={handleSubmit(onSubmit)}>
                     <div className='flex lg:gap-2 justify-between lg:flex-row flex-col gap-6 '>
