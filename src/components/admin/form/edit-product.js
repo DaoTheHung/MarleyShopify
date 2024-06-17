@@ -15,7 +15,7 @@ export const EditProduct = ({ showForm, setShowForm, data }) => {
     } = useForm({
         mode: "onSubmit",
         defaultValues: {
-            id: data.id,
+            id: data?.id,
             name: data.name,
             price: data.price,
             quantity: data.quantity,
