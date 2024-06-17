@@ -57,7 +57,13 @@ const ProductsManagement = () => {
     }
 
 
-    const dataEdit = data.find(item => item.id === idEdit)
+    const dataEdit = data?.find(item => item.id === idEdit)
+
+    useEffect(()=> {
+if(data){
+setIdEdit('')
+}
+    },[data])
 
 
     return (
@@ -70,8 +76,8 @@ const ProductsManagement = () => {
 
                         <div key={product.id} className='border relative rounded-[4px] pb-4 shadow-md w-full lg:w-[29%] h-[471px] flex flex-col justify-between group/item overflow-hidden items-center'>
                             <div className='flex border-b top-2 p-2 right-2 cursor-pointer justify-end w-full gap-3'>
-                                <i onClick={() => setIdEdit(product.id)} class="fa-regular fa-pen-to-square"></i>
-                                <i onClick={() => handeRemoveProduct(product.id)} class="fa-solid fa-trash-can"></i>
+                                <i onClick={() => setIdEdit(product.id)} className="fa-regular fa-pen-to-square"></i>
+                                <i onClick={() => handeRemoveProduct(product.id)} className="fa-solid fa-trash-can"></i>
 
                             </div>
                             <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit '>

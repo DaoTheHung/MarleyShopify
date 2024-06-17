@@ -29,9 +29,7 @@ export const EditProduct = ({ showForm, setShowForm, data }) => {
 
     const onSubmit = (data) => {
         if (data) {
-            console.log(data)
             dispath(updateProduct({ ...data, image: data.titleImage }))
-            setShowForm('')
             dispath(isData(!isDataState))
         }
     }

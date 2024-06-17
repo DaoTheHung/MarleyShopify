@@ -144,7 +144,7 @@ export default function Address() {
 
                 <div className='flex justify-between md:gap-0 gap-[20px] flex-col-reverse md:flex-row  items-center'>
                     <button onClick={() => router.push('/collections/all')} className='text-[#1773b0] transition-color duration-300 hover:text-[#1f8dd6]'>
-                        <span className='mr-[20px]'><i class="fa-solid fa-angle-left"></i></span>
+                        <span className='mr-[20px]'><i className="fa-solid fa-angle-left"></i></span>
                         Return to cart
                     </button>
                     <button

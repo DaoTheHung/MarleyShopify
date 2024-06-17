@@ -21,9 +21,9 @@ export default function Information({ showCart }) {
                     <RouterCheckout />
                     <Address />
 
-                    <div className='w-full lg:mt-4 text-[13px] pt-[21px] text-ink-100  border-t border-t-[#dedede]'>
+                    {/* <div className='w-full lg:mt-4 text-[13px] pt-[21px] text-ink-100  border-t border-t-[#dedede]'>
                         All rights reserved Marley Theme
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

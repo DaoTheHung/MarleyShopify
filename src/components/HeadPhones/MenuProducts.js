@@ -40,7 +40,7 @@ const MenuProducts = () => {
 
             <div className={` w-full md:sticky md:p-0  pt-[102px] px-[20px] transition-allLinear overflow-y-scroll md:overflow-y-auto duration-500 fixed top-0 bottom-0 z-20 bg-[#fff]  ${show ? "left-0" : "left-[-400px]"} `}>
                 <div onClick={() => setShow(false)} className='block md:hidden absolute top-[20px] text-ink-100 right-[20px] text-[20px]'>
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                 </div>
                 <div className='sticky top-0'>
                     <div>

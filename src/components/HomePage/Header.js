@@ -153,7 +153,7 @@ export default function Header() {
           <div className='flex items-center gap-4'>
             {
               listUser?.fullname ? <Link href='/account' className='text-white text-xl hidden lg:block no-underline'>{listUser.fullname}</Link> : <Link href='/account/login'>
-                <div className=' lg:text-[24px]  text-[#fff]'><i class="fa-solid fa-user"></i></div>
+                <div className=' lg:text-[24px]  text-[#fff]'><i className="fa-solid fa-user"></i></div>
               </Link>
             }
 

@@ -113,7 +113,7 @@ const ProductData = () => {
                         </div>
                     </div>
                     <div className='flex items-center flex-col md:flex-row '>
-                        <label className='text-ink-100 text-[22px] font-normal'>Search <span><i class="text-[15px] fa-solid fa-magnifying-glass"></i></span></label>
+                        <label className='text-ink-100 text-[22px] font-normal'>Search <span><i className="text-[15px] fa-solid fa-magnifying-glass"></i></span></label>
                         <div>
                             <input
 
@@ -132,9 +132,9 @@ const ProductData = () => {
                     {!isLoading ?
                         currenCart?.map((product) => (
 
-                            <div key={product.id} className={`${animate == "translate-x-[44px]" ? "flex flex-row w-[88%]" : ""} md:w-[31%] w-full  group/item overflow-hidden`}>
-                                <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit mb-[41px]'>
-                                    <div className={`${animate == "translate-x-[44px]" ? "w-[358px] " : ""} relative`}>
+                            <div key={product.id} className={`${animate == "translate-x-[44px] w-full" ? "flex flex-row md:w-[31%]" : ""}  w-full  group/item overflow-hidden`}>
+                                <div className='relative group/edit transition duration-[600ms] cursor-pointer group-hover/item:shadow-cart  group/edit '>
+                                    <div className={`${animate == "translate-x-[44px] w-[358px]" ? "w-full " : ""} relative`}>
                                         <img className='' src={product.image} />
                                         <img className='transition   duration-[600ms] absolute top-0 opacity-[0] group-hover/edit:opacity-100' src={product.imageSlick1} />
                                     </div>
@@ -154,7 +154,7 @@ const ProductData = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={`${animate == "translate-x-[44px]" ? "flex flex-col gap-[20px] mt-[138px] ml-[22px]" : "text-center "}`}>
+                                <div className={`${animate == "translate-x-[44px]" ? "flex flex-col gap-[20px] items-center" : "text-center "}`}>
                                     <div className={`${animate == "translate-x-[44px]" ? "" : "text-center"} tracking-[3px]`}>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
                                         <i className="fa-solid text-[#1a1a1a6b] fa-star text-[12px]"></i>
